@@ -4,9 +4,8 @@ const KEY_RIGHT  = 2;
 const KEY_DOWN   = 3;
 const KEY_LEFT   = 4;
 const KEY_ACTION = 5;
-const KEY_ESC    = 6;
 
-var keyboard = new Array( 8 );
+var keyboard = new Array( 6 );
 
 function is_key_pressed( code ) {
 	return keyboard[ code ];
@@ -23,11 +22,10 @@ function set_key_pressed( jcode, state ) {
 		keyboard[ KEY_DOWN ] = state;
 	} else if ( jcode == 32 || jcode == 13 ) {
 		keyboard[ KEY_ACTION ] = state;
-	} else if ( jcode == 27 ) {
-		keyboard[ KEY_ESC ] = state;
 	}
 }
 
+const VAR_HERO_POS_UP_DOWN     = 0xe5;
 const VAR_SCROLL_Y             = 0xf9;
 const VAR_HERO_ACTION          = 0xfa;
 const VAR_HERO_POS_JUMP_DOWN   = 0xfb;
@@ -247,8 +245,10 @@ var opcodes = {
 		const num = read_word( );
 		if ( num > 16000 ) {
 			next_part = num;
+		} else if ( num in bitmaps ) {
+			draw_bitmap( num );
 		}
-		console.log(' load num:' + num );
+		console.log( 'load num:' + num );
 	},
 	0x1a : function( ) { // play_music
 		const num      = read_word( );
@@ -330,12 +330,15 @@ function update_input( ) {
 	}
 	if ( is_key_pressed( KEY_DOWN ) ) {
 		vars[ VAR_HERO_POS_JUMP_DOWN ] = 1;
+		vars[ VAR_HERO_POS_UP_DOWN ] = 1;
 		mask |= 4;
 	} else if ( is_key_pressed( KEY_UP ) ) {
 		vars[ VAR_HERO_POS_JUMP_DOWN ] = -1;
+		vars[ VAR_HERO_POS_UP_DOWN ] = -1;
 		mask |= 8;
 	} else {
 		vars[ VAR_HERO_POS_JUMP_DOWN ] = 0;
+		vars[ VAR_HERO_POS_UP_DOWN ] = 0;
 	}
 	vars[ VAR_HERO_POS_MASK ] = mask;
 	if ( is_key_pressed( KEY_ACTION ) ) {
@@ -383,7 +386,7 @@ function load( data, size ) {
 		console.assert( buf.length == size );
 		return buf;
 	}
-	var buf = new Array( size );
+	var buf = new Uint8Array( size );
 	for ( var i = 0; i < data.length; ++i ) {
 		buf[ i ] = data.charCodeAt( data[ i ] ) & 0xff;
 	}
@@ -457,6 +460,8 @@ const PALETTE_TYPE_VGA = 2;
 
 var palette_type = PALETTE_TYPE_AMIGA;
 
+var is_1991; // 320x200
+
 function get_page( num ) {
 	if ( num == 0xff ) {
 		return current_page2;
@@ -483,19 +488,27 @@ function copy_page( src, dst, vscroll ) {
 		src = get_page( src );
 		buffer8.set( buffer8.subarray( src * PAGE_SIZE, ( src + 1 ) * PAGE_SIZE ), dst * PAGE_SIZE );
 	} else {
+		if ( ( src & 0x80 ) == 0 ) {
+			vscroll = 0;
+		}
 		src = get_page( src & 3 );
 		if ( dst == src ) {
 			return;
 		}
-		vscroll *= SCALE;
-		vscroll = 0;
+		const dst_offset = dst * PAGE_SIZE;
+		const src_offset = src * PAGE_SIZE;
 		if ( vscroll == 0 ) {
-			buffer8.set( buffer8.subarray( src * PAGE_SIZE, ( src + 1 ) * PAGE_SIZE ), dst * PAGE_SIZE );
-		} else if ( vscroll > -SCREEN_W && vscroll < SCREEN_W ) {
-			if ( vscroll < 0 ) {
-				buffer8.set( buffer8.subarray( src * PAGE_SIZE - vscroll * SCREEN_W, src * PAGE_SIZE ), dst * PAGE_SIZE );
-			} else {
-				buffer8.set( buffer8.subarray( src * PAGE_SIZE, src * PAGE_SIZE + ( SCREEN_H - vscroll ) * SCREEN_W ), dst * PAGE_SIZE + vscroll * SCREEN_W );
+			buffer8.set( buffer8.subarray( src_offset, src_offset + PAGE_SIZE ), dst_offset );
+		} else {
+			//console.log( 'vscroll:' + vscroll );
+			vscroll *= SCALE;
+			if ( vscroll > -SCREEN_W && vscroll < SCREEN_W ) {
+				const h = vscroll * SCREEN_W;
+				if ( vscroll < 0 ) {
+					buffer8.set( buffer8.subarray( src_offset - h, src_offset + PAGE_SIZE ), dst_offset );
+				} else {
+					buffer8.set( buffer8.subarray( src_offset, src_offset + PAGE_SIZE - h ), dst_offset + h );
+				}
 			}
 		}
 	}
@@ -507,7 +520,7 @@ function draw_point( page, color, x, y ) {
 	}
 	const offset = page * PAGE_SIZE + y * SCREEN_W + x;
 	if ( color == 0x11 ) {
-		console.log( page != 0 );
+		console.assert( page != 0 );
 		buffer8[ offset ] = buffer8[ y * SCREEN_W + x ];
 	} else if ( color == 0x10 ) {
 		buffer8[ offset ] |= 8;
@@ -518,28 +531,31 @@ function draw_point( page, color, x, y ) {
 }
 
 function draw_line( page, color, y, x1, x2 ) {
-	var start = Math.min( x1, x2 );
-	var end   = Math.max( x1, x2 );
-	if ( start >= SCREEN_W || end < 0 ) {
+	if ( x1 > x2 ) {
+		const tmp = x1;
+		x1 = x2;
+		x2 = tmp;
+	}
+	if ( x1 >= SCREEN_W || x2 < 0 ) {
 		return;
 	}
-	if ( start < 0 ) {
-		start = 0;
+	if ( x1 < 0 ) {
+		x1 = 0;
 	}
-	if ( end >= SCREEN_W ) {
-		end = SCREEN_W - 1;
+	if ( x2 >= SCREEN_W ) {
+		x2 = SCREEN_W - 1;
 	}
 	const offset = page * PAGE_SIZE + y * SCREEN_W;
 	if ( color == 0x11 ) {
 		console.assert( page != 0 );
-		buffer8.set( buffer8.subarray( y * SCREEN_W + start, y * SCREEN_W + end + 1 ), offset + start );
+		buffer8.set( buffer8.subarray( y * SCREEN_W + x1, y * SCREEN_W + x2 + 1 ), offset + x1 );
 	} else if ( color == 0x10 ) {
-		for ( var i = start; i <= end; ++i ) {
+		for ( var i = x1; i <= x2; ++i ) {
 			buffer8[ offset + i ] |= 8;
 		}
 	} else {
 		console.assert( color < 0x10 );
-		buffer8.fill( color, offset + start, offset + end + 1);
+		buffer8.fill( color, offset + x1, offset + x2 + 1);
 	}
 }
 
@@ -548,10 +564,8 @@ function draw_polygon( page, color, vertices ) {
 	var i = 0;
 	var j = vertices.length - 1;
 	var scanline = Math.min( vertices[ i ].y, vertices[ j ].y );
-	var x2 = vertices[ i++ ].x;
-	var x1 = vertices[ j-- ].x;
-	var f1 = x1 << 16;
-	var f2 = x2 << 16;
+	var f2 = vertices[ i++ ].x << 16;
+	var f1 = vertices[ j-- ].x << 16;
 	var count = vertices.length;
 	for ( count -= 2; count != 0; count -= 2 ) {
 		const h1 = vertices[ j ].y - vertices[ j + 1 ].y;
@@ -568,9 +582,7 @@ function draw_polygon( page, color, vertices ) {
 		} else {
 			for ( var k = 0; k < h2; ++k ) {
 				if ( scanline >= 0 ) {
-					x1 = f1 >> 16;
-					x2 = f2 >> 16;
-					draw_line( page, color, scanline, x1, x2 );
+					draw_line( page, color, scanline, f1 >> 16, f2 >> 16 );
 				}
 				f1 += step1;
 				f2 += step2;
@@ -584,12 +596,12 @@ function draw_polygon( page, color, vertices ) {
 }
 
 function fill_polygon( data, offset, color, zoom, x, y ) {
-	const w = ( ( data[ offset++ ] * zoom / 64 ) >> 0 ) * SCALE;
-	const h = ( ( data[ offset++ ] * zoom / 64 ) >> 0 ) * SCALE;
-	const x1 = ( x * SCALE - w / 2 ) >> 0;
-	const x2 = ( x * SCALE + w / 2 ) >> 0;
-	const y1 = ( y * SCALE - h / 2 ) >> 0;
-	const y2 = ( y * SCALE + h / 2 ) >> 0;
+	const w = ( data[ offset++ ] * zoom / 64 ) >> 0;
+	const h = ( data[ offset++ ] * zoom / 64 ) >> 0;
+	const x1 = ( x * SCALE - w * SCALE / 2 ) >> 0;
+	const x2 = ( x * SCALE + w * SCALE / 2 ) >> 0;
+	const y1 = ( y * SCALE - h * SCALE / 2 ) >> 0;
+	const y2 = ( y * SCALE + h * SCALE / 2 ) >> 0;
 	if ( x1 >= SCREEN_W || x2 < 0 || y1 >= SCREEN_H || y2 < 0 ) {
 		return;
 	}
@@ -602,13 +614,13 @@ function fill_polygon( data, offset, color, zoom, x, y ) {
 		vertices.push( { x : vx, y : vy } );
 	}
 	if ( count == 4 && w == 0 && h <= 1 ) {
-		draw_point( current_page0, color, x, y );
+		draw_point( current_page0, color, x1, y1 );
         } else {
 		draw_polygon( current_page0, color, vertices );
 	}
 }
 
-function draw_shape_parts( data, offset, color, zoom, x, y ) {
+function draw_shape_parts( data, offset, zoom, x, y ) {
 	const x0 = x - ( data[ offset++ ] * zoom / 64 ) >> 0;
 	const y0 = y - ( data[ offset++ ] * zoom / 64 ) >> 0;
 	const count = data[ offset++ ];
@@ -633,31 +645,42 @@ function draw_shape( data, offset, color, zoom, x, y ) {
 		fill_polygon( data, offset, color, zoom, x, y );
 	} else {
 		if ( ( code & 0x3f ) == 2 ) {
-			draw_shape_parts( data, offset, color, zoom, x, y );
+			draw_shape_parts( data, offset, zoom, x, y );
 		}
+	}
+}
+
+function put_pixel( page, x, y, color ) {
+	var offset = page * PAGE_SIZE + ( y * SCREEN_W + x ) * SCALE;
+	for ( var j = 0; j < SCALE; ++j ) {
+		buffer8.fill( color, offset, offset + SCALE );
+		offset += SCREEN_W;
 	}
 }
 
 function draw_char( page, chr, color, x, y ) {
-	if ( x < 40 * SCALE && y < 192 * SCALE ) {
-		var offset = page * PAGE_SIZE + ( x * 8 + y * SCREEN_W ) * SCALE;
-		for ( var y = 0; y < 8; ++y ) {
-			const mask = font[ ( chr - 32 ) * 8 + y ];
-			for ( var x = 0; x < 8; ++x ) {
-				if ( ( mask & ( 1 << ( 7 - x ) ) ) != 0 ) {
-					for ( var j = 0; j < SCALE; ++j ) {
-						for ( var i = 0; i < SCALE; ++i ) {
-							buffer8[ offset + j * SCREEN_W + x * SCALE + i ] = color;
-						}
-					}
+	if ( x < ( 320 / 8 ) && y < ( 200 - 8 ) ) {
+		for ( var j = 0; j < 8; ++j ) {
+			const mask = font[ ( chr - 32 ) * 8 + j ];
+			for ( var i = 0; i < 8; ++i ) {
+				if ( ( mask & ( 1 << ( 7 - i ) ) ) != 0 ) {
+					put_pixel( page, x * 8 + i, y + j, color );
 				}
 			}
-			offset += SCREEN_W * SCALE;
 		}
 	}
 }
 
+const STRINGS_LANGUAGE_EN = 0;
+const STRINGS_LANGUAGE_FR = 1;
+
+var strings_language = STRINGS_LANGUAGE_EN;
+
 function draw_string( num, color, x, y ) {
+	var strings = strings_en;
+	if ( strings_language == STRINGS_LANGUAGE_FR && ( num in strings_fr ) ) {
+		strings = strings_fr;
+	}
 	if ( num in strings ) {
 		const x0 = x;
 		const str = strings[ num ];
@@ -670,6 +693,28 @@ function draw_string( num, color, x, y ) {
 				draw_char( current_page0, chr, color, x, y );
 				x += 1;
 			}
+		}
+	}
+}
+
+function draw_bitmap( num ) {
+	const size = bitmaps[ num ][ 1 ];
+	console.assert( size == 32000 );
+	const buf = load( bitmaps[ num ][ 0 ], size );
+	var offset = 0;
+	for ( var y = 0; y < 200; ++y ) {
+		for ( var x = 0; x < 320; x += 8 ) {
+			for ( var b = 0; b < 8; ++b ) {
+				const mask = 1 << ( 7 - b );
+				var color = 0;
+				for ( var p = 0; p < 4; ++p ) {
+					if ( buf[ offset + p * 8000 ] & mask ) {
+						color |= 1 << p;
+					}
+				}
+				put_pixel( 0, x + b, y, color );
+			}
+			offset += 1;
 		}
 	}
 }
@@ -747,11 +792,11 @@ function reset( ) {
 	vars[ 0xdc ] = 33;
 	vars[ 0xe4 ] = 20;
 	next_part = 16001;
-	timestamp = Date.now();
+	timestamp = Date.now( );
 }
 
 function tick( ) {
-	const current = Date.now();
+	const current = Date.now( );
 	delay -= current - timestamp;
 	while ( delay <= 0 ) {
 		run_tasks( );
@@ -784,20 +829,45 @@ function pause( ) {
 	return false;
 }
 
-function mute( ) {
-}
-
 function change_palette( num ) {
 	palette_type = num;
+}
+
+function change_part( num ) {
+	reset( );
+	next_part = 16001 + num;
+	console.log( 'next_part:' + next_part );
+}
+
+function change_language( num ) {
+	strings_language = num;
+}
+
+function set_1991_resolution( low ) {
+	is_1991 = low;
 }
 
 function update_screen( offset ) {
 	var context = canvas.getContext( '2d' );
 	var data = context.getImageData( 0, 0, SCREEN_W, SCREEN_H );
 	var rgba = new Uint32Array( data.data.buffer );
-	for ( var i = 0; i < SCREEN_W * SCREEN_H; ++i ) {
-		const color = buffer8[ offset + i ];
-		rgba[ i ] = palette32[ palette_type * 16 + color ];
+	if ( is_1991 ) {
+		var rgba_offset = 0;
+		for ( var y = 0; y < SCREEN_H; y += SCALE ) {
+			for ( var x = 0; x < SCREEN_W; x += SCALE ) {
+				const color = palette32[ palette_type * 16 + buffer8[ offset + x ] ];
+				for ( var j = 0; j < SCALE; ++j ) {
+					rgba.fill( color, rgba_offset + j * SCREEN_W + x, rgba_offset + j * SCREEN_W + x + SCALE );
+				}
+			}
+			rgba_offset += SCREEN_W * SCALE;
+			offset += SCREEN_W * SCALE;
+		}
+	} else {
+		for ( var i = 0; i < SCREEN_W * SCREEN_H; ++i ) {
+			const color = buffer8[ offset + i ];
+			rgba[ i ] = palette32[ palette_type * 16 + color ];
+		}
 	}
 	context.putImageData( data, 0, 0 );
 }

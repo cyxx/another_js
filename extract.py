@@ -1,4 +1,6 @@
 
+# Extract and convert Another World DOS datafiles to be used with 'another.js'
+
 import base64
 import ctypes
 import os
@@ -64,13 +66,22 @@ def unpack(i, r):
 		f.write(buf)
 	return buf
 
-for i in range(COUNT):
-	if resources[i].uncompressed == 0 or not banks.has_key(resources[i].bank):
+for i, r in enumerate(resources):
+	if r.uncompressed == 0 or not banks.has_key(r.bank):
 		continue
 	if UNPACK_FILES:
-		unpack(i, resources[i])
-	if resources[i].rtype in (TYPE_SND, TYPE_MOD):
+		unpack(i, r)
+	if r.rtype in (TYPE_SND, TYPE_MOD):
 		continue
-	buf = banks[resources[i].bank][resources[i].offset:resources[i].offset+resources[i].compressed]
+	buf = banks[r.bank][r.offset:r.offset+r.compressed]
 	print 'const data%02x = "%s";' % (i, base64.b64encode(buf))
-	print 'const size%02x = %d;' % (i, resources[i].uncompressed);
+	print 'const size%02x = %d;' % (i, r.uncompressed);
+
+print 'const bitmaps = {'
+for i, r in enumerate(resources):
+	if r.uncompressed == 0 or not banks.has_key(r.bank):
+		continue
+	if r.rtype != TYPE_BMP:
+		continue
+	print '\t%3d : [ data%02x, size%02x ],' % (i, i, i)
+print '};'
