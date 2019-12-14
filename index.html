@@ -19,8 +19,9 @@
 				<canvas id="screen" width="640" height="400"></canvas>
 				<p></p>
 				<div align="left">
-					<input type="button" value="Pause" onclick="onPauseClick()" id="pauseButton" />
-					<input type="button" value="Reset" onclick="onResetClick()" id="resetButton" />
+					<input type="button" value="Pause"  onclick="onPauseClick()"  id="pauseButton" />
+					<input type="button" value="Reset"  onclick="onResetClick()"  id="resetButton" />
+					<input type="button" value="Rewind" onclick="onRewindClick()" id="rewindButton" />
 					<select onchange="onLanguageChange()" id="languageSelect">
 						<option>English</option>
 						<option>French</option>
@@ -62,6 +63,9 @@
 			}
 			function onResetClick( ) {
 				reset( );
+			}
+			function onRewindClick( ) {
+				rewind( );
 			}
 			function onLanguageChange( ) {
 				change_language( languageSelect.selectedIndex );
