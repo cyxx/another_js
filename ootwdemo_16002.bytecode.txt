@@ -77,9 +77,9 @@
 00DB: (0A) jmpIf(VAR(0xFA) != 0, @00DA)
 00E1: (0B) setPalette(num=29)
 00E4: loc_00E4:
-00E4: (12) drawString(str=0x13D, x=5, y=80, color=12)
-00EA: (12) drawString(str=0x13C, x=5, y=180, color=13)
-00F0: (12) drawString(str=0x15E, x=26, y=180, color=14)
+00E4: (12) drawString(str=0x13D, x=5, y=80, color=12) ; "PRESS BUTTON OR RETURN TO CONTINUE"
+00EA: (12) drawString(str=0x13C, x=5, y=180, color=13) ; "        ACCESS CODE:"
+00F0: (12) drawString(str=0x15E, x=26, y=180, color=14) ; "LDKD"
 00F6: (06) yieldTask // PAUSE SCRIPT TASK
 00F7: (0A) jmpIf(VAR(0xFA) == 0, @00E4)
 00FD: (00) VAR(0x00) = 10
@@ -1375,7 +1375,7 @@
 10A1: // START OF SCRIPT TASK
 10A1: (0E) fillPage(page=0, color=0)
 10A4: (0D) selectPage(page=0)
-10A6: (12) drawString(str=0x1FA, x=6, y=70, color=15)
+10A6: (12) drawString(str=0x1FA, x=6, y=70, color=15) ; "     Out of this World\nA Cinematic Action Adventure\n from Interplay Productions\n                    \n       By Eric CHAHI      \n\n  IBM version : D.MORAIS\n"
 10AC: (0D) selectPage(page=255)
 10AE: (06) yieldTask // PAUSE SCRIPT TASK
 10AF: (0B) setPalette(num=2)

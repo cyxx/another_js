@@ -28,10 +28,7 @@ static int nextBit(struct UnpackCtx *uc) {
 static int getBits(struct UnpackCtx *uc, int count) { // rdd1bits
 	int bits = 0;
 	for (int i = 0; i < count; ++i) {
-		bits <<= 1;
-		if (nextBit(uc)) {
-			bits |= 1;
-		}
+		bits |= nextBit(uc) << (count - 1 - i);
 	}
 	return bits;
 }
@@ -81,8 +78,7 @@ uint32_t bytekiller_unpack(uint8_t *dst, int dstSize, const uint8_t *src, int sr
 				copyReference(&uc, 8, 2);
 			}
 		} else {
-			const int code = getBits(&uc, 2);
-			switch (code) {
+			switch (getBits(&uc, 2)) {
 			case 3:
 				copyLiteral(&uc, 8, 8);
 				break;

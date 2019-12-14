@@ -111,7 +111,7 @@
 0109: (06) yieldTask // PAUSE SCRIPT TASK
 010A: (0B) setPalette(num=30)
 010D: (0D) selectPage(page=0)
-010F: (12) drawString(str=0x1F4, x=6, y=80, color=1)
+010F: (12) drawString(str=0x1F4, x=6, y=80, color=1) ; "Over Two Years in the Making"
 0115: (0D) selectPage(page=255)
 0117: (00) VAR(0x03) = 70
 011B: loc_011B:
@@ -181,7 +181,7 @@
 0194: (78) SHAPE_0x78 offset=0xcf1c (bank1.mat) x=66 y=100
 0199: (48) SHAPE_0x48 offset=0xcf04 (bank1.mat) x=255 y=99
 019F: (E7) SHAPE_0xE7 offset=0xcf5c (bank1.mat) x=160 y=108
-01A3: (12) drawString(str=0x192, x=22, y=16, color=5)
+01A3: (12) drawString(str=0x192, x=22, y=16, color=5) ; "IDENTIFICATION"
 01A9: (0F) copyPage(src=255, dst=0)
 01AC: (0F) copyPage(src=255, dst=3)
 01AF: (0B) setPalette(num=11)
@@ -195,12 +195,12 @@
 01C7: (00) VAR(0x01) = 35
 01CB: loc_01CB:
 01CB: (06) yieldTask // PAUSE SCRIPT TASK
-01CC: (12) drawString(str=0x190, x=3, y=168, color=11)
+01CC: (12) drawString(str=0x190, x=3, y=168, color=11) ; "Good evening professor."
 01D2: (09) jmpIfVar(VAR(0x01), @01CB)
 01D6: (00) VAR(0x01) = 45
 01DA: loc_01DA:
 01DA: (06) yieldTask // PAUSE SCRIPT TASK
-01DB: (12) drawString(str=0x191, x=3, y=168, color=11)
+01DB: (12) drawString(str=0x191, x=3, y=168, color=11) ; "I see you have driven here in your\nFerrari."
 01E1: (09) jmpIfVar(VAR(0x01), @01DA)
 01E5: (08) installTask(8, @02EB)
 01E9: (08) installTask(2, @1C32)
@@ -986,7 +986,7 @@
 09F8: (0E) fillPage(page=255, color=0)
 09FB: (0B) setPalette(num=30)
 09FE: (0D) selectPage(page=0)
-0A00: (12) drawString(str=0x1F9, x=11, y=80, color=1)
+0A00: (12) drawString(str=0x1F9, x=11, y=80, color=1) ; "And sends you ..."
 0A06: (0D) selectPage(page=255)
 0A08: (00) VAR(0x03) = 40
 0A0C: loc_0A0C:
@@ -1792,7 +1792,7 @@
 124B: (06) yieldTask // PAUSE SCRIPT TASK
 124C: (09) jmpIfVar(VAR(0x01), @124B)
 1250: (0D) selectPage(page=0)
-1252: (12) drawString(str=0x002, x=1, y=24, color=6)
+1252: (12) drawString(str=0x002, x=1, y=24, color=6) ; "Copyright  } 1990 Peanut Computer, Inc.\nAll rights reserved.\n\nCDOS Version 5.01"
 1258: (0D) selectPage(page=255)
 125A: (00) VAR(0x01) = 10
 125E: loc_125E:
@@ -1800,11 +1800,11 @@
 125F: (09) jmpIfVar(VAR(0x01), @125E)
 1263: (00) VAR(0x01) = 20
 1267: (0D) selectPage(page=0)
-1269: (12) drawString(str=0x007, x=1, y=150, color=6)
+1269: (12) drawString(str=0x007, x=1, y=150, color=6) ; "@"
 126F: (0D) selectPage(page=255)
 1271: loc_1271:
 1271: (06) yieldTask // PAUSE SCRIPT TASK
-1272: (12) drawString(str=0x021, x=3, y=150, color=6)
+1272: (12) drawString(str=0x021, x=3, y=150, color=6) ; "|"
 1278: (09) jmpIfVar(VAR(0x01), @1271)
 127C: (08) installTask(12, @1632)
 1280: (08) installTask(5, @15BC)
@@ -1820,50 +1820,50 @@
 1299: (09) jmpIfVar(VAR(0x01), @1298)
 129D: (0F) copyPage(src=0, dst=3)
 12A0: (0D) selectPage(page=0)
-12A2: (12) drawString(str=0x01A, x=20, y=60, color=6)
-12A8: (12) drawString(str=0x038, x=5, y=20, color=5)
+12A2: (12) drawString(str=0x01A, x=20, y=60, color=6) ; "E: 23%\ng: .005\n\nRK: 77.2L\n\nopt: g+\n\n Shield:\n1: OFF\n2: ON\n3: ON\n\nP~: 1\n"
+12A8: (12) drawString(str=0x038, x=5, y=20, color=5) ; "MODIFICATION OF PARAMETERS\nRELATING TO PARTICLE\nACCELERATOR (SYNCHROTRON)."
 12AE: (0D) selectPage(page=255)
 12B0: (00) VAR(0x01) = 10
 12B4: loc_12B4:
 12B4: (06) yieldTask // PAUSE SCRIPT TASK
-12B5: (12) drawString(str=0x021, x=26, y=60, color=6)
+12B5: (12) drawString(str=0x021, x=26, y=60, color=6) ; "|"
 12BB: (09) jmpIfVar(VAR(0x01), @12B4)
 12BF: (00) VAR(0x01) = 15
 12C3: loc_12C3:
 12C3: (06) yieldTask // PAUSE SCRIPT TASK
-12C4: (12) drawString(str=0x021, x=27, y=68, color=6)
+12C4: (12) drawString(str=0x021, x=27, y=68, color=6) ; "|"
 12CA: (09) jmpIfVar(VAR(0x01), @12C3)
 12CE: (06) yieldTask // PAUSE SCRIPT TASK
-12CF: (12) drawString(str=0x021, x=29, y=84, color=6)
+12CF: (12) drawString(str=0x021, x=29, y=84, color=6) ; "|"
 12D5: (00) VAR(0x01) = 10
 12D9: loc_12D9:
 12D9: (06) yieldTask // PAUSE SCRIPT TASK
-12DA: (12) drawString(str=0x021, x=27, y=100, color=6)
+12DA: (12) drawString(str=0x021, x=27, y=100, color=6) ; "|"
 12E0: (09) jmpIfVar(VAR(0x01), @12D9)
 12E4: (0D) selectPage(page=0)
-12E6: (12) drawString(str=0x021, x=26, y=100, color=2)
+12E6: (12) drawString(str=0x021, x=26, y=100, color=2) ; "|"
 12EC: (0D) selectPage(page=255)
 12EE: (06) yieldTask // PAUSE SCRIPT TASK
 12EF: (0D) selectPage(page=0)
-12F1: (12) drawString(str=0x01C, x=26, y=100, color=6)
+12F1: (12) drawString(str=0x01C, x=26, y=100, color=6) ; "-"
 12F7: (0D) selectPage(page=255)
-12F9: (12) drawString(str=0x021, x=26, y=100, color=6)
+12F9: (12) drawString(str=0x021, x=26, y=100, color=6) ; "|"
 12FF: (00) VAR(0x01) = 10
 1303: loc_1303:
 1303: (06) yieldTask // PAUSE SCRIPT TASK
-1304: (12) drawString(str=0x021, x=27, y=100, color=6)
+1304: (12) drawString(str=0x021, x=27, y=100, color=6) ; "|"
 130A: (09) jmpIfVar(VAR(0x01), @1303)
 130E: (00) VAR(0x01) = 18
 1312: loc_1312:
 1312: (06) yieldTask // PAUSE SCRIPT TASK
-1313: (12) drawString(str=0x021, x=26, y=124, color=6)
+1313: (12) drawString(str=0x021, x=26, y=124, color=6) ; "|"
 1319: (09) jmpIfVar(VAR(0x01), @1312)
 131D: (06) yieldTask // PAUSE SCRIPT TASK
-131E: (12) drawString(str=0x021, x=25, y=132, color=6)
+131E: (12) drawString(str=0x021, x=25, y=132, color=6) ; "|"
 1324: (00) VAR(0x01) = 18
 1328: loc_1328:
 1328: (06) yieldTask // PAUSE SCRIPT TASK
-1329: (12) drawString(str=0x021, x=25, y=156, color=6)
+1329: (12) drawString(str=0x021, x=25, y=156, color=6) ; "|"
 132F: (09) jmpIfVar(VAR(0x01), @1328)
 1333: (08) installTask(7, @15A0)
 1337: (00) VAR(0x01) = 37
@@ -1871,7 +1871,7 @@
 133B: (06) yieldTask // PAUSE SCRIPT TASK
 133C: (09) jmpIfVar(VAR(0x01), @133B)
 1340: (0D) selectPage(page=0)
-1342: (12) drawString(str=0x194, x=36, y=170, color=6)
+1342: (12) drawString(str=0x194, x=36, y=170, color=6) ; "Y\n"
 1348: (0D) selectPage(page=255)
 134A: (00) VAR(0x01) = 15
 134E: loc_134E:
@@ -1884,70 +1884,70 @@
 135F: (0F) copyPage(src=3, dst=0)
 1362: (06) yieldTask // PAUSE SCRIPT TASK
 1363: (0D) selectPage(page=0)
-1365: (12) drawString(str=0x022, x=8, y=2, color=6)
+1365: (12) drawString(str=0x022, x=8, y=2, color=6) ; "--- Theoretical study ---"
 136B: (0D) selectPage(page=255)
 136D: (08) installTask(7, @17D0)
 1371: (00) VAR(0x01) = 5
 1375: loc_1375:
 1375: (06) yieldTask // PAUSE SCRIPT TASK
-1376: (12) drawString(str=0x031, x=2, y=150, color=6)
+1376: (12) drawString(str=0x031, x=2, y=150, color=6) ; "- Phase 0:\nINJECTION of particles\ninto synchrotron"
 137C: (09) jmpIfVar(VAR(0x01), @1375)
 1380: (00) VAR(0x01) = 64
 1384: loc_1384:
 1384: (06) yieldTask // PAUSE SCRIPT TASK
-1385: (12) drawString(str=0x032, x=2, y=156, color=6)
+1385: (12) drawString(str=0x032, x=2, y=156, color=6) ; "- Phase 1:\nParticle ACCELERATION."
 138B: (09) jmpIfVar(VAR(0x01), @1384)
 138F: (00) VAR(0xFF) = 5
 1393: (00) VAR(0x01) = 19
 1397: loc_1397:
 1397: (06) yieldTask // PAUSE SCRIPT TASK
-1398: (12) drawString(str=0x033, x=2, y=150, color=6)
+1398: (12) drawString(str=0x033, x=2, y=150, color=6) ; "- Phase 2:\nEJECTION of particles\non the shield."
 139E: (09) jmpIfVar(VAR(0x01), @1397)
 13A2: (00) VAR(0xFF) = 4
 13A6: (00) VAR(0x01) = 19
 13AA: loc_13AA:
 13AA: (06) yieldTask // PAUSE SCRIPT TASK
-13AB: (12) drawString(str=0x034, x=8, y=152, color=6)
+13AB: (12) drawString(str=0x034, x=8, y=152, color=6) ; "A  N  A  L  Y  S  I  S"
 13B1: (09) jmpIfVar(VAR(0x01), @13AA)
 13B5: (00) VAR(0x01) = 25
 13B9: loc_13B9:
 13B9: (06) yieldTask // PAUSE SCRIPT TASK
-13BA: (12) drawString(str=0x035, x=2, y=140, color=6)
+13BA: (12) drawString(str=0x035, x=2, y=140, color=6) ; "- RESULT:\nProbability of creating:\n ANTIMATTER: 91.V %\n NEUTRINO 27:  0.04 %\n NEUTRINO 424: 18 %\n"
 13C0: (0A) jmpIf(VAR(0xF4) > 32, @13DF)
 13C6: (09) jmpIfVar(VAR(0x01), @13B9)
 13CA: (00) VAR(0x01) = 10
 13CE: loc_13CE:
 13CE: (06) yieldTask // PAUSE SCRIPT TASK
-13CF: (12) drawString(str=0x036, x=2, y=80, color=6)
+13CF: (12) drawString(str=0x036, x=2, y=80, color=6) ; "   Practical verification Y/N ?"
 13D5: (0A) jmpIf(VAR(0xF4) > 32, @13DF)
 13DB: (09) jmpIfVar(VAR(0x01), @13CE)
 13DF: loc_13DF:
 13DF: (0F) copyPage(src=3, dst=0)
 13E2: (0D) selectPage(page=0)
-13E4: (12) drawString(str=0x023, x=0, y=80, color=6)
+13E4: (12) drawString(str=0x023, x=0, y=80, color=6) ; " THE EXPERIMENT WILL BEGIN IN    SECONDS"
 13EA: (0D) selectPage(page=255)
 13EC: (00) VAR(0xFF) = 5
 13F0: (00) VAR(0x01) = 10
 13F4: (06) yieldTask // PAUSE SCRIPT TASK
 13F5: loc_13F5:
 13F5: (0A) jmpIf(VAR(0xF4) == 34, @1406)
-13FB: (12) drawString(str=0x024, x=28, y=80, color=6)
+13FB: (12) drawString(str=0x024, x=28, y=80, color=6) ; "  20"
 1401: (06) yieldTask // PAUSE SCRIPT TASK
 1402: (09) jmpIfVar(VAR(0x01), @13F5)
 1406: loc_1406:
 1406: (00) VAR(0x01) = 10
 140A: loc_140A:
 140A: (0A) jmpIf(VAR(0xF4) == 35, @141B)
-1410: (12) drawString(str=0x025, x=28, y=80, color=6)
+1410: (12) drawString(str=0x025, x=28, y=80, color=6) ; "  19"
 1416: (06) yieldTask // PAUSE SCRIPT TASK
 1417: (09) jmpIfVar(VAR(0x01), @140A)
 141B: loc_141B:
 141B: (00) VAR(0x01) = 10
 141F: loc_141F:
-141F: (12) drawString(str=0x026, x=28, y=80, color=6)
+141F: (12) drawString(str=0x026, x=28, y=80, color=6) ; "  18"
 1425: (06) yieldTask // PAUSE SCRIPT TASK
 1426: (09) jmpIfVar(VAR(0x01), @141F)
-142A: (12) drawString(str=0x04C, x=28, y=80, color=6)
+142A: (12) drawString(str=0x04C, x=28, y=80, color=6) ; "  17"
 1430: (08) installTask(16, @007D)
 1434: (08) installTask(10, @007D)
 1438: (08) installTask(2, @0F96)
@@ -1956,7 +1956,7 @@
 
 1441: // START OF SCRIPT TASK
 1441: (0F) copyPage(src=3, dst=255)
-1444: (12) drawString(str=0x023, x=0, y=80, color=6)
+1444: (12) drawString(str=0x023, x=0, y=80, color=6) ; " THE EXPERIMENT WILL BEGIN IN    SECONDS"
 144A: (0F) copyPage(src=255, dst=0)
 144D: (00) VAR(0xFF) = 5
 1451: (08) installTask(3, @17A3)
@@ -1968,39 +1968,39 @@
 1468: (00) VAR(0x01) = 11
 146C: loc_146C:
 146C: (0A) jmpIf(VAR(0xF4) == 44, @147D)
-1472: (12) drawString(str=0x04B, x=28, y=80, color=6)
+1472: (12) drawString(str=0x04B, x=28, y=80, color=6) ; "  5"
 1478: (06) yieldTask // PAUSE SCRIPT TASK
 1479: (09) jmpIfVar(VAR(0x01), @146C)
 147D: loc_147D:
 147D: (00) VAR(0x01) = 11
 1481: loc_1481:
 1481: (0A) jmpIf(VAR(0xF4) == 45, @1492)
-1487: (12) drawString(str=0x027, x=28, y=80, color=6)
+1487: (12) drawString(str=0x027, x=28, y=80, color=6) ; "  4"
 148D: (06) yieldTask // PAUSE SCRIPT TASK
 148E: (09) jmpIfVar(VAR(0x01), @1481)
 1492: loc_1492:
 1492: (00) VAR(0x01) = 11
 1496: loc_1496:
 1496: (0A) jmpIf(VAR(0xF4) == 46, @14A7)
-149C: (12) drawString(str=0x028, x=28, y=80, color=6)
+149C: (12) drawString(str=0x028, x=28, y=80, color=6) ; "  3"
 14A2: (06) yieldTask // PAUSE SCRIPT TASK
 14A3: (09) jmpIfVar(VAR(0x01), @1496)
 14A7: loc_14A7:
 14A7: (00) VAR(0x01) = 11
 14AB: loc_14AB:
 14AB: (0A) jmpIf(VAR(0xF4) == 47, @14BC)
-14B1: (12) drawString(str=0x029, x=28, y=80, color=13)
+14B1: (12) drawString(str=0x029, x=28, y=80, color=13) ; "  2"
 14B7: (06) yieldTask // PAUSE SCRIPT TASK
 14B8: (09) jmpIfVar(VAR(0x01), @14AB)
 14BC: loc_14BC:
 14BC: (00) VAR(0x01) = 11
 14C0: loc_14C0:
 14C0: (0A) jmpIf(VAR(0xF4) == 48, @14D1)
-14C6: (12) drawString(str=0x02A, x=28, y=80, color=13)
+14C6: (12) drawString(str=0x02A, x=28, y=80, color=13) ; "  1"
 14CC: (06) yieldTask // PAUSE SCRIPT TASK
 14CD: (09) jmpIfVar(VAR(0x01), @14C0)
 14D1: loc_14D1:
-14D1: (12) drawString(str=0x02B, x=28, y=80, color=15)
+14D1: (12) drawString(str=0x02B, x=28, y=80, color=15) ; "  0"
 14D7: (0F) copyPage(src=3, dst=0)
 14DA: (00) VAR(0xFF) = 4
 14DE: (08) installTask(7, @17D0)
@@ -2022,7 +2022,7 @@
 1515: (08) installTask(7, @007D)
 1519: (0B) setPalette(num=25)
 151C: (0D) selectPage(page=0)
-151E: (12) drawString(str=0x1F8, x=5, y=80, color=15)
+151E: (12) drawString(str=0x1F8, x=5, y=80, color=15) ; "Nature decides to put a little\n    extra spin on the ball"
 1524: (0D) selectPage(page=255)
 1526: (00) VAR(0x03) = 50
 152A: loc_152A:
@@ -2033,32 +2033,32 @@
 1535: (08) installTask(2, @0639)
 1539: (11) removeTask // STOP SCRIPT TASK
 153A: loc_153A:
-153A: (12) drawString(str=0x044, x=2, y=20, color=5)
+153A: (12) drawString(str=0x044, x=2, y=20, color=5) ; "+"
 1540: (06) yieldTask // PAUSE SCRIPT TASK
-1541: (12) drawString(str=0x045, x=2, y=20, color=5)
+1541: (12) drawString(str=0x045, x=2, y=20, color=5) ; "*"
 1547: (06) yieldTask // PAUSE SCRIPT TASK
 1548: (07) jmp(@153A)
 154B: (11) removeTask // STOP SCRIPT TASK
 154C: loc_154C:
-154C: (12) drawString(str=0x03E, x=10, y=120, color=4)
+154C: (12) drawString(str=0x03E, x=10, y=120, color=4) ; ".20x14dd"
 1552: (06) yieldTask // PAUSE SCRIPT TASK
-1553: (12) drawString(str=0x03F, x=10, y=120, color=4)
+1553: (12) drawString(str=0x03F, x=10, y=120, color=4) ; "gj5r5r"
 1559: (06) yieldTask // PAUSE SCRIPT TASK
-155A: (12) drawString(str=0x046, x=11, y=120, color=4)
+155A: (12) drawString(str=0x046, x=11, y=120, color=4) ; "% 304"
 1560: (06) yieldTask // PAUSE SCRIPT TASK
-1561: (12) drawString(str=0x047, x=11, y=120, color=4)
+1561: (12) drawString(str=0x047, x=11, y=120, color=4) ; "gurgle 21"
 1567: (06) yieldTask // PAUSE SCRIPT TASK
-1568: (12) drawString(str=0x040, x=10, y=120, color=4)
+1568: (12) drawString(str=0x040, x=10, y=120, color=4) ; "tilgor 25%"
 156E: (06) yieldTask // PAUSE SCRIPT TASK
 156F: (07) jmp(@154C)
 1572: loc_1572:
-1572: (12) drawString(str=0x03F, x=11, y=132, color=4)
+1572: (12) drawString(str=0x03F, x=11, y=132, color=4) ; "gj5r5r"
 1578: (06) yieldTask // PAUSE SCRIPT TASK
-1579: (12) drawString(str=0x041, x=11, y=132, color=4)
+1579: (12) drawString(str=0x041, x=11, y=132, color=4) ; "12% 33% checked"
 157F: (06) yieldTask // PAUSE SCRIPT TASK
-1580: (12) drawString(str=0x042, x=11, y=132, color=4)
+1580: (12) drawString(str=0x042, x=11, y=132, color=4) ; "D=4.2158005584"
 1586: (06) yieldTask // PAUSE SCRIPT TASK
-1587: (12) drawString(str=0x043, x=11, y=132, color=4)
+1587: (12) drawString(str=0x043, x=11, y=132, color=4) ; "d=10.00001"
 158D: (06) yieldTask // PAUSE SCRIPT TASK
 158E: (07) jmp(@1572)
 1591: (11) removeTask // STOP SCRIPT TASK
@@ -2082,7 +2082,7 @@
 15A0: (00) VAR(0x03) = 10
 15A4: loc_15A4:
 15A4: (06) yieldTask // PAUSE SCRIPT TASK
-15A5: (12) drawString(str=0x039, x=5, y=170, color=6)
+15A5: (12) drawString(str=0x039, x=5, y=170, color=6) ; "       RUN EXPERIMENT ?"
 15AB: (09) jmpIfVar(VAR(0x03), @15A4)
 15AF: (00) VAR(0x03) = 8
 15B3: loc_15B3:
@@ -2093,76 +2093,76 @@
 
 15BC: // START OF SCRIPT TASK
 15BC: (06) yieldTask // PAUSE SCRIPT TASK
-15BD: (12) drawString(str=0x021, x=5, y=150, color=6)
+15BD: (12) drawString(str=0x021, x=5, y=150, color=6) ; "|"
 15C3: (06) yieldTask // PAUSE SCRIPT TASK
-15C4: (12) drawString(str=0x021, x=6, y=150, color=6)
+15C4: (12) drawString(str=0x021, x=6, y=150, color=6) ; "|"
 15CA: (06) yieldTask // PAUSE SCRIPT TASK
-15CB: (12) drawString(str=0x021, x=7, y=150, color=6)
+15CB: (12) drawString(str=0x021, x=7, y=150, color=6) ; "|"
 15D1: (06) yieldTask // PAUSE SCRIPT TASK
-15D2: (12) drawString(str=0x021, x=7, y=150, color=6)
+15D2: (12) drawString(str=0x021, x=7, y=150, color=6) ; "|"
 15D8: (06) yieldTask // PAUSE SCRIPT TASK
-15D9: (12) drawString(str=0x021, x=9, y=150, color=6)
+15D9: (12) drawString(str=0x021, x=9, y=150, color=6) ; "|"
 15DF: (06) yieldTask // PAUSE SCRIPT TASK
-15E0: (12) drawString(str=0x021, x=10, y=150, color=6)
+15E0: (12) drawString(str=0x021, x=10, y=150, color=6) ; "|"
 15E6: (06) yieldTask // PAUSE SCRIPT TASK
-15E7: (12) drawString(str=0x021, x=10, y=150, color=6)
+15E7: (12) drawString(str=0x021, x=10, y=150, color=6) ; "|"
 15ED: (06) yieldTask // PAUSE SCRIPT TASK
-15EE: (12) drawString(str=0x021, x=11, y=150, color=6)
+15EE: (12) drawString(str=0x021, x=11, y=150, color=6) ; "|"
 15F4: (06) yieldTask // PAUSE SCRIPT TASK
-15F5: (12) drawString(str=0x021, x=12, y=150, color=6)
+15F5: (12) drawString(str=0x021, x=12, y=150, color=6) ; "|"
 15FB: (06) yieldTask // PAUSE SCRIPT TASK
-15FC: (12) drawString(str=0x021, x=12, y=150, color=6)
+15FC: (12) drawString(str=0x021, x=12, y=150, color=6) ; "|"
 1602: (06) yieldTask // PAUSE SCRIPT TASK
-1603: (12) drawString(str=0x021, x=13, y=150, color=6)
+1603: (12) drawString(str=0x021, x=13, y=150, color=6) ; "|"
 1609: (06) yieldTask // PAUSE SCRIPT TASK
-160A: (12) drawString(str=0x021, x=14, y=150, color=6)
+160A: (12) drawString(str=0x021, x=14, y=150, color=6) ; "|"
 1610: (06) yieldTask // PAUSE SCRIPT TASK
-1611: (12) drawString(str=0x021, x=15, y=150, color=6)
+1611: (12) drawString(str=0x021, x=15, y=150, color=6) ; "|"
 1617: (06) yieldTask // PAUSE SCRIPT TASK
 1618: (00) VAR(0x02) = 10
 161C: loc_161C:
-161C: (12) drawString(str=0x021, x=17, y=150, color=6)
+161C: (12) drawString(str=0x021, x=17, y=150, color=6) ; "|"
 1622: (06) yieldTask // PAUSE SCRIPT TASK
 1623: (09) jmpIfVar(VAR(0x02), @161C)
 1627: (0D) selectPage(page=0)
-1629: (12) drawString(str=0x021, x=3, y=158, color=6)
+1629: (12) drawString(str=0x021, x=3, y=158, color=6) ; "|"
 162F: (0D) selectPage(page=255)
 1631: (11) removeTask // STOP SCRIPT TASK
 
 1632: // START OF SCRIPT TASK
-1632: (12) drawString(str=0x00A, x=3, y=150, color=6)
-1638: (12) drawString(str=0x00B, x=4, y=150, color=6)
+1632: (12) drawString(str=0x00A, x=3, y=150, color=6) ; "R"
+1638: (12) drawString(str=0x00B, x=4, y=150, color=6) ; "U"
 163E: (18) playSound(res=51, freq=20, vol=63, channel=2)
 1644: (06) yieldTask // PAUSE SCRIPT TASK
-1645: (12) drawString(str=0x00C, x=5, y=150, color=6)
+1645: (12) drawString(str=0x00C, x=5, y=150, color=6) ; "N"
 164B: (18) playSound(res=51, freq=17, vol=63, channel=2)
 1651: (06) yieldTask // PAUSE SCRIPT TASK
 1652: (06) yieldTask // PAUSE SCRIPT TASK
 1653: (06) yieldTask // PAUSE SCRIPT TASK
-1654: (12) drawString(str=0x00D, x=7, y=150, color=6)
-165A: (12) drawString(str=0x00E, x=8, y=150, color=6)
+1654: (12) drawString(str=0x00D, x=7, y=150, color=6) ; "P"
+165A: (12) drawString(str=0x00E, x=8, y=150, color=6) ; "R"
 1660: (18) playSound(res=51, freq=20, vol=63, channel=2)
 1666: (06) yieldTask // PAUSE SCRIPT TASK
-1667: (12) drawString(str=0x00F, x=9, y=150, color=6)
+1667: (12) drawString(str=0x00F, x=9, y=150, color=6) ; "O"
 166D: (18) playSound(res=51, freq=20, vol=63, channel=2)
 1673: (06) yieldTask // PAUSE SCRIPT TASK
 1674: (06) yieldTask // PAUSE SCRIPT TASK
-1675: (12) drawString(str=0x010, x=10, y=150, color=6)
+1675: (12) drawString(str=0x010, x=10, y=150, color=6) ; "J"
 167B: (18) playSound(res=51, freq=22, vol=63, channel=2)
 1681: (06) yieldTask // PAUSE SCRIPT TASK
-1682: (12) drawString(str=0x011, x=11, y=150, color=6)
+1682: (12) drawString(str=0x011, x=11, y=150, color=6) ; "E"
 1688: (18) playSound(res=51, freq=21, vol=63, channel=2)
 168E: (06) yieldTask // PAUSE SCRIPT TASK
 168F: (06) yieldTask // PAUSE SCRIPT TASK
-1690: (12) drawString(str=0x012, x=12, y=150, color=6)
+1690: (12) drawString(str=0x012, x=12, y=150, color=6) ; "C"
 1696: (18) playSound(res=51, freq=20, vol=63, channel=2)
 169C: (06) yieldTask // PAUSE SCRIPT TASK
-169D: (12) drawString(str=0x013, x=13, y=150, color=6)
+169D: (12) drawString(str=0x013, x=13, y=150, color=6) ; "T"
 16A3: (18) playSound(res=51, freq=21, vol=63, channel=2)
 16A9: (06) yieldTask // PAUSE SCRIPT TASK
 16AA: (06) yieldTask // PAUSE SCRIPT TASK
-16AB: (12) drawString(str=0x003, x=15, y=150, color=6)
-16B1: (12) drawString(str=0x004, x=16, y=150, color=6)
+16AB: (12) drawString(str=0x003, x=15, y=150, color=6) ; "2"
+16B1: (12) drawString(str=0x004, x=16, y=150, color=6) ; "3"
 16B7: (18) playSound(res=51, freq=20, vol=63, channel=2)
 16BD: (11) removeTask // STOP SCRIPT TASK
 
@@ -2255,15 +2255,15 @@
 17A3: (06) yieldTask // PAUSE SCRIPT TASK
 17A4: (00) VAR(0x02) = 18
 17A8: loc_17A8:
-17A8: (12) drawString(str=0x014, x=10, y=150, color=5)
+17A8: (12) drawString(str=0x014, x=10, y=150, color=5) ; "Shield 9A.5f Ok"
 17AE: (06) yieldTask // PAUSE SCRIPT TASK
-17AF: (12) drawString(str=0x015, x=10, y=150, color=5)
+17AF: (12) drawString(str=0x015, x=10, y=150, color=5) ; "Flux % 5.0177 Ok"
 17B5: (06) yieldTask // PAUSE SCRIPT TASK
-17B6: (12) drawString(str=0x016, x=9, y=150, color=5)
+17B6: (12) drawString(str=0x016, x=9, y=150, color=5) ; "CDI Vector ok"
 17BC: (06) yieldTask // PAUSE SCRIPT TASK
-17BD: (12) drawString(str=0x017, x=11, y=150, color=5)
+17BD: (12) drawString(str=0x017, x=11, y=150, color=5) ; " %%%ddd ok"
 17C3: (06) yieldTask // PAUSE SCRIPT TASK
-17C4: (12) drawString(str=0x018, x=10, y=150, color=5)
+17C4: (12) drawString(str=0x018, x=10, y=150, color=5) ; "Race-Track ok"
 17CA: (06) yieldTask // PAUSE SCRIPT TASK
 17CB: (09) jmpIfVar(VAR(0x02), @17A8)
 17CF: (11) removeTask // STOP SCRIPT TASK
@@ -2503,7 +2503,7 @@
 1A38: (03) VAR(0x01) += 5
 1A3C: (09) jmpIfVar(VAR(0x03), @1A37)
 1A40: (0D) selectPage(page=0)
-1A42: (12) drawString(str=0x1F5, x=0, y=60, color=15)
+1A42: (12) drawString(str=0x1F5, x=0, y=60, color=15) ; "   A New, State\nof the Art, Polygon\n  Graphics System"
 1A48: (0D) selectPage(page=255)
 1A4A: (00) VAR(0x03) = 55
 1A4E: loc_1A4E:
@@ -2516,8 +2516,8 @@
 1A5C: (03) VAR(0x01) += 4
 1A60: (09) jmpIfVar(VAR(0x03), @1A5B)
 1A64: (0D) selectPage(page=0)
-1A66: (12) drawString(str=0x1F5, x=0, y=60, color=1)
-1A6C: (12) drawString(str=0x1F6, x=21, y=110, color=15)
+1A66: (12) drawString(str=0x1F5, x=0, y=60, color=1) ; "   A New, State\nof the Art, Polygon\n  Graphics System"
+1A6C: (12) drawString(str=0x1F6, x=21, y=110, color=15) ; "   Comes to the\nComputer With Full\n Screen Graphics"
 1A72: (0D) selectPage(page=255)
 1A74: (00) VAR(0x03) = 100
 1A78: loc_1A78:
@@ -2525,7 +2525,7 @@
 1A79: (03) VAR(0x01) += 3
 1A7D: (09) jmpIfVar(VAR(0x03), @1A78)
 1A81: (0D) selectPage(page=0)
-1A83: (12) drawString(str=0x1F6, x=21, y=110, color=1)
+1A83: (12) drawString(str=0x1F6, x=21, y=110, color=1) ; "   Comes to the\nComputer With Full\n Screen Graphics"
 1A89: (0D) selectPage(page=255)
 1A8B: (00) VAR(0x03) = 30
 1A8F: loc_1A8F:
@@ -2706,7 +2706,7 @@
 1C63: (08) installTask(11, @1D03)
 1C67: (08) installTask(14, @1CA6)
 1C6B: (0D) selectPage(page=0)
-1C6D: (12) drawString(str=0x1F7, x=1, y=10, color=8)
+1C6D: (12) drawString(str=0x1F7, x=1, y=10, color=8) ; "While conducting a nuclear fission\nexperiment at your local\nparticle accelerator ..."
 1C73: (0D) selectPage(page=255)
 1C75: (00) VAR(0x01) = 80
 1C79: loc_1C79:
