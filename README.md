@@ -26,7 +26,7 @@ This port has a few extra features, besides the ability to run in a browser :
 
 As the game data files are not freely distributable (at the exception of the demo versions), you will need to extract and convert your original files.
 
-This can be done using [extract.py](https://github.com/cyxx/another_js/blob/master/extract.py).
+This can be done using [extract.py](https://github.com/cyxx/another_js/blob/master/extract_dos.py).
 The script takes a .zip file as input and outputs a .js file to be included in the .html file.
 
 For example, the DOS demo data files can be converted with these commands :
@@ -53,7 +53,7 @@ Zip file size: 531072 bytes, number of entries: 14
 
 $ gcc -shared -o bytekiller_unpack.so unpack.c
 
-$ LD_LIBRARY_PATH=$( pwd ) python extract.py ootwdemo.zip > ootwdemo.js
+$ LD_LIBRARY_PATH=$( pwd ) python extract_dos.py ootwdemo.zip > ootwdemo.js
 ```
 
 

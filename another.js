@@ -245,6 +245,9 @@ var opcodes = {
 		const num = read_word( );
 		if ( num > 16000 ) {
 			next_part = num;
+		} else if ( num >= 3000 ) {
+			set_palette_bmp( load( bitmaps[ num ][ 0 ], 768 ) );
+			buffer8.set( load( bitmaps[ num ][ 1 ], 640 * 400 ) );
 		} else if ( num in bitmaps ) {
 			draw_bitmap( num );
 		}
@@ -293,19 +296,16 @@ function execute_task( ) {
 				}
                         }
 			var polygons = polygons1;
-			var zoom = read_byte( );
+			var zoom = 64;
 			if ( ( opcode & 2 ) == 0 ) {
-				if ( ( opcode & 1 ) == 0 ) {
-					bytecode_offset -= 1;
-					zoom = 64;
-				} else {
-					zoom = vars[ zoom ];
+				if ( opcode & 1 ) {
+					zoom = vars[ read_byte( ) ];
 				}
 			} else {
 				if ( opcode & 1 ) {
 					polygons = polygons2;
-					bytecode_offset -= 1;
-					zoom = 64;
+				} else {
+					zoom = read_byte( );
 				}
 			}
 			draw_shape( polygons, offset, 0xff, zoom, x, y );
@@ -382,13 +382,13 @@ function run_tasks( ) {
 function load( data, size ) {
 	data = atob( data );
 	if ( data.length != size ) {
-		var buf = decrunch.uncompress( data );
+		var buf = pako.inflate( data );
 		console.assert( buf.length == size );
 		return buf;
 	}
 	var buf = new Uint8Array( size );
 	for ( var i = 0; i < data.length; ++i ) {
-		buf[ i ] = data.charCodeAt( data[ i ] ) & 0xff;
+		buf[ i ] = data.charCodeAt( i ) & 0xff;
 	}
 	return buf;
 }
@@ -461,6 +461,8 @@ const PALETTE_TYPE_VGA = 2;
 var palette_type = PALETTE_TYPE_AMIGA;
 
 var is_1991; // 320x200
+
+var palette_bmp = new Uint32Array( 256 * 3 ); // 15th edition backgrounds
 
 function get_page( num ) {
 	if ( num == 0xff ) {
@@ -759,6 +761,14 @@ function set_palette_444( offset, type ) {
 	}
 }
 
+function set_palette_bmp( data ) {
+	var color = 0;
+	for ( var i = 0; i < 256; ++i ) {
+		palette_bmp[ i ] = 0xff000000 | ( data[ color + 2 ] << 16 ) | ( data[ color + 1 ] << 8 ) | data[ color ];
+		color += 3;
+	}
+}
+
 function update_display( num ) {
 	if ( num != 0xfe ) {
 		if ( num == 0xff ) {
@@ -899,7 +909,11 @@ function update_screen( offset ) {
 	} else {
 		for ( var i = 0; i < SCREEN_W * SCREEN_H; ++i ) {
 			const color = buffer8[ offset + i ];
-			rgba[ i ] = palette32[ palette_type * 16 + color ];
+			if ( color < 16 ) {
+				rgba[ i ] = palette32[ PALETTE_TYPE_AMIGA * 16 + color ];
+			} else {
+				rgba[ i ] = palette_bmp[ color - 16 ];
+			}
 		}
 	}
 	context.putImageData( data, 0, 0 );

@@ -7,6 +7,7 @@ import os
 import struct
 import sys
 import zipfile
+import zlib
 
 COUNT = 146
 
@@ -17,8 +18,6 @@ TYPE_PAL = 3 # palette
 TYPE_MAC = 4 # bytecode
 TYPE_MAT = 5 # polygons
 TYPE_BNK = 6 # bank2.mat
-
-UNPACK_FILES = True
 
 class Resource(object):
 	def __init__(self):
@@ -69,11 +68,10 @@ def unpack(i, r):
 for i, r in enumerate(resources):
 	if r.uncompressed == 0 or not banks.has_key(r.bank):
 		continue
-	if UNPACK_FILES:
-		unpack(i, r)
 	if r.rtype in (TYPE_SND, TYPE_MOD):
 		continue
-	buf = banks[r.bank][r.offset:r.offset+r.compressed]
+	buf = unpack(i, r)
+	buf = zlib.compress(buf, 9)
 	print 'const data%02x = "%s";' % (i, base64.b64encode(buf))
 	print 'const size%02x = %d;' % (i, r.uncompressed);
 
