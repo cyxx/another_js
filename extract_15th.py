@@ -1,5 +1,7 @@
-
+#!/usr/bin/env python
+#
 # Extract and convert Another World 15th Anniversary 'Pak01.pak' file to be used with 'another.js'
+#
 
 import base64
 import io
@@ -9,7 +11,8 @@ import sys
 import zlib
 from PIL import Image
 
-# The demo version contains more datafiles than it probably should...
+# The demo version contains all datafiles, restrict to the subset necessary for the demo (introduction and water parts).
+# These files are not encrypted.
 DEMO_RESOURCES = [ 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x11 ]
 
 BITMAP_W = 640

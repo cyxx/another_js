@@ -245,11 +245,14 @@ var opcodes = {
 		const num = read_word( );
 		if ( num > 16000 ) {
 			next_part = num;
-		} else if ( num >= 3000 ) {
-			set_palette_bmp( load( bitmaps[ num ][ 0 ], 768 ) );
-			buffer8.set( load( bitmaps[ num ][ 1 ], 640 * 400 ) );
 		} else if ( num in bitmaps ) {
-			draw_bitmap( num );
+			if ( num >= 3000 ) {
+				// should also load t3%d.bmp files for transparency (color 0x10)
+				set_palette_bmp( load( bitmaps[ num ][ 0 ], 256 * 3 ) );
+				buffer8.set( load( bitmaps[ num ][ 1 ], SCREEN_W * SCREEN_H ) );
+			} else {
+				draw_bitmap( num );
+			}
 		}
 		console.log( 'load num:' + num );
 	},
@@ -394,7 +397,12 @@ function load( data, size ) {
 }
 
 function restart( part ) {
-	if ( part == 16001 ) { // introduction
+	if ( part == 16000 ) { // protection
+		palette   = load( data14, size14 );
+		bytecode  = load( data15, size15 );
+		polygons1 = load( data16, size16 );
+		polygons2 = null;
+	} else if ( part == 16001 ) { // introduction
 		palette   = load( data17, size17 );
 		bytecode  = load( data18, size18 );
 		polygons1 = load( data19, size19 );
@@ -431,7 +439,7 @@ function restart( part ) {
 		polygons2 = load( data11, size11 );
 	} else if ( part == 16008 ) { // password screen
 		palette   = load( data7d, size7d );
-		bytecode  = load( data7e, size7d );
+		bytecode  = load( data7e, size7e );
 		polygons1 = load( data7f, size7f );
 		polygons2 = null;
 	}
@@ -910,7 +918,7 @@ function update_screen( offset ) {
 		for ( var i = 0; i < SCREEN_W * SCREEN_H; ++i ) {
 			const color = buffer8[ offset + i ];
 			if ( color < 16 ) {
-				rgba[ i ] = palette32[ PALETTE_TYPE_AMIGA * 16 + color ];
+				rgba[ i ] = palette32[ palette_type * 16 + color ];
 			} else {
 				rgba[ i ] = palette_bmp[ color - 16 ];
 			}

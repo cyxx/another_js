@@ -1,5 +1,7 @@
-
+#!/usr/bin/env python
+#
 # Extract and convert Another World DOS datafiles to be used with 'another.js'
+#
 
 import base64
 import ctypes
