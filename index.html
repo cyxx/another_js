@@ -21,9 +21,9 @@
 				<div align="left">
 					<input type="button" value="Pause" onclick="onPauseClick()" id="pauseButton" />
 					<input type="button" value="Reset" onclick="onResetClick()" id="resetButton" />
-					<select onchange="onLanguageChange" id="languageSelect">
-						<option style="background-image:url(uk.png);">English</option>
-						<option style="background-image:url(fr.png);">French</option>
+					<select onchange="onLanguageChange()" id="languageSelect">
+						<option>English</option>
+						<option>French</option>
 					</select>
 					Palette <select onchange="onPaletteChange()" id="paletteSelect">
 						<option>Amiga</option>
@@ -65,12 +65,15 @@
 			}
 			function onLanguageChange( ) {
 				change_language( languageSelect.selectedIndex );
+				ga( 'send', 'event', 'game', 'change', 'language', languageSelect.selectedIndex );
 			}
 			function onPaletteChange( ) {
 				change_palette( paletteSelect.selectedIndex );
+				ga( 'send', 'event', 'game', 'change', 'palette', paletteSelect.selectedIndex );
 			}
 			function onPartChange( ) {
 				change_part( partSelect.selectedIndex );
+				ga( 'send', 'event', 'game', 'change', 'part', partSelect.selectedIndex );
 			}
 			function onLowResolutionClick( ) {
 				set_1991_resolution( resolutionCheckbox.checked );
