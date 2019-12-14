@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Another World JS</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body style="margin: 0px auto; text-align: center; padding: 0px 0px; width: 800px; background: #e5e5e5;">
+		<div align="center" style="background-color: #fff; padding-top: 10px; width: 800px; text-align: center;">
+		<h1>Another World JS</h1>
+		<div align="center">
+			<div align="center" style="font-family: Arial; font-size: 14px; width: 640px; text-align: left;">
+			<p>
+				This is a JavaScript port of <a href="https://www.mobygames.com/game/out-of-this-world">Another World</a> using the DOS demo data files.
+			</p>
+			<p>
+				Use arrow keys to control the player and Space/Enter to run.
+			</p>
+			</div>
+			<div align="center" style="width: 640px;">
+				<canvas id="screen" width="640" height="400"></canvas>
+				<p></p>
+				<div align="left">
+					<input type="button" value="Pause"  onclick="onPauseClick()"  id="pauseButton" />
+					<input type="button" value="Reset"  onclick="onResetClick()"  id="resetButton" />
+					<select onchange="onPaletteChange()" id="paletteSelect">
+						<option>Amiga</option>
+						<option>EGA</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #eeeeee; margin: 20px 0px 0px 0px; padding: 8px;">
+			<strong>another.js</strong> code is available on <a href="http://github.com/cyxx/another_js">github.com</a>.
+		</div>
+		<script>
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create','UA-100340326-4','auto');
+			ga('send','pageview');
+		</script>
+		<script async src='https://www.google-analytics.com/analytics.js'></script>
+		<script type="text/javascript" src="ootwdemo.js"></script>
+		<script type="text/javascript" src="another.min.js"></script>
+		<script type="text/javascript">
+			init( "screen" );
+			function onPauseClick( ) {
+				if ( pause( ) ) {
+					pauseButton.value = "Play";
+				} else {
+					pauseButton.value = "Pause";
+				}
+			}
+			function onResetClick( ) {
+				reset( );
+			}
+			function onPaletteChange( ) {
+				change_palette( paletteSelect.selectedIndex );
+			}
+		</script>
+		</div>
+	</body>
+</html>
