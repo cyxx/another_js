@@ -779,6 +779,22 @@ function update_display( num ) {
 	update_screen( current_page1 * PAGE_SIZE );
 }
 
+const REWIND_SIZE = 10;
+const REWIND_INTERVAL = 5000;
+var rewind_buffer = new Array( );
+var rewind_timestamp;
+
+function save_state( ) {
+	return { vars: vars.slice( ), tasks: JSON.parse( JSON.stringify( tasks ) ), buffer8: buffer8.slice( ), palette32: palette32.slice( ) }
+}
+
+function load_state( state ) {
+	vars = state.vars;
+	tasks = state.tasks;
+	buffer8 = state.buffer8;
+	palette32 = state.palette32;
+}
+
 function reset( ) {
 	current_page2 = 1;
 	current_page1 = 2;
@@ -792,7 +808,8 @@ function reset( ) {
 	vars[ 0xdc ] = 33;
 	vars[ 0xe4 ] = 20;
 	next_part = 16001;
-	timestamp = Date.now( );
+	timestamp = rewind_timestamp = Date.now( );
+	rewind_buffer.length = 0;
 }
 
 function tick( ) {
@@ -802,6 +819,14 @@ function tick( ) {
 		run_tasks( );
 	}
 	timestamp = current;
+
+	if ( rewind_timestamp + REWIND_INTERVAL < current ) {
+		if ( rewind_buffer.length == REWIND_SIZE ) {
+			rewind_buffer.shift( );
+		}
+		rewind_buffer.push( save_state( ) );
+		rewind_timestamp = current;
+	}
 }
 
 const INTERVAL = 50;
@@ -827,6 +852,14 @@ function pause( ) {
 	}
 	timer = setInterval( tick, INTERVAL );
 	return false;
+}
+
+function rewind( ) {
+	if ( rewind_buffer.length != 0 ) {
+		console.log( 'rewind pos:' + rewind_buffer.length );
+		var state = rewind_buffer.pop( );
+		load_state( state );
+	}
 }
 
 function change_palette( num ) {

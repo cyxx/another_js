@@ -6,16 +6,27 @@ This is a Javascript (HTML5) port of the game <a href="https://www.mobygames.com
 ![Screenshot Water](screenshot-water-640.png)
 
 
-# Internals
+## Internals
 
-The Javascript code interprets the original game bytecode.
+This port behaves the same as the original executable and interprets the game bytecode.
+
+The implementation of the 26 opcodes can be found [here](https://github.com/cyxx/another_js/blob/master/another.js#L71).
 
 
-# Data files
+## Features
 
-As the game data files are not freely distributable (at the exception of the demo versions), you will need to extract and convert them.
+This port has a few extra features, besides the ability to run in a browser :
+
+* switch between Amiga and EGA palettes
+* switch between the original 320x200 and 640x400 resolutions
+* rewind game play
+
+
+## Data files
+
+As the game data files are not freely distributable (at the exception of the demo versions), you will need to extract and convert your original files.
+
 This can be done using [extract.py](https://github.com/cyxx/another_js/blob/master/extract.py).
-
 The script takes a .zip file as input and outputs a .js file to be included in the .html file.
 
 For example, the DOS demo data files can be converted with these commands :
@@ -46,8 +57,8 @@ $ LD_LIBRARY_PATH=$( pwd ) python extract.py ootwdemo.zip > ootwdemo.js
 ```
 
 
-# Status
+## Status
 
 The DOS demo version of the game can be played at [cyxx.github.io/another_js](http://cyxx.github.io/another_js)
 
-Music and sounds are not played.
+Music and sounds are not supported.
