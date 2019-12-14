@@ -1,0 +1,3590 @@
+0000: (04) call(@0170)
+0003: (00) VAR(0xFF) = 1
+0007: (08) installTask(60, @014A)
+000B: (00) VAR(0xF4) = 0
+000F: (06) yieldTask // PAUSE SCRIPT TASK
+0010: (1A) playMusic(res=0, delay=0, pos=0)
+0016: (19) updateResources(res=54)
+0019: (19) updateResources(res=8)
+001C: (19) updateResources(res=10)
+001F: (19) updateResources(res=14)
+0022: (19) updateResources(res=15)
+0025: (19) updateResources(res=44)
+0028: (19) updateResources(res=3)
+002B: (19) updateResources(res=2)
+002E: (19) updateResources(res=1)
+0031: (19) updateResources(res=7)
+0034: (19) updateResources(res=65)
+0037: (19) updateResources(res=4)
+003A: (19) updateResources(res=5)
+003D: (19) updateResources(res=6)
+0040: (19) updateResources(res=7)
+0043: (19) updateResources(res=8)
+0046: (19) updateResources(res=9)
+0049: (19) updateResources(res=10)
+004C: (19) updateResources(res=11)
+004F: (19) updateResources(res=13)
+0052: (19) updateResources(res=54)
+0055: (19) updateResources(res=60)
+0058: (19) updateResources(res=12)
+005B: (19) updateResources(res=51)
+005E: (19) updateResources(res=63)
+0061: (19) updateResources(res=47)
+0064: (19) updateResources(res=64)
+0067: (07) jmp(@0087)
+006A: loc_006A:
+006A: (1A) playMusic(res=7, delay=15700, pos=0)
+0070: (08) installTask(1, @22D0)
+0074: (08) installTask(2, @23AC)
+0078: (08) installTask(3, @22C7)
+007C: (11) removeTask // STOP SCRIPT TASK
+
+007D: // START OF SCRIPT TASK
+007D: (11) removeTask // STOP SCRIPT TASK
+
+007E: // func_007E
+007E: (0D) selectPage(page=0)
+0080: (FF) SHAPE_0xFF offset=0xfe7a (bank1.mat) x=160 y=100
+0084: (0D) selectPage(page=255)
+0086: (05) ret // RETURN FROM CALL
+0087: loc_0087:
+0087: (00) VAR(0xFF) = 2
+008B: (19) updateResources(res=18)
+008E: (04) call(@007E)
+0091: (0B) setPalette(num=28)
+0094: (00) VAR(0x03) = 40
+0098: loc_0098:
+0098: (06) yieldTask // PAUSE SCRIPT TASK
+0099: (09) jmpIfVar(VAR(0x03), @0098)
+009D: (0B) setPalette(num=33)
+00A0: (06) yieldTask // PAUSE SCRIPT TASK
+00A1: (0B) setPalette(num=34)
+00A4: (06) yieldTask // PAUSE SCRIPT TASK
+00A5: (0B) setPalette(num=35)
+00A8: (06) yieldTask // PAUSE SCRIPT TASK
+00A9: (0B) setPalette(num=36)
+00AC: (06) yieldTask // PAUSE SCRIPT TASK
+00AD: (0B) setPalette(num=37)
+00B0: (06) yieldTask // PAUSE SCRIPT TASK
+00B1: (0B) setPalette(num=38)
+00B4: (06) yieldTask // PAUSE SCRIPT TASK
+00B5: (0B) setPalette(num=39)
+00B8: (06) yieldTask // PAUSE SCRIPT TASK
+00B9: (0B) setPalette(num=40)
+00BC: (06) yieldTask // PAUSE SCRIPT TASK
+00BD: (0B) setPalette(num=0)
+00C0: (0E) fillPage(page=0, color=0)
+00C3: (06) yieldTask // PAUSE SCRIPT TASK
+00C4: (06) yieldTask // PAUSE SCRIPT TASK
+00C5: (06) yieldTask // PAUSE SCRIPT TASK
+00C6: (06) yieldTask // PAUSE SCRIPT TASK
+00C7: (06) yieldTask // PAUSE SCRIPT TASK
+00C8: (19) updateResources(res=71)
+00CB: (04) call(@007E)
+00CE: (0B) setPalette(num=30)
+00D1: (00) VAR(0x03) = 40
+00D5: loc_00D5:
+00D5: (06) yieldTask // PAUSE SCRIPT TASK
+00D6: (09) jmpIfVar(VAR(0x03), @00D5)
+00DA: (0B) setPalette(num=30)
+00DD: (06) yieldTask // PAUSE SCRIPT TASK
+00DE: (0B) setPalette(num=41)
+00E1: (06) yieldTask // PAUSE SCRIPT TASK
+00E2: (0B) setPalette(num=42)
+00E5: (06) yieldTask // PAUSE SCRIPT TASK
+00E6: (0B) setPalette(num=43)
+00E9: (06) yieldTask // PAUSE SCRIPT TASK
+00EA: (0B) setPalette(num=44)
+00ED: (06) yieldTask // PAUSE SCRIPT TASK
+00EE: (0B) setPalette(num=45)
+00F1: (06) yieldTask // PAUSE SCRIPT TASK
+00F2: (0B) setPalette(num=46)
+00F5: (06) yieldTask // PAUSE SCRIPT TASK
+00F6: (0B) setPalette(num=47)
+00F9: (06) yieldTask // PAUSE SCRIPT TASK
+00FA: (0B) setPalette(num=0)
+00FD: (0E) fillPage(page=0, color=0)
+0100: (00) VAR(0x03) = 8
+0104: loc_0104:
+0104: (06) yieldTask // PAUSE SCRIPT TASK
+0105: (09) jmpIfVar(VAR(0x03), @0104)
+0109: (06) yieldTask // PAUSE SCRIPT TASK
+010A: (0B) setPalette(num=30)
+010D: (0D) selectPage(page=0)
+010F: (12) drawString(str=0x1F4, x=6, y=80, color=1)
+0115: (0D) selectPage(page=255)
+0117: (00) VAR(0x03) = 70
+011B: loc_011B:
+011B: (06) yieldTask // PAUSE SCRIPT TASK
+011C: (09) jmpIfVar(VAR(0x03), @011B)
+0120: (0B) setPalette(num=30)
+0123: (06) yieldTask // PAUSE SCRIPT TASK
+0124: (0B) setPalette(num=41)
+0127: (06) yieldTask // PAUSE SCRIPT TASK
+0128: (0B) setPalette(num=42)
+012B: (06) yieldTask // PAUSE SCRIPT TASK
+012C: (0B) setPalette(num=43)
+012F: (06) yieldTask // PAUSE SCRIPT TASK
+0130: (0B) setPalette(num=44)
+0133: (06) yieldTask // PAUSE SCRIPT TASK
+0134: (0B) setPalette(num=45)
+0137: (06) yieldTask // PAUSE SCRIPT TASK
+0138: (0B) setPalette(num=46)
+013B: (06) yieldTask // PAUSE SCRIPT TASK
+013C: (0B) setPalette(num=47)
+013F: (0E) fillPage(page=0, color=0)
+0142: (06) yieldTask // PAUSE SCRIPT TASK
+0143: (0E) fillPage(page=255, color=0)
+0146: (07) jmp(@006A)
+0149: (11) removeTask // STOP SCRIPT TASK
+
+014A: // START OF SCRIPT TASK
+014A: loc_014A:
+014A: (03) VAR(0xC7) += 1
+014E: (10) updateDisplay(page=255)
+0150: (0D) selectPage(page=255)
+0152: (0F) copyPage(src=0, dst=255)
+0155: (06) yieldTask // PAUSE SCRIPT TASK
+0156: (07) jmp(@014A)
+
+0159: // START OF SCRIPT TASK
+0159: loc_0159:
+0159: (10) updateDisplay(page=255)
+015B: (0D) selectPage(page=255)
+015D: (06) yieldTask // PAUSE SCRIPT TASK
+015E: (07) jmp(@0159)
+
+0161: // START OF SCRIPT TASK
+0161: loc_0161:
+0161: (03) VAR(0xC7) += 1
+0165: (10) updateDisplay(page=255)
+0167: (0D) selectPage(page=255)
+0169: (0F) copyPage(src=0, dst=255)
+016C: (06) yieldTask // PAUSE SCRIPT TASK
+016D: (07) jmp(@0161)
+
+0170: // func_0170
+0170: (0E) fillPage(page=1, color=0)
+0173: (0E) fillPage(page=2, color=0)
+0176: (0D) selectPage(page=1)
+0178: (10) updateDisplay(page=1)
+017A: (10) updateDisplay(page=255)
+017C: (10) updateDisplay(page=2)
+017E: (05) ret // RETURN FROM CALL
+
+017F: // START OF SCRIPT TASK
+017F: (00) VAR(0xFF) = 3
+0183: (0E) fillPage(page=255, color=2)
+0186: (78) SHAPE_0x78 offset=0xcf88 (bank1.mat) x=66 y=145
+018B: (78) SHAPE_0x78 offset=0xcf98 (bank1.mat) x=66 y=59
+0190: (E7) SHAPE_0xE7 offset=0xcf34 (bank1.mat) x=17 y=100
+0194: (78) SHAPE_0x78 offset=0xcf1c (bank1.mat) x=66 y=100
+0199: (48) SHAPE_0x48 offset=0xcf04 (bank1.mat) x=255 y=99
+019F: (E7) SHAPE_0xE7 offset=0xcf5c (bank1.mat) x=160 y=108
+01A3: (12) drawString(str=0x192, x=22, y=16, color=5)
+01A9: (0F) copyPage(src=255, dst=0)
+01AC: (0F) copyPage(src=255, dst=3)
+01AF: (0B) setPalette(num=11)
+01B2: (00) VAR(0x04) = 220
+01B6: (00) VAR(0x06) = 64
+01BA: (08) installTask(6, @01EE)
+01BE: (00) VAR(0x01) = 50
+01C2: loc_01C2:
+01C2: (06) yieldTask // PAUSE SCRIPT TASK
+01C3: (09) jmpIfVar(VAR(0x01), @01C2)
+01C7: (00) VAR(0x01) = 35
+01CB: loc_01CB:
+01CB: (06) yieldTask // PAUSE SCRIPT TASK
+01CC: (12) drawString(str=0x190, x=3, y=168, color=11)
+01D2: (09) jmpIfVar(VAR(0x01), @01CB)
+01D6: (00) VAR(0x01) = 45
+01DA: loc_01DA:
+01DA: (06) yieldTask // PAUSE SCRIPT TASK
+01DB: (12) drawString(str=0x191, x=3, y=168, color=11)
+01E1: (09) jmpIfVar(VAR(0x01), @01DA)
+01E5: (08) installTask(8, @02EB)
+01E9: (08) installTask(2, @1C32)
+01ED: (11) removeTask // STOP SCRIPT TASK
+
+01EE: // START OF SCRIPT TASK
+01EE: (06) yieldTask // PAUSE SCRIPT TASK
+01EF: (00) VAR(0x02) = 1
+01F3: loc_01F3:
+01F3: (06) yieldTask // PAUSE SCRIPT TASK
+01F4: (09) jmpIfVar(VAR(0x02), @01F3)
+01F8: (0D) selectPage(page=0)
+01FA: (FB) SHAPE_0xFB offset=0xf754 (bank1.mat) x=80 y=80
+01FE: (FC) SHAPE_0xFC offset=0xf9a6 (bank1.mat) x=160 y=100
+0202: (0D) selectPage(page=255)
+0204: (08) installTask(9, @037D)
+0208: (00) VAR(0x02) = 10
+020C: loc_020C:
+020C: (06) yieldTask // PAUSE SCRIPT TASK
+020D: (09) jmpIfVar(VAR(0x02), @020C)
+0211: (0D) selectPage(page=0)
+0213: (FB) SHAPE_0xFB offset=0xf754 (bank1.mat) x=82 y=82
+0217: (FC) SHAPE_0xFC offset=0xf9f6 (bank1.mat) x=160 y=100
+021B: (0D) selectPage(page=255)
+021D: (08) installTask(9, @037D)
+0221: (00) VAR(0x02) = 10
+0225: loc_0225:
+0225: (06) yieldTask // PAUSE SCRIPT TASK
+0226: (09) jmpIfVar(VAR(0x02), @0225)
+022A: (0D) selectPage(page=0)
+022C: (FB) SHAPE_0xFB offset=0xf754 (bank1.mat) x=82 y=82
+0230: (6A) SHAPE_0x6A offset=0xf612 (bank1.mat) x=80 y=80
+0236: (0D) selectPage(page=255)
+0238: (08) installTask(9, @037D)
+023C: (00) VAR(0x02) = 10
+0240: loc_0240:
+0240: (06) yieldTask // PAUSE SCRIPT TASK
+0241: (09) jmpIfVar(VAR(0x02), @0240)
+0245: (0D) selectPage(page=0)
+0247: (FB) SHAPE_0xFB offset=0xf754 (bank1.mat) x=82 y=82
+024B: (FB) SHAPE_0xFB offset=0xf612 (bank1.mat) x=80 y=80
+024F: (0D) selectPage(page=255)
+0251: (08) installTask(9, @037D)
+0255: (08) installTask(8, @0274)
+0259: (00) VAR(0x02) = 50
+025D: loc_025D:
+025D: (06) yieldTask // PAUSE SCRIPT TASK
+025E: (09) jmpIfVar(VAR(0x02), @025D)
+0262: (06) yieldTask // PAUSE SCRIPT TASK
+0263: (0D) selectPage(page=0)
+0265: (FB) SHAPE_0xFB offset=0xf754 (bank1.mat) x=82 y=82
+0269: (FB) SHAPE_0xFB offset=0xf760 (bank1.mat) x=160 y=100
+026D: (0D) selectPage(page=255)
+026F: (08) installTask(9, @037D)
+0273: (11) removeTask // STOP SCRIPT TASK
+
+0274: // START OF SCRIPT TASK
+0274: (08) installTask(10, @02F0)
+0278: (08) installTask(11, @0302)
+027C: (06) yieldTask // PAUSE SCRIPT TASK
+027D: (06) yieldTask // PAUSE SCRIPT TASK
+027E: (06) yieldTask // PAUSE SCRIPT TASK
+027F: (08) installTask(12, @02F9)
+0283: (08) installTask(13, @0302)
+0287: (06) yieldTask // PAUSE SCRIPT TASK
+0288: (06) yieldTask // PAUSE SCRIPT TASK
+0289: (06) yieldTask // PAUSE SCRIPT TASK
+028A: (08) installTask(14, @02F9)
+028E: (08) installTask(15, @0302)
+0292: (06) yieldTask // PAUSE SCRIPT TASK
+0293: (06) yieldTask // PAUSE SCRIPT TASK
+0294: (06) yieldTask // PAUSE SCRIPT TASK
+0295: (08) installTask(16, @02F9)
+0299: (08) installTask(17, @0302)
+029D: (06) yieldTask // PAUSE SCRIPT TASK
+029E: (06) yieldTask // PAUSE SCRIPT TASK
+029F: (06) yieldTask // PAUSE SCRIPT TASK
+02A0: (08) installTask(18, @02F9)
+02A4: (08) installTask(19, @0302)
+02A8: (06) yieldTask // PAUSE SCRIPT TASK
+02A9: (06) yieldTask // PAUSE SCRIPT TASK
+02AA: (06) yieldTask // PAUSE SCRIPT TASK
+02AB: (08) installTask(20, @02F9)
+02AF: (08) installTask(21, @0302)
+02B3: (06) yieldTask // PAUSE SCRIPT TASK
+02B4: (06) yieldTask // PAUSE SCRIPT TASK
+02B5: (06) yieldTask // PAUSE SCRIPT TASK
+02B6: (08) installTask(22, @02F9)
+02BA: (08) installTask(23, @0302)
+02BE: (06) yieldTask // PAUSE SCRIPT TASK
+02BF: (06) yieldTask // PAUSE SCRIPT TASK
+02C0: (06) yieldTask // PAUSE SCRIPT TASK
+02C1: (08) installTask(24, @02F9)
+02C5: (08) installTask(25, @0302)
+02C9: (06) yieldTask // PAUSE SCRIPT TASK
+02CA: (06) yieldTask // PAUSE SCRIPT TASK
+02CB: (06) yieldTask // PAUSE SCRIPT TASK
+02CC: (08) installTask(26, @02F9)
+02D0: (08) installTask(27, @0302)
+02D4: (06) yieldTask // PAUSE SCRIPT TASK
+02D5: (06) yieldTask // PAUSE SCRIPT TASK
+02D6: (06) yieldTask // PAUSE SCRIPT TASK
+02D7: (08) installTask(28, @02F9)
+02DB: (08) installTask(29, @0302)
+02DF: (06) yieldTask // PAUSE SCRIPT TASK
+02E0: (06) yieldTask // PAUSE SCRIPT TASK
+02E1: (06) yieldTask // PAUSE SCRIPT TASK
+02E2: (08) installTask(30, @02F9)
+02E6: (08) installTask(31, @0302)
+02EA: (11) removeTask // STOP SCRIPT TASK
+
+02EB: // START OF SCRIPT TASK
+02EB: (0C) changeTasksState(from=10,to=31,type=2)
+02EF: (11) removeTask // STOP SCRIPT TASK
+
+02F0: // START OF SCRIPT TASK
+02F0: loc_02F0:
+02F0: (00) VAR(0x05) = 42
+02F4: (06) yieldTask // PAUSE SCRIPT TASK
+02F5: (07) jmp(@02F0)
+02F8: (11) removeTask // STOP SCRIPT TASK
+
+02F9: // START OF SCRIPT TASK
+02F9: loc_02F9:
+02F9: (03) VAR(0x05) += 10
+02FD: (06) yieldTask // PAUSE SCRIPT TASK
+02FE: (07) jmp(@02F9)
+0301: (11) removeTask // STOP SCRIPT TASK
+
+0302: // START OF SCRIPT TASK
+0302: loc_0302:
+0302: (06) yieldTask // PAUSE SCRIPT TASK
+0303: (55) SHAPE_0x55 offset=0xf866 (bank1.mat) x=4 y=5
+0309: (06) yieldTask // PAUSE SCRIPT TASK
+030A: (55) SHAPE_0x55 offset=0xf878 (bank1.mat) x=4 y=5
+0310: (06) yieldTask // PAUSE SCRIPT TASK
+0311: (55) SHAPE_0x55 offset=0xf88a (bank1.mat) x=4 y=5
+0317: (06) yieldTask // PAUSE SCRIPT TASK
+0318: (55) SHAPE_0x55 offset=0xf89e (bank1.mat) x=4 y=5
+031E: (06) yieldTask // PAUSE SCRIPT TASK
+031F: (55) SHAPE_0x55 offset=0xf8b0 (bank1.mat) x=4 y=5
+0325: (06) yieldTask // PAUSE SCRIPT TASK
+0326: (55) SHAPE_0x55 offset=0xf8c2 (bank1.mat) x=4 y=5
+032C: (06) yieldTask // PAUSE SCRIPT TASK
+032D: (55) SHAPE_0x55 offset=0xf8d6 (bank1.mat) x=4 y=5
+0333: (06) yieldTask // PAUSE SCRIPT TASK
+0334: (55) SHAPE_0x55 offset=0xf8ea (bank1.mat) x=4 y=5
+033A: (06) yieldTask // PAUSE SCRIPT TASK
+033B: (55) SHAPE_0x55 offset=0xf8fe (bank1.mat) x=4 y=5
+0341: (06) yieldTask // PAUSE SCRIPT TASK
+0342: (55) SHAPE_0x55 offset=0xf90e (bank1.mat) x=4 y=5
+0348: (06) yieldTask // PAUSE SCRIPT TASK
+0349: (55) SHAPE_0x55 offset=0xf922 (bank1.mat) x=4 y=5
+034F: (06) yieldTask // PAUSE SCRIPT TASK
+0350: (55) SHAPE_0x55 offset=0xf936 (bank1.mat) x=4 y=5
+0356: (06) yieldTask // PAUSE SCRIPT TASK
+0357: (55) SHAPE_0x55 offset=0xf94a (bank1.mat) x=4 y=5
+035D: (06) yieldTask // PAUSE SCRIPT TASK
+035E: (55) SHAPE_0x55 offset=0xf95e (bank1.mat) x=4 y=5
+0364: (06) yieldTask // PAUSE SCRIPT TASK
+0365: (55) SHAPE_0x55 offset=0xf970 (bank1.mat) x=4 y=5
+036B: (06) yieldTask // PAUSE SCRIPT TASK
+036C: (55) SHAPE_0x55 offset=0xf982 (bank1.mat) x=4 y=5
+0372: (06) yieldTask // PAUSE SCRIPT TASK
+0373: (55) SHAPE_0x55 offset=0xf994 (bank1.mat) x=4 y=5
+0379: (07) jmp(@0302)
+037C: (11) removeTask // STOP SCRIPT TASK
+
+037D: // START OF SCRIPT TASK
+037D: (FB) SHAPE_0xFB offset=0xf666 (bank1.mat) x=160 y=100
+0381: (18) playSound(res=44, freq=15, vol=63, channel=2)
+0387: (06) yieldTask // PAUSE SCRIPT TASK
+0388: (FB) SHAPE_0xFB offset=0xf6cc (bank1.mat) x=160 y=100
+038C: (06) yieldTask // PAUSE SCRIPT TASK
+038D: (FB) SHAPE_0xFB offset=0xf716 (bank1.mat) x=160 y=100
+0391: (06) yieldTask // PAUSE SCRIPT TASK
+0392: (FB) SHAPE_0xFB offset=0xf666 (bank1.mat) x=160 y=100
+0396: (11) removeTask // STOP SCRIPT TASK
+
+0397: // START OF SCRIPT TASK
+0397: (00) VAR(0x10) = 228
+039B: (00) VAR(0x11) = 228
+039F: (0D) selectPage(page=0)
+03A1: (F9) SHAPE_0xF9 offset=0xf384 (bank1.mat) x=157 y=100
+03A5: (0D) selectPage(page=255)
+03A7: (00) VAR(0x0F) = 30
+03AB: loc_03AB:
+03AB: (06) yieldTask // PAUSE SCRIPT TASK
+03AC: (09) jmpIfVar(VAR(0x0F), @03AB)
+03B0: (00) VAR(0x0F) = 10
+03B4: loc_03B4:
+03B4: (03) VAR(0x10) += 1
+03B8: (06) yieldTask // PAUSE SCRIPT TASK
+03B9: (03) VAR(0x11) -= 1
+03BD: (06) yieldTask // PAUSE SCRIPT TASK
+03BE: (09) jmpIfVar(VAR(0x0F), @03B4)
+03C2: (11) removeTask // STOP SCRIPT TASK
+
+03C3: // START OF SCRIPT TASK
+03C3: loc_03C3:
+03C3: (58) SHAPE_0x58 offset=0xf43e (bank1.mat) x=16 y=44
+03C8: (58) SHAPE_0x58 offset=0xf44a (bank1.mat) x=17 y=44
+03CD: (06) yieldTask // PAUSE SCRIPT TASK
+03CE: (07) jmp(@03C3)
+03D1: (11) removeTask // STOP SCRIPT TASK
+
+03D2: // START OF SCRIPT TASK
+03D2: (FA) SHAPE_0xFA offset=0xf46e (bank1.mat) x=160 y=100
+03D6: (06) yieldTask // PAUSE SCRIPT TASK
+03D7: (FA) SHAPE_0xFA offset=0xf4b8 (bank1.mat) x=160 y=100
+03DB: (06) yieldTask // PAUSE SCRIPT TASK
+03DC: (FA) SHAPE_0xFA offset=0xf500 (bank1.mat) x=160 y=100
+03E0: (06) yieldTask // PAUSE SCRIPT TASK
+03E1: (FA) SHAPE_0xFA offset=0xf530 (bank1.mat) x=160 y=100
+03E5: (11) removeTask // STOP SCRIPT TASK
+03E6: loc_03E6:
+03E6: (0B) setPalette(num=3)
+03E9: (00) VAR(0xFF) = 3
+03ED: (DE) SHAPE_0xDE offset=0xbcca (bank1.mat) x=160 y=100
+03F1: (06) yieldTask // PAUSE SCRIPT TASK
+03F2: (DE) SHAPE_0xDE offset=0xbd0a (bank1.mat) x=160 y=100
+03F6: (06) yieldTask // PAUSE SCRIPT TASK
+03F7: (DE) SHAPE_0xDE offset=0xbd5e (bank1.mat) x=160 y=100
+03FB: (06) yieldTask // PAUSE SCRIPT TASK
+03FC: (DE) SHAPE_0xDE offset=0xbdb2 (bank1.mat) x=160 y=100
+0400: (18) playSound(res=60, freq=22, vol=15, channel=0)
+0406: (06) yieldTask // PAUSE SCRIPT TASK
+0407: (DE) SHAPE_0xDE offset=0xbdf6 (bank1.mat) x=160 y=100
+040B: (06) yieldTask // PAUSE SCRIPT TASK
+040C: (DF) SHAPE_0xDF offset=0xbe46 (bank1.mat) x=160 y=100
+0410: (06) yieldTask // PAUSE SCRIPT TASK
+0411: (DF) SHAPE_0xDF offset=0xbe68 (bank1.mat) x=160 y=100
+0415: (06) yieldTask // PAUSE SCRIPT TASK
+0416: (DF) SHAPE_0xDF offset=0xbeba (bank1.mat) x=160 y=100
+041A: (06) yieldTask // PAUSE SCRIPT TASK
+041B: (DF) SHAPE_0xDF offset=0xbf0c (bank1.mat) x=160 y=100
+041F: (06) yieldTask // PAUSE SCRIPT TASK
+0420: (E0) SHAPE_0xE0 offset=0xc03a (bank1.mat) x=160 y=100
+0424: (06) yieldTask // PAUSE SCRIPT TASK
+0425: (E0) SHAPE_0xE0 offset=0xc0dc (bank1.mat) x=160 y=100
+0429: (06) yieldTask // PAUSE SCRIPT TASK
+042A: (00) VAR(0xFF) = 4
+042E: (0B) setPalette(num=27)
+0431: (E0) SHAPE_0xE0 offset=0xc11a (bank1.mat) x=160 y=100
+0435: (06) yieldTask // PAUSE SCRIPT TASK
+0436: (E0) SHAPE_0xE0 offset=0xc1e4 (bank1.mat) x=160 y=100
+043A: (00) VAR(0x01) = 15
+043E: loc_043E:
+043E: (06) yieldTask // PAUSE SCRIPT TASK
+043F: (E1) SHAPE_0xE1 offset=0xc2c4 (bank1.mat) x=160 y=100
+0443: (09) jmpIfVar(VAR(0x01), @043E)
+0447: (08) installTask(1, @2634)
+044B: (08) installTask(2, @24C5)
+044F: (08) installTask(3, @2669)
+0453: (11) removeTask // STOP SCRIPT TASK
+
+0454: // START OF SCRIPT TASK
+0454: loc_0454:
+0454: (06) yieldTask // PAUSE SCRIPT TASK
+0455: (00) VAR(0x02) = 50
+0459: loc_0459:
+0459: (06) yieldTask // PAUSE SCRIPT TASK
+045A: (09) jmpIfVar(VAR(0x02), @0459)
+045E: (18) playSound(res=14, freq=10, vol=63, channel=0)
+0464: (D5) SHAPE_0xD5 offset=0xabec (bank1.mat) x=160 y=100
+0468: (06) yieldTask // PAUSE SCRIPT TASK
+0469: (18) playSound(res=8, freq=10, vol=63, channel=1)
+046F: (D6) SHAPE_0xD6 offset=0xac20 (bank1.mat) x=160 y=100
+0473: (06) yieldTask // PAUSE SCRIPT TASK
+0474: (D5) SHAPE_0xD5 offset=0xabec (bank1.mat) x=160 y=100
+0478: (06) yieldTask // PAUSE SCRIPT TASK
+0479: (D6) SHAPE_0xD6 offset=0xac54 (bank1.mat) x=160 y=100
+047D: (06) yieldTask // PAUSE SCRIPT TASK
+047E: (D6) SHAPE_0xD6 offset=0xac88 (bank1.mat) x=160 y=100
+0482: (07) jmp(@0454)
+0485: (11) removeTask // STOP SCRIPT TASK
+
+0486: // START OF SCRIPT TASK
+0486: loc_0486:
+0486: (06) yieldTask // PAUSE SCRIPT TASK
+0487: (00) VAR(0x03) = 70
+048B: loc_048B:
+048B: (06) yieldTask // PAUSE SCRIPT TASK
+048C: (09) jmpIfVar(VAR(0x03), @048B)
+0490: (18) playSound(res=15, freq=10, vol=63, channel=0)
+0496: (D6) SHAPE_0xD6 offset=0xacac (bank1.mat) x=160 y=100
+049A: (06) yieldTask // PAUSE SCRIPT TASK
+049B: (D6) SHAPE_0xD6 offset=0xacc0 (bank1.mat) x=160 y=100
+049F: (06) yieldTask // PAUSE SCRIPT TASK
+04A0: (D6) SHAPE_0xD6 offset=0xacd4 (bank1.mat) x=160 y=100
+04A4: (06) yieldTask // PAUSE SCRIPT TASK
+04A5: (D6) SHAPE_0xD6 offset=0xace8 (bank1.mat) x=160 y=100
+04A9: (06) yieldTask // PAUSE SCRIPT TASK
+04AA: (D6) SHAPE_0xD6 offset=0xacfc (bank1.mat) x=160 y=100
+04AE: (06) yieldTask // PAUSE SCRIPT TASK
+04AF: (D6) SHAPE_0xD6 offset=0xace8 (bank1.mat) x=160 y=100
+04B3: (06) yieldTask // PAUSE SCRIPT TASK
+04B4: (D6) SHAPE_0xD6 offset=0xacd4 (bank1.mat) x=160 y=100
+04B8: (06) yieldTask // PAUSE SCRIPT TASK
+04B9: (D6) SHAPE_0xD6 offset=0xacc0 (bank1.mat) x=160 y=100
+04BD: (06) yieldTask // PAUSE SCRIPT TASK
+04BE: (D6) SHAPE_0xD6 offset=0xacac (bank1.mat) x=160 y=100
+04C2: (18) playSound(res=8, freq=12, vol=63, channel=3)
+04C8: (07) jmp(@0486)
+04CB: (11) removeTask // STOP SCRIPT TASK
+
+04CC: // START OF SCRIPT TASK
+04CC: loc_04CC:
+04CC: (06) yieldTask // PAUSE SCRIPT TASK
+04CD: (00) VAR(0x04) = 80
+04D1: loc_04D1:
+04D1: (06) yieldTask // PAUSE SCRIPT TASK
+04D2: (09) jmpIfVar(VAR(0x04), @04D1)
+04D6: (D6) SHAPE_0xD6 offset=0xad10 (bank1.mat) x=160 y=100
+04DA: (06) yieldTask // PAUSE SCRIPT TASK
+04DB: (D6) SHAPE_0xD6 offset=0xad24 (bank1.mat) x=160 y=100
+04DF: (06) yieldTask // PAUSE SCRIPT TASK
+04E0: (D6) SHAPE_0xD6 offset=0xad38 (bank1.mat) x=160 y=100
+04E4: (06) yieldTask // PAUSE SCRIPT TASK
+04E5: (D6) SHAPE_0xD6 offset=0xad4c (bank1.mat) x=160 y=100
+04E9: (06) yieldTask // PAUSE SCRIPT TASK
+04EA: (D6) SHAPE_0xD6 offset=0xad60 (bank1.mat) x=160 y=100
+04EE: (06) yieldTask // PAUSE SCRIPT TASK
+04EF: (D6) SHAPE_0xD6 offset=0xad74 (bank1.mat) x=160 y=100
+04F3: (06) yieldTask // PAUSE SCRIPT TASK
+04F4: (D6) SHAPE_0xD6 offset=0xad60 (bank1.mat) x=180 y=100
+04F8: (06) yieldTask // PAUSE SCRIPT TASK
+04F9: (D6) SHAPE_0xD6 offset=0xad60 (bank1.mat) x=200 y=100
+04FD: (18) playSound(res=8, freq=1, vol=63, channel=2)
+0503: (07) jmp(@04CC)
+0506: (11) removeTask // STOP SCRIPT TASK
+
+0507: // START OF SCRIPT TASK
+0507: loc_0507:
+0507: (06) yieldTask // PAUSE SCRIPT TASK
+0508: (00) VAR(0x05) = 20
+050C: loc_050C:
+050C: (06) yieldTask // PAUSE SCRIPT TASK
+050D: (09) jmpIfVar(VAR(0x05), @050C)
+0511: (18) playSound(res=14, freq=2, vol=63, channel=0)
+0517: (D6) SHAPE_0xD6 offset=0xad88 (bank1.mat) x=160 y=100
+051B: (06) yieldTask // PAUSE SCRIPT TASK
+051C: (18) playSound(res=14, freq=8, vol=63, channel=1)
+0522: (D6) SHAPE_0xD6 offset=0xadbc (bank1.mat) x=160 y=100
+0526: (06) yieldTask // PAUSE SCRIPT TASK
+0527: (D7) SHAPE_0xD7 offset=0xae0c (bank1.mat) x=160 y=100
+052B: (06) yieldTask // PAUSE SCRIPT TASK
+052C: (D7) SHAPE_0xD7 offset=0xae54 (bank1.mat) x=160 y=100
+0530: (06) yieldTask // PAUSE SCRIPT TASK
+0531: (D7) SHAPE_0xD7 offset=0xae9c (bank1.mat) x=160 y=100
+0535: (06) yieldTask // PAUSE SCRIPT TASK
+0536: (00) VAR(0x05) = 110
+053A: loc_053A:
+053A: (06) yieldTask // PAUSE SCRIPT TASK
+053B: (09) jmpIfVar(VAR(0x05), @053A)
+053F: (D8) SHAPE_0xD8 offset=0xb18a (bank1.mat) x=160 y=100
+0543: (06) yieldTask // PAUSE SCRIPT TASK
+0544: (D8) SHAPE_0xD8 offset=0xb1be (bank1.mat) x=160 y=100
+0548: (06) yieldTask // PAUSE SCRIPT TASK
+0549: (D9) SHAPE_0xD9 offset=0xb20e (bank1.mat) x=160 y=100
+054D: (06) yieldTask // PAUSE SCRIPT TASK
+054E: (D9) SHAPE_0xD9 offset=0xb28e (bank1.mat) x=160 y=100
+0552: (06) yieldTask // PAUSE SCRIPT TASK
+0553: (D9) SHAPE_0xD9 offset=0xb30a (bank1.mat) x=160 y=100
+0557: (00) VAR(0x05) = 70
+055B: loc_055B:
+055B: (06) yieldTask // PAUSE SCRIPT TASK
+055C: (09) jmpIfVar(VAR(0x05), @055B)
+0560: (07) jmp(@0507)
+0563: (11) removeTask // STOP SCRIPT TASK
+
+0564: // START OF SCRIPT TASK
+0564: (06) yieldTask // PAUSE SCRIPT TASK
+0565: (00) VAR(0x06) = 60
+0569: loc_0569:
+0569: (06) yieldTask // PAUSE SCRIPT TASK
+056A: (09) jmpIfVar(VAR(0x06), @0569)
+056E: (0B) setPalette(num=2)
+0571: (06) yieldTask // PAUSE SCRIPT TASK
+0572: (06) yieldTask // PAUSE SCRIPT TASK
+0573: (06) yieldTask // PAUSE SCRIPT TASK
+0574: (0B) setPalette(num=25)
+0577: (06) yieldTask // PAUSE SCRIPT TASK
+0578: (00) VAR(0x06) = 100
+057C: loc_057C:
+057C: (06) yieldTask // PAUSE SCRIPT TASK
+057D: (09) jmpIfVar(VAR(0x06), @057C)
+0581: (0B) setPalette(num=2)
+0584: (06) yieldTask // PAUSE SCRIPT TASK
+0585: (06) yieldTask // PAUSE SCRIPT TASK
+0586: (06) yieldTask // PAUSE SCRIPT TASK
+0587: (0B) setPalette(num=25)
+058A: (06) yieldTask // PAUSE SCRIPT TASK
+058B: (06) yieldTask // PAUSE SCRIPT TASK
+058C: (06) yieldTask // PAUSE SCRIPT TASK
+058D: (0B) setPalette(num=2)
+0590: (06) yieldTask // PAUSE SCRIPT TASK
+0591: (06) yieldTask // PAUSE SCRIPT TASK
+0592: (06) yieldTask // PAUSE SCRIPT TASK
+0593: (0B) setPalette(num=25)
+0596: (11) removeTask // STOP SCRIPT TASK
+
+0597: // START OF SCRIPT TASK
+0597: (06) yieldTask // PAUSE SCRIPT TASK
+0598: (00) VAR(0x09) = 150
+059C: (00) VAR(0x07) = 0
+05A0: (00) VAR(0x08) = 70
+05A4: loc_05A4:
+05A4: (06) yieldTask // PAUSE SCRIPT TASK
+05A5: (03) VAR(0x07) += 7
+05A9: (09) jmpIfVar(VAR(0x08), @05A4)
+05AD: (00) VAR(0x09) = 130
+05B1: (00) VAR(0x07) = 0
+05B5: (00) VAR(0x08) = 50
+05B9: loc_05B9:
+05B9: (06) yieldTask // PAUSE SCRIPT TASK
+05BA: (03) VAR(0x07) += 7
+05BE: (09) jmpIfVar(VAR(0x08), @05B9)
+05C2: (11) removeTask // STOP SCRIPT TASK
+
+05C3: // START OF SCRIPT TASK
+05C3: loc_05C3:
+05C3: (06) yieldTask // PAUSE SCRIPT TASK
+05C4: (54) SHAPE_0x54 offset=0xaec4 (bank1.mat) x=7 y=9
+05C9: (06) yieldTask // PAUSE SCRIPT TASK
+05CA: (54) SHAPE_0x54 offset=0xaee2 (bank1.mat) x=7 y=9
+05CF: (06) yieldTask // PAUSE SCRIPT TASK
+05D0: (54) SHAPE_0x54 offset=0xaf00 (bank1.mat) x=7 y=9
+05D5: (06) yieldTask // PAUSE SCRIPT TASK
+05D6: (54) SHAPE_0x54 offset=0xaf1e (bank1.mat) x=7 y=9
+05DB: (06) yieldTask // PAUSE SCRIPT TASK
+05DC: (54) SHAPE_0x54 offset=0xaf3c (bank1.mat) x=7 y=9
+05E1: (07) jmp(@05C3)
+05E4: (11) removeTask // STOP SCRIPT TASK
+
+05E5: // START OF SCRIPT TASK
+05E5: loc_05E5:
+05E5: (06) yieldTask // PAUSE SCRIPT TASK
+05E6: (00) VAR(0x0A) = -50
+05EA: (00) VAR(0x0B) = 50
+05EE: loc_05EE:
+05EE: (58) SHAPE_0x58 offset=0x0630 (bank1.mat) x=10 y=50
+05F3: (58) SHAPE_0x58 offset=0x063c (bank1.mat) x=10 y=20
+05F8: (58) SHAPE_0x58 offset=0x0654 (bank1.mat) x=10 y=110
+05FD: (58) SHAPE_0x58 offset=0x063c (bank1.mat) x=10 y=180
+0602: (03) VAR(0x0A) += 10
+0606: (06) yieldTask // PAUSE SCRIPT TASK
+0607: (09) jmpIfVar(VAR(0x0B), @05EE)
+060B: (07) jmp(@05E5)
+060E: (11) removeTask // STOP SCRIPT TASK
+
+060F: // START OF SCRIPT TASK
+060F: loc_060F:
+060F: (06) yieldTask // PAUSE SCRIPT TASK
+0610: (00) VAR(0x0C) = -80
+0614: (00) VAR(0x0D) = 60
+0618: loc_0618:
+0618: (58) SHAPE_0x58 offset=0x0648 (bank1.mat) x=12 y=140
+061D: (58) SHAPE_0x58 offset=0x063c (bank1.mat) x=12 y=100
+0622: (58) SHAPE_0x58 offset=0x063c (bank1.mat) x=12 y=80
+0627: (58) SHAPE_0x58 offset=0x0654 (bank1.mat) x=12 y=10
+062C: (03) VAR(0x0C) += 9
+0630: (06) yieldTask // PAUSE SCRIPT TASK
+0631: (09) jmpIfVar(VAR(0x0D), @0618)
+0635: (07) jmp(@060F)
+0638: (11) removeTask // STOP SCRIPT TASK
+
+0639: // START OF SCRIPT TASK
+0639: (08) installTask(3, @0E23)
+063D: (08) installTask(1, @22D0)
+0641: (06) yieldTask // PAUSE SCRIPT TASK
+0642: (1A) playMusic(res=0, delay=0, pos=0)
+0648: (18) playSound(res=10, freq=2, vol=20, channel=0)
+064E: (18) playSound(res=8, freq=5, vol=63, channel=3)
+0654: (18) playSound(res=8, freq=0, vol=63, channel=2)
+065A: (0B) setPalette(num=25)
+065D: (08) installTask(10, @0454)
+0661: (08) installTask(11, @0486)
+0665: (08) installTask(12, @04CC)
+0669: (08) installTask(13, @0507)
+066D: (08) installTask(14, @0564)
+0671: (08) installTask(15, @0597)
+0675: (08) installTask(16, @05C3)
+0679: (08) installTask(17, @05E5)
+067D: (08) installTask(18, @060F)
+0681: (00) VAR(0xFF) = 3
+0685: (82) SHAPE_0x82 offset=0x05b8 (bank1.mat) x=215 y=100
+0689: (86) SHAPE_0x86 offset=0x0cb8 (bank1.mat) x=90 y=101
+068D: (00) VAR(0x01) = 350
+0691: loc_0691:
+0691: (06) yieldTask // PAUSE SCRIPT TASK
+0692: (09) jmpIfVar(VAR(0x01), @0691)
+0696: (08) installTask(60, @0159)
+069A: (08) installTask(1, @070D)
+069E: (0C) changeTasksState(from=10,to=18,type=2)
+06A2: (06) yieldTask // PAUSE SCRIPT TASK
+06A3: (18) playSound(res=10, freq=20, vol=63, channel=0)
+06A9: (0B) setPalette(num=23)
+06AC: (0E) fillPage(page=255, color=8)
+06AF: (06) yieldTask // PAUSE SCRIPT TASK
+06B0: (0E) fillPage(page=255, color=8)
+06B3: (06) yieldTask // PAUSE SCRIPT TASK
+06B4: (0E) fillPage(page=255, color=8)
+06B7: (18) playSound(res=10, freq=10, vol=63, channel=1)
+06BD: (06) yieldTask // PAUSE SCRIPT TASK
+06BE: (CB) SHAPE_0xCB offset=0x97ba (bank1.mat) x=160 y=100
+06C2: (06) yieldTask // PAUSE SCRIPT TASK
+06C3: (00) VAR(0xFF) = 3
+06C7: (CC) SHAPE_0xCC offset=0x9856 (bank1.mat) x=160 y=100
+06CB: (06) yieldTask // PAUSE SCRIPT TASK
+06CC: (CC) SHAPE_0xCC offset=0x98ea (bank1.mat) x=160 y=100
+06D0: (06) yieldTask // PAUSE SCRIPT TASK
+06D1: (18) playSound(res=10, freq=5, vol=63, channel=2)
+06D7: (CC) SHAPE_0xCC offset=0x9982 (bank1.mat) x=160 y=100
+06DB: (06) yieldTask // PAUSE SCRIPT TASK
+06DC: (CA) SHAPE_0xCA offset=0x95f0 (bank1.mat) x=160 y=100
+06E0: (06) yieldTask // PAUSE SCRIPT TASK
+06E1: (CB) SHAPE_0xCB offset=0x9680 (bank1.mat) x=160 y=100
+06E5: (06) yieldTask // PAUSE SCRIPT TASK
+06E6: (CB) SHAPE_0xCB offset=0x971c (bank1.mat) x=160 y=100
+06EA: (18) playSound(res=10, freq=25, vol=63, channel=3)
+06F0: (06) yieldTask // PAUSE SCRIPT TASK
+06F1: (0E) fillPage(page=255, color=8)
+06F4: (06) yieldTask // PAUSE SCRIPT TASK
+06F5: (0E) fillPage(page=255, color=8)
+06F8: (06) yieldTask // PAUSE SCRIPT TASK
+06F9: (0E) fillPage(page=255, color=8)
+06FC: (06) yieldTask // PAUSE SCRIPT TASK
+06FD: (06) yieldTask // PAUSE SCRIPT TASK
+06FE: (06) yieldTask // PAUSE SCRIPT TASK
+06FF: (06) yieldTask // PAUSE SCRIPT TASK
+0700: (06) yieldTask // PAUSE SCRIPT TASK
+0701: (08) installTask(60, @014A)
+0705: (08) installTask(1, @007D)
+0709: (07) jmp(@0715)
+070C: (11) removeTask // STOP SCRIPT TASK
+
+070D: // START OF SCRIPT TASK
+070D: loc_070D:
+070D: (0E) fillPage(page=255, color=2)
+0710: (06) yieldTask // PAUSE SCRIPT TASK
+0711: (07) jmp(@070D)
+0714: (11) removeTask // STOP SCRIPT TASK
+0715: loc_0715:
+0715: (0D) selectPage(page=0)
+0717: (00) VAR(0xFF) = 2
+071B: (0B) setPalette(num=25)
+071E: (06) yieldTask // PAUSE SCRIPT TASK
+071F: (18) playSound(res=10, freq=30, vol=63, channel=2)
+0725: (CD) SHAPE_0xCD offset=0x9a1e (bank1.mat) x=183 y=100
+0729: (06) yieldTask // PAUSE SCRIPT TASK
+072A: (CD) SHAPE_0xCD offset=0x9a5e (bank1.mat) x=183 y=100
+072E: (06) yieldTask // PAUSE SCRIPT TASK
+072F: (CD) SHAPE_0xCD offset=0x9a9e (bank1.mat) x=183 y=100
+0733: (06) yieldTask // PAUSE SCRIPT TASK
+0734: (CD) SHAPE_0xCD offset=0x9ade (bank1.mat) x=183 y=100
+0738: (06) yieldTask // PAUSE SCRIPT TASK
+0739: (18) playSound(res=10, freq=2, vol=63, channel=3)
+073F: (CD) SHAPE_0xCD offset=0x9b1e (bank1.mat) x=183 y=100
+0743: (06) yieldTask // PAUSE SCRIPT TASK
+0744: (CD) SHAPE_0xCD offset=0x9bca (bank1.mat) x=183 y=100
+0748: (06) yieldTask // PAUSE SCRIPT TASK
+0749: (00) VAR(0xFF) = 3
+074D: (CE) SHAPE_0xCE offset=0x9cb2 (bank1.mat) x=183 y=100
+0751: (06) yieldTask // PAUSE SCRIPT TASK
+0752: (CE) SHAPE_0xCE offset=0x9dd6 (bank1.mat) x=183 y=100
+0756: (06) yieldTask // PAUSE SCRIPT TASK
+0757: (CF) SHAPE_0xCF offset=0x9f1e (bank1.mat) x=183 y=100
+075B: (06) yieldTask // PAUSE SCRIPT TASK
+075C: (D0) SHAPE_0xD0 offset=0xa090 (bank1.mat) x=183 y=100
+0760: (06) yieldTask // PAUSE SCRIPT TASK
+0761: (D0) SHAPE_0xD0 offset=0xa1f8 (bank1.mat) x=183 y=100
+0765: (06) yieldTask // PAUSE SCRIPT TASK
+0766: (D1) SHAPE_0xD1 offset=0xa32a (bank1.mat) x=183 y=100
+076A: (06) yieldTask // PAUSE SCRIPT TASK
+076B: (D2) SHAPE_0xD2 offset=0xa450 (bank1.mat) x=183 y=100
+076F: (06) yieldTask // PAUSE SCRIPT TASK
+0770: (D2) SHAPE_0xD2 offset=0xa57e (bank1.mat) x=183 y=100
+0774: (06) yieldTask // PAUSE SCRIPT TASK
+0775: (00) VAR(0xFF) = 2
+0779: (D3) SHAPE_0xD3 offset=0xa6ac (bank1.mat) x=183 y=100
+077D: (06) yieldTask // PAUSE SCRIPT TASK
+077E: (D3) SHAPE_0xD3 offset=0xa7ba (bank1.mat) x=183 y=100
+0782: (06) yieldTask // PAUSE SCRIPT TASK
+0783: (D4) SHAPE_0xD4 offset=0xa8b8 (bank1.mat) x=183 y=100
+0787: (06) yieldTask // PAUSE SCRIPT TASK
+0788: (D4) SHAPE_0xD4 offset=0xa9b6 (bank1.mat) x=183 y=100
+078C: (06) yieldTask // PAUSE SCRIPT TASK
+078D: (D5) SHAPE_0xD5 offset=0xaa58 (bank1.mat) x=183 y=100
+0791: (06) yieldTask // PAUSE SCRIPT TASK
+0792: (D5) SHAPE_0xD5 offset=0xaade (bank1.mat) x=183 y=100
+0796: (06) yieldTask // PAUSE SCRIPT TASK
+0797: (D5) SHAPE_0xD5 offset=0xab50 (bank1.mat) x=183 y=100
+079B: (06) yieldTask // PAUSE SCRIPT TASK
+079C: (D5) SHAPE_0xD5 offset=0xab9e (bank1.mat) x=183 y=100
+07A0: (06) yieldTask // PAUSE SCRIPT TASK
+07A1: (07) jmp(@0E37)
+07A4: (11) removeTask // STOP SCRIPT TASK
+07A5: loc_07A5:
+07A5: (06) yieldTask // PAUSE SCRIPT TASK
+07A6: (18) playSound(res=10, freq=7, vol=63, channel=3)
+07AC: (18) playSound(res=10, freq=20, vol=63, channel=2)
+07B2: (0F) copyPage(src=3, dst=0)
+07B5: (0B) setPalette(num=23)
+07B8: (00) VAR(0x01) = 1
+07BC: loc_07BC:
+07BC: (06) yieldTask // PAUSE SCRIPT TASK
+07BD: (09) jmpIfVar(VAR(0x01), @07BC)
+07C1: (18) playSound(res=10, freq=15, vol=63, channel=1)
+07C7: (0B) setPalette(num=24)
+07CA: (00) VAR(0x01) = 1
+07CE: loc_07CE:
+07CE: (06) yieldTask // PAUSE SCRIPT TASK
+07CF: (0E) fillPage(page=255, color=8)
+07D2: (06) yieldTask // PAUSE SCRIPT TASK
+07D3: (09) jmpIfVar(VAR(0x01), @07CE)
+07D7: (08) installTask(4, @0CD4)
+07DB: (E7) SHAPE_0xE7 offset=0xcfa8 (bank1.mat) x=160 y=100
+07DF: (18) playSound(res=44, freq=20, vol=63, channel=3)
+07E5: (06) yieldTask // PAUSE SCRIPT TASK
+07E6: (E8) SHAPE_0xE8 offset=0xd050 (bank1.mat) x=160 y=100
+07EA: (18) playSound(res=10, freq=20, vol=63, channel=3)
+07F0: (06) yieldTask // PAUSE SCRIPT TASK
+07F1: (E8) SHAPE_0xE8 offset=0xd0c0 (bank1.mat) x=160 y=100
+07F5: (18) playSound(res=44, freq=20, vol=63, channel=3)
+07FB: (06) yieldTask // PAUSE SCRIPT TASK
+07FC: (E8) SHAPE_0xE8 offset=0xd130 (bank1.mat) x=160 y=100
+0800: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0806: (06) yieldTask // PAUSE SCRIPT TASK
+0807: (E8) SHAPE_0xE8 offset=0xd1a0 (bank1.mat) x=160 y=100
+080B: (18) playSound(res=14, freq=20, vol=63, channel=2)
+0811: (06) yieldTask // PAUSE SCRIPT TASK
+0812: (E9) SHAPE_0xE9 offset=0xd210 (bank1.mat) x=160 y=100
+0816: (18) playSound(res=10, freq=5, vol=63, channel=0)
+081C: (06) yieldTask // PAUSE SCRIPT TASK
+081D: (E9) SHAPE_0xE9 offset=0xd280 (bank1.mat) x=160 y=100
+0821: (18) playSound(res=10, freq=20, vol=63, channel=1)
+0827: (06) yieldTask // PAUSE SCRIPT TASK
+0828: (E9) SHAPE_0xE9 offset=0xd2fc (bank1.mat) x=160 y=100
+082C: (06) yieldTask // PAUSE SCRIPT TASK
+082D: (E9) SHAPE_0xE9 offset=0xd374 (bank1.mat) x=160 y=100
+0831: (06) yieldTask // PAUSE SCRIPT TASK
+0832: (E9) SHAPE_0xE9 offset=0xd3a4 (bank1.mat) x=160 y=100
+0836: (06) yieldTask // PAUSE SCRIPT TASK
+0837: (E9) SHAPE_0xE9 offset=0xd3c4 (bank1.mat) x=160 y=100
+083B: (06) yieldTask // PAUSE SCRIPT TASK
+083C: (EA) SHAPE_0xEA offset=0xd400 (bank1.mat) x=160 y=100
+0840: (06) yieldTask // PAUSE SCRIPT TASK
+0841: (EA) SHAPE_0xEA offset=0xd440 (bank1.mat) x=160 y=100
+0845: (18) playSound(res=10, freq=12, vol=63, channel=3)
+084B: (06) yieldTask // PAUSE SCRIPT TASK
+084C: (EA) SHAPE_0xEA offset=0xd48c (bank1.mat) x=160 y=100
+0850: (06) yieldTask // PAUSE SCRIPT TASK
+0851: (EA) SHAPE_0xEA offset=0xd4ec (bank1.mat) x=160 y=100
+0855: (06) yieldTask // PAUSE SCRIPT TASK
+0856: (EA) SHAPE_0xEA offset=0xd550 (bank1.mat) x=160 y=100
+085A: (06) yieldTask // PAUSE SCRIPT TASK
+085B: (EA) SHAPE_0xEA offset=0xd5b4 (bank1.mat) x=160 y=100
+085F: (06) yieldTask // PAUSE SCRIPT TASK
+0860: (EB) SHAPE_0xEB offset=0xd620 (bank1.mat) x=160 y=100
+0864: (06) yieldTask // PAUSE SCRIPT TASK
+0865: (EB) SHAPE_0xEB offset=0xd66c (bank1.mat) x=160 y=100
+0869: (06) yieldTask // PAUSE SCRIPT TASK
+086A: (EB) SHAPE_0xEB offset=0xd6e8 (bank1.mat) x=160 y=100
+086E: (06) yieldTask // PAUSE SCRIPT TASK
+086F: (EB) SHAPE_0xEB offset=0xd780 (bank1.mat) x=160 y=100
+0873: (18) playSound(res=10, freq=2, vol=63, channel=1)
+0879: (06) yieldTask // PAUSE SCRIPT TASK
+087A: (EC) SHAPE_0xEC offset=0xd822 (bank1.mat) x=160 y=100
+087E: (06) yieldTask // PAUSE SCRIPT TASK
+087F: (EC) SHAPE_0xEC offset=0xd892 (bank1.mat) x=160 y=100
+0883: (06) yieldTask // PAUSE SCRIPT TASK
+0884: (EC) SHAPE_0xEC offset=0xd902 (bank1.mat) x=160 y=100
+0888: (18) playSound(res=10, freq=20, vol=63, channel=0)
+088E: (18) playSound(res=10, freq=1, vol=63, channel=2)
+0894: (06) yieldTask // PAUSE SCRIPT TASK
+0895: (08) installTask(4, @007D)
+0899: (00) VAR(0xFF) = 2
+089D: (00) VAR(0x01) = 3
+08A1: loc_08A1:
+08A1: (0E) fillPage(page=255, color=8)
+08A4: (06) yieldTask // PAUSE SCRIPT TASK
+08A5: (0E) fillPage(page=255, color=0)
+08A8: (06) yieldTask // PAUSE SCRIPT TASK
+08A9: (09) jmpIfVar(VAR(0x01), @08A1)
+08AD: (0E) fillPage(page=255, color=8)
+08B0: (0D) selectPage(page=0)
+08B2: (EC) SHAPE_0xEC offset=0xd9ee (bank1.mat) x=160 y=100
+08B6: (0D) selectPage(page=255)
+08B8: (06) yieldTask // PAUSE SCRIPT TASK
+08B9: (0E) fillPage(page=255, color=0)
+08BC: (0D) selectPage(page=0)
+08BE: (ED) SHAPE_0xED offset=0xda7e (bank1.mat) x=160 y=100
+08C2: (18) playSound(res=14, freq=2, vol=63, channel=3)
+08C8: (0D) selectPage(page=255)
+08CA: (06) yieldTask // PAUSE SCRIPT TASK
+08CB: (0E) fillPage(page=255, color=8)
+08CE: (0D) selectPage(page=0)
+08D0: (EE) SHAPE_0xEE offset=0xdc20 (bank1.mat) x=160 y=100
+08D4: (18) playSound(res=15, freq=2, vol=63, channel=3)
+08DA: (0D) selectPage(page=255)
+08DC: (06) yieldTask // PAUSE SCRIPT TASK
+08DD: (0E) fillPage(page=255, color=0)
+08E0: (06) yieldTask // PAUSE SCRIPT TASK
+08E1: (0B) setPalette(num=23)
+08E4: (18) playSound(res=3, freq=20, vol=10, channel=3)
+08EA: (08) installTask(4, @0CE2)
+08EE: (08) installTask(11, @0A27)
+08F2: (08) installTask(12, @0A53)
+08F6: (08) installTask(13, @0A92)
+08FA: (08) installTask(14, @0AAE)
+08FE: (08) installTask(15, @0AD5)
+0902: (08) installTask(16, @0B37)
+0906: (08) installTask(17, @0BCC)
+090A: (08) installTask(18, @0C2B)
+090E: (08) installTask(20, @0C68)
+0912: (08) installTask(21, @0C9E)
+0916: (00) VAR(0x01) = 100
+091A: loc_091A:
+091A: (06) yieldTask // PAUSE SCRIPT TASK
+091B: (09) jmpIfVar(VAR(0x01), @091A)
+091F: (18) playSound(res=3, freq=20, vol=18, channel=3)
+0925: (E7) SHAPE_0xE7 offset=0xcfa8 (bank1.mat) x=160 y=100
+0929: (06) yieldTask // PAUSE SCRIPT TASK
+092A: (18) playSound(res=3, freq=20, vol=16, channel=3)
+0930: (E8) SHAPE_0xE8 offset=0xd050 (bank1.mat) x=160 y=100
+0934: (06) yieldTask // PAUSE SCRIPT TASK
+0935: (18) playSound(res=3, freq=20, vol=14, channel=3)
+093B: (E8) SHAPE_0xE8 offset=0xd0c0 (bank1.mat) x=160 y=100
+093F: (18) playSound(res=14, freq=2, vol=50, channel=3)
+0945: (06) yieldTask // PAUSE SCRIPT TASK
+0946: (18) playSound(res=3, freq=20, vol=12, channel=3)
+094C: (E8) SHAPE_0xE8 offset=0xd130 (bank1.mat) x=160 y=100
+0950: (18) playSound(res=14, freq=5, vol=50, channel=2)
+0956: (06) yieldTask // PAUSE SCRIPT TASK
+0957: (18) playSound(res=3, freq=20, vol=10, channel=3)
+095D: (E8) SHAPE_0xE8 offset=0xd1a0 (bank1.mat) x=160 y=100
+0961: (18) playSound(res=14, freq=1, vol=63, channel=0)
+0967: (06) yieldTask // PAUSE SCRIPT TASK
+0968: (18) playSound(res=3, freq=20, vol=8, channel=3)
+096E: (E9) SHAPE_0xE9 offset=0xd210 (bank1.mat) x=160 y=100
+0972: (06) yieldTask // PAUSE SCRIPT TASK
+0973: (18) playSound(res=3, freq=20, vol=6, channel=3)
+0979: (E9) SHAPE_0xE9 offset=0xd280 (bank1.mat) x=160 y=100
+097D: (08) installTask(4, @007D)
+0981: (18) playSound(res=14, freq=6, vol=63, channel=1)
+0987: (06) yieldTask // PAUSE SCRIPT TASK
+0988: (18) playSound(res=3, freq=20, vol=4, channel=3)
+098E: (E9) SHAPE_0xE9 offset=0xd2fc (bank1.mat) x=160 y=100
+0992: (06) yieldTask // PAUSE SCRIPT TASK
+0993: (0B) setPalette(num=24)
+0996: (18) playSound(res=3, freq=20, vol=2, channel=3)
+099C: (E9) SHAPE_0xE9 offset=0xd374 (bank1.mat) x=160 y=100
+09A0: (06) yieldTask // PAUSE SCRIPT TASK
+09A1: (0B) setPalette(num=26)
+09A4: (18) playSound(res=14, freq=0, vol=63, channel=3)
+09AA: (E9) SHAPE_0xE9 offset=0xd374 (bank1.mat) x=160 y=100
+09AE: (06) yieldTask // PAUSE SCRIPT TASK
+09AF: (08) installTask(20, @007D)
+09B3: (08) installTask(21, @007D)
+09B7: (08) installTask(10, @007D)
+09BB: (08) installTask(11, @007D)
+09BF: (08) installTask(12, @007D)
+09C3: (08) installTask(13, @007D)
+09C7: (08) installTask(16, @007D)
+09CB: (06) yieldTask // PAUSE SCRIPT TASK
+09CC: (0B) setPalette(num=24)
+09CF: (06) yieldTask // PAUSE SCRIPT TASK
+09D0: (0B) setPalette(num=23)
+09D3: (00) VAR(0x01) = 30
+09D7: loc_09D7:
+09D7: (06) yieldTask // PAUSE SCRIPT TASK
+09D8: (09) jmpIfVar(VAR(0x01), @09D7)
+09DC: (08) installTask(18, @0C2B)
+09E0: (08) installTask(14, @007D)
+09E4: (08) installTask(17, @007D)
+09E8: (08) installTask(15, @007D)
+09EC: (00) VAR(0x01) = 30
+09F0: loc_09F0:
+09F0: (06) yieldTask // PAUSE SCRIPT TASK
+09F1: (09) jmpIfVar(VAR(0x01), @09F0)
+09F5: (0E) fillPage(page=0, color=0)
+09F8: (0E) fillPage(page=255, color=0)
+09FB: (0B) setPalette(num=30)
+09FE: (0D) selectPage(page=0)
+0A00: (12) drawString(str=0x1F9, x=11, y=80, color=1)
+0A06: (0D) selectPage(page=255)
+0A08: (00) VAR(0x03) = 40
+0A0C: loc_0A0C:
+0A0C: (06) yieldTask // PAUSE SCRIPT TASK
+0A0D: (09) jmpIfVar(VAR(0x03), @0A0C)
+0A11: (0B) setPalette(num=29)
+0A14: (19) updateResources(res=19)
+0A17: (04) call(@007E)
+0A1A: (00) VAR(0x03) = 40
+0A1E: loc_0A1E:
+0A1E: (06) yieldTask // PAUSE SCRIPT TASK
+0A1F: (09) jmpIfVar(VAR(0x03), @0A1E)
+0A23: (19) updateResources(res=16002)
+0A26: (11) removeTask // STOP SCRIPT TASK
+
+0A27: // START OF SCRIPT TASK
+0A27: loc_0A27:
+0A27: (06) yieldTask // PAUSE SCRIPT TASK
+0A28: (18) playSound(res=44, freq=20, vol=63, channel=0)
+0A2E: (F5) SHAPE_0xF5 offset=0xebaa (bank1.mat) x=160 y=100
+0A32: (06) yieldTask // PAUSE SCRIPT TASK
+0A33: (F5) SHAPE_0xF5 offset=0xebc2 (bank1.mat) x=160 y=100
+0A37: (06) yieldTask // PAUSE SCRIPT TASK
+0A38: (F5) SHAPE_0xF5 offset=0xebda (bank1.mat) x=160 y=100
+0A3C: (06) yieldTask // PAUSE SCRIPT TASK
+0A3D: (F5) SHAPE_0xF5 offset=0xebf2 (bank1.mat) x=160 y=100
+0A41: (06) yieldTask // PAUSE SCRIPT TASK
+0A42: (F6) SHAPE_0xF6 offset=0xec0e (bank1.mat) x=160 y=100
+0A46: (00) VAR(0x02) = 90
+0A4A: loc_0A4A:
+0A4A: (06) yieldTask // PAUSE SCRIPT TASK
+0A4B: (09) jmpIfVar(VAR(0x02), @0A4A)
+0A4F: (07) jmp(@0A27)
+0A52: (11) removeTask // STOP SCRIPT TASK
+
+0A53: // START OF SCRIPT TASK
+0A53: loc_0A53:
+0A53: (F6) SHAPE_0xF6 offset=0xecf2 (bank1.mat) x=160 y=100
+0A57: (06) yieldTask // PAUSE SCRIPT TASK
+0A58: (F6) SHAPE_0xF6 offset=0xed1a (bank1.mat) x=160 y=100
+0A5C: (06) yieldTask // PAUSE SCRIPT TASK
+0A5D: (F6) SHAPE_0xF6 offset=0xed42 (bank1.mat) x=160 y=100
+0A61: (06) yieldTask // PAUSE SCRIPT TASK
+0A62: (F6) SHAPE_0xF6 offset=0xed6a (bank1.mat) x=160 y=100
+0A66: (06) yieldTask // PAUSE SCRIPT TASK
+0A67: (18) playSound(res=44, freq=10, vol=32, channel=1)
+0A6D: (F6) SHAPE_0xF6 offset=0xed92 (bank1.mat) x=160 y=100
+0A71: (06) yieldTask // PAUSE SCRIPT TASK
+0A72: (F6) SHAPE_0xF6 offset=0xedba (bank1.mat) x=160 y=100
+0A76: (06) yieldTask // PAUSE SCRIPT TASK
+0A77: (F6) SHAPE_0xF6 offset=0xede2 (bank1.mat) x=160 y=100
+0A7B: (06) yieldTask // PAUSE SCRIPT TASK
+0A7C: (F7) SHAPE_0xF7 offset=0xee06 (bank1.mat) x=160 y=100
+0A80: (06) yieldTask // PAUSE SCRIPT TASK
+0A81: (F7) SHAPE_0xF7 offset=0xee26 (bank1.mat) x=160 y=100
+0A85: (00) VAR(0x04) = 36
+0A89: loc_0A89:
+0A89: (06) yieldTask // PAUSE SCRIPT TASK
+0A8A: (09) jmpIfVar(VAR(0x04), @0A89)
+0A8E: (07) jmp(@0A53)
+0A91: (11) removeTask // STOP SCRIPT TASK
+
+0A92: // START OF SCRIPT TASK
+0A92: loc_0A92:
+0A92: (06) yieldTask // PAUSE SCRIPT TASK
+0A93: (F6) SHAPE_0xF6 offset=0xec32 (bank1.mat) x=160 y=100
+0A97: (06) yieldTask // PAUSE SCRIPT TASK
+0A98: (F6) SHAPE_0xF6 offset=0xec4e (bank1.mat) x=160 y=100
+0A9C: (06) yieldTask // PAUSE SCRIPT TASK
+0A9D: (F6) SHAPE_0xF6 offset=0xec9e (bank1.mat) x=160 y=100
+0AA1: (00) VAR(0x06) = 60
+0AA5: loc_0AA5:
+0AA5: (06) yieldTask // PAUSE SCRIPT TASK
+0AA6: (09) jmpIfVar(VAR(0x06), @0AA5)
+0AAA: (07) jmp(@0A92)
+0AAD: (11) removeTask // STOP SCRIPT TASK
+
+0AAE: // START OF SCRIPT TASK
+0AAE: loc_0AAE:
+0AAE: (06) yieldTask // PAUSE SCRIPT TASK
+0AAF: (F7) SHAPE_0xF7 offset=0xee3a (bank1.mat) x=160 y=100
+0AB3: (06) yieldTask // PAUSE SCRIPT TASK
+0AB4: (F7) SHAPE_0xF7 offset=0xee5e (bank1.mat) x=160 y=100
+0AB8: (06) yieldTask // PAUSE SCRIPT TASK
+0AB9: (F7) SHAPE_0xF7 offset=0xee82 (bank1.mat) x=160 y=100
+0ABD: (06) yieldTask // PAUSE SCRIPT TASK
+0ABE: (18) playSound(res=44, freq=15, vol=63, channel=2)
+0AC4: (F7) SHAPE_0xF7 offset=0xeea6 (bank1.mat) x=160 y=100
+0AC8: (00) VAR(0x08) = 50
+0ACC: loc_0ACC:
+0ACC: (06) yieldTask // PAUSE SCRIPT TASK
+0ACD: (09) jmpIfVar(VAR(0x08), @0ACC)
+0AD1: (07) jmp(@0AAE)
+0AD4: (11) removeTask // STOP SCRIPT TASK
+
+0AD5: // START OF SCRIPT TASK
+0AD5: loc_0AD5:
+0AD5: (06) yieldTask // PAUSE SCRIPT TASK
+0AD6: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=112 y=127
+0ADA: (06) yieldTask // PAUSE SCRIPT TASK
+0ADB: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=113 y=129
+0ADF: (06) yieldTask // PAUSE SCRIPT TASK
+0AE0: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=115 y=131
+0AE4: (06) yieldTask // PAUSE SCRIPT TASK
+0AE5: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=116 y=133
+0AE9: (06) yieldTask // PAUSE SCRIPT TASK
+0AEA: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=117 y=136
+0AEE: (06) yieldTask // PAUSE SCRIPT TASK
+0AEF: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=118 y=138
+0AF3: (06) yieldTask // PAUSE SCRIPT TASK
+0AF4: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=120 y=140
+0AF8: (06) yieldTask // PAUSE SCRIPT TASK
+0AF9: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=122 y=142
+0AFD: (06) yieldTask // PAUSE SCRIPT TASK
+0AFE: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=123 y=144
+0B02: (06) yieldTask // PAUSE SCRIPT TASK
+0B03: (F7) SHAPE_0xF7 offset=0xeeda (bank1.mat) x=125 y=147
+0B07: (06) yieldTask // PAUSE SCRIPT TASK
+0B08: (F7) SHAPE_0xF7 offset=0xeeda (bank1.mat) x=127 y=149
+0B0C: (06) yieldTask // PAUSE SCRIPT TASK
+0B0D: (F7) SHAPE_0xF7 offset=0xeeda (bank1.mat) x=128 y=151
+0B11: (06) yieldTask // PAUSE SCRIPT TASK
+0B12: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=130 y=153
+0B16: (06) yieldTask // PAUSE SCRIPT TASK
+0B17: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=132 y=155
+0B1B: (06) yieldTask // PAUSE SCRIPT TASK
+0B1C: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=133 y=158
+0B20: (06) yieldTask // PAUSE SCRIPT TASK
+0B21: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=133 y=160
+0B25: (06) yieldTask // PAUSE SCRIPT TASK
+0B26: (F7) SHAPE_0xF7 offset=0xeeca (bank1.mat) x=133 y=162
+0B2A: (00) VAR(0x0A) = 30
+0B2E: loc_0B2E:
+0B2E: (06) yieldTask // PAUSE SCRIPT TASK
+0B2F: (09) jmpIfVar(VAR(0x0A), @0B2E)
+0B33: (07) jmp(@0AD5)
+0B36: (11) removeTask // STOP SCRIPT TASK
+
+0B37: // START OF SCRIPT TASK
+0B37: loc_0B37:
+0B37: (06) yieldTask // PAUSE SCRIPT TASK
+0B38: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=254 y=142
+0B3C: (06) yieldTask // PAUSE SCRIPT TASK
+0B3D: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=254 y=144
+0B41: (06) yieldTask // PAUSE SCRIPT TASK
+0B42: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=254 y=146
+0B46: (06) yieldTask // PAUSE SCRIPT TASK
+0B47: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=253 y=148
+0B4B: (06) yieldTask // PAUSE SCRIPT TASK
+0B4C: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=253 y=150
+0B50: (06) yieldTask // PAUSE SCRIPT TASK
+0B51: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=253 y=151
+0B55: (06) yieldTask // PAUSE SCRIPT TASK
+0B56: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=253 y=154
+0B5A: (06) yieldTask // PAUSE SCRIPT TASK
+0B5B: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=253 y=156
+0B5F: (06) yieldTask // PAUSE SCRIPT TASK
+0B60: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=253 y=158
+0B64: (06) yieldTask // PAUSE SCRIPT TASK
+0B65: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=252 y=159
+0B69: (06) yieldTask // PAUSE SCRIPT TASK
+0B6A: (F7) SHAPE_0xF7 offset=0xeeea (bank1.mat) x=252 y=160
+0B6E: (06) yieldTask // PAUSE SCRIPT TASK
+0B6F: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=250 y=162
+0B73: (06) yieldTask // PAUSE SCRIPT TASK
+0B74: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=250 y=163
+0B78: (06) yieldTask // PAUSE SCRIPT TASK
+0B79: (18) playSound(res=14, freq=8, vol=32, channel=2)
+0B7F: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=248 y=167
+0B83: (06) yieldTask // PAUSE SCRIPT TASK
+0B84: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=247 y=169
+0B88: (06) yieldTask // PAUSE SCRIPT TASK
+0B89: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=246 y=172
+0B8D: (06) yieldTask // PAUSE SCRIPT TASK
+0B8E: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=245 y=174
+0B92: (06) yieldTask // PAUSE SCRIPT TASK
+0B93: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=243 y=176
+0B97: (06) yieldTask // PAUSE SCRIPT TASK
+0B98: (F7) SHAPE_0xF7 offset=0xeefa (bank1.mat) x=242 y=178
+0B9C: (06) yieldTask // PAUSE SCRIPT TASK
+0B9D: (F7) SHAPE_0xF7 offset=0xef0a (bank1.mat) x=144 y=158
+0BA1: (06) yieldTask // PAUSE SCRIPT TASK
+0BA2: (F7) SHAPE_0xF7 offset=0xef1a (bank1.mat) x=144 y=160
+0BA6: (06) yieldTask // PAUSE SCRIPT TASK
+0BA7: (F7) SHAPE_0xF7 offset=0xef2a (bank1.mat) x=145 y=162
+0BAB: (06) yieldTask // PAUSE SCRIPT TASK
+0BAC: (F7) SHAPE_0xF7 offset=0xef3a (bank1.mat) x=145 y=163
+0BB0: (06) yieldTask // PAUSE SCRIPT TASK
+0BB1: (F7) SHAPE_0xF7 offset=0xef2a (bank1.mat) x=145 y=167
+0BB5: (06) yieldTask // PAUSE SCRIPT TASK
+0BB6: (F7) SHAPE_0xF7 offset=0xef1a (bank1.mat) x=145 y=169
+0BBA: (06) yieldTask // PAUSE SCRIPT TASK
+0BBB: (F7) SHAPE_0xF7 offset=0xef0a (bank1.mat) x=145 y=171
+0BBF: (00) VAR(0x0C) = 10
+0BC3: loc_0BC3:
+0BC3: (06) yieldTask // PAUSE SCRIPT TASK
+0BC4: (09) jmpIfVar(VAR(0x0C), @0BC3)
+0BC8: (07) jmp(@0B37)
+0BCB: (11) removeTask // STOP SCRIPT TASK
+
+0BCC: // START OF SCRIPT TASK
+0BCC: loc_0BCC:
+0BCC: (06) yieldTask // PAUSE SCRIPT TASK
+0BCD: (F7) SHAPE_0xF7 offset=0xef4a (bank1.mat) x=176 y=157
+0BD1: (06) yieldTask // PAUSE SCRIPT TASK
+0BD2: (F7) SHAPE_0xF7 offset=0xef5a (bank1.mat) x=176 y=157
+0BD6: (06) yieldTask // PAUSE SCRIPT TASK
+0BD7: (F7) SHAPE_0xF7 offset=0xef6a (bank1.mat) x=175 y=159
+0BDB: (06) yieldTask // PAUSE SCRIPT TASK
+0BDC: (F7) SHAPE_0xF7 offset=0xef7a (bank1.mat) x=175 y=156
+0BE0: (06) yieldTask // PAUSE SCRIPT TASK
+0BE1: (F7) SHAPE_0xF7 offset=0xef6a (bank1.mat) x=176 y=159
+0BE5: (06) yieldTask // PAUSE SCRIPT TASK
+0BE6: (F7) SHAPE_0xF7 offset=0xef5a (bank1.mat) x=175 y=157
+0BEA: (06) yieldTask // PAUSE SCRIPT TASK
+0BEB: (F7) SHAPE_0xF7 offset=0xef4a (bank1.mat) x=176 y=157
+0BEF: (00) VAR(0x0E) = 7
+0BF3: loc_0BF3:
+0BF3: (06) yieldTask // PAUSE SCRIPT TASK
+0BF4: (09) jmpIfVar(VAR(0x0E), @0BF3)
+0BF8: (F7) SHAPE_0xF7 offset=0xef8a (bank1.mat) x=149 y=158
+0BFC: (06) yieldTask // PAUSE SCRIPT TASK
+0BFD: (F7) SHAPE_0xF7 offset=0xef9a (bank1.mat) x=150 y=159
+0C01: (06) yieldTask // PAUSE SCRIPT TASK
+0C02: (F7) SHAPE_0xF7 offset=0xefaa (bank1.mat) x=150 y=160
+0C06: (06) yieldTask // PAUSE SCRIPT TASK
+0C07: (F7) SHAPE_0xF7 offset=0xef9a (bank1.mat) x=151 y=160
+0C0B: (00) VAR(0x0E) = 5
+0C0F: loc_0C0F:
+0C0F: (06) yieldTask // PAUSE SCRIPT TASK
+0C10: (09) jmpIfVar(VAR(0x0E), @0C0F)
+0C14: (F7) SHAPE_0xF7 offset=0xef0a (bank1.mat) x=134 y=166
+0C18: (06) yieldTask // PAUSE SCRIPT TASK
+0C19: (F7) SHAPE_0xF7 offset=0xef1a (bank1.mat) x=134 y=170
+0C1D: (06) yieldTask // PAUSE SCRIPT TASK
+0C1E: (F7) SHAPE_0xF7 offset=0xef2a (bank1.mat) x=134 y=169
+0C22: (06) yieldTask // PAUSE SCRIPT TASK
+0C23: (F7) SHAPE_0xF7 offset=0xef3a (bank1.mat) x=134 y=169
+0C27: (07) jmp(@0BCC)
+0C2A: (11) removeTask // STOP SCRIPT TASK
+
+0C2B: // START OF SCRIPT TASK
+0C2B: (06) yieldTask // PAUSE SCRIPT TASK
+0C2C: (00) VAR(0x0D) = 20
+0C30: loc_0C30:
+0C30: (06) yieldTask // PAUSE SCRIPT TASK
+0C31: (09) jmpIfVar(VAR(0x0D), @0C30)
+0C35: (18) playSound(res=44, freq=8, vol=32, channel=1)
+0C3B: (F8) SHAPE_0xF8 offset=0xf08a (bank1.mat) x=198 y=136
+0C3F: (06) yieldTask // PAUSE SCRIPT TASK
+0C40: (F8) SHAPE_0xF8 offset=0xf0aa (bank1.mat) x=198 y=136
+0C44: (06) yieldTask // PAUSE SCRIPT TASK
+0C45: (F8) SHAPE_0xF8 offset=0xf0ca (bank1.mat) x=198 y=135
+0C49: (06) yieldTask // PAUSE SCRIPT TASK
+0C4A: (F8) SHAPE_0xF8 offset=0xf0ee (bank1.mat) x=199 y=138
+0C4E: (06) yieldTask // PAUSE SCRIPT TASK
+0C4F: (F8) SHAPE_0xF8 offset=0xf112 (bank1.mat) x=197 y=139
+0C53: (06) yieldTask // PAUSE SCRIPT TASK
+0C54: (F8) SHAPE_0xF8 offset=0xf136 (bank1.mat) x=205 y=144
+0C58: (06) yieldTask // PAUSE SCRIPT TASK
+0C59: (F8) SHAPE_0xF8 offset=0xf15a (bank1.mat) x=249 y=149
+0C5D: (06) yieldTask // PAUSE SCRIPT TASK
+0C5E: (F8) SHAPE_0xF8 offset=0xf176 (bank1.mat) x=252 y=150
+0C62: (06) yieldTask // PAUSE SCRIPT TASK
+0C63: (F8) SHAPE_0xF8 offset=0xf192 (bank1.mat) x=254 y=145
+0C67: (11) removeTask // STOP SCRIPT TASK
+
+0C68: // START OF SCRIPT TASK
+0C68: loc_0C68:
+0C68: (06) yieldTask // PAUSE SCRIPT TASK
+0C69: (F7) SHAPE_0xF7 offset=0xefca (bank1.mat) x=229 y=40
+0C6D: (06) yieldTask // PAUSE SCRIPT TASK
+0C6E: (F7) SHAPE_0xF7 offset=0xefe2 (bank1.mat) x=229 y=40
+0C72: (06) yieldTask // PAUSE SCRIPT TASK
+0C73: (F7) SHAPE_0xF7 offset=0xeffa (bank1.mat) x=229 y=40
+0C77: (06) yieldTask // PAUSE SCRIPT TASK
+0C78: (F8) SHAPE_0xF8 offset=0xf012 (bank1.mat) x=229 y=40
+0C7C: (06) yieldTask // PAUSE SCRIPT TASK
+0C7D: (18) playSound(res=44, freq=25, vol=10, channel=1)
+0C83: (F7) SHAPE_0xF7 offset=0xeffa (bank1.mat) x=229 y=40
+0C87: (06) yieldTask // PAUSE SCRIPT TASK
+0C88: (F7) SHAPE_0xF7 offset=0xefe2 (bank1.mat) x=229 y=40
+0C8C: (06) yieldTask // PAUSE SCRIPT TASK
+0C8D: (F7) SHAPE_0xF7 offset=0xefca (bank1.mat) x=229 y=40
+0C91: (00) VAR(0x0F) = 22
+0C95: loc_0C95:
+0C95: (06) yieldTask // PAUSE SCRIPT TASK
+0C96: (09) jmpIfVar(VAR(0x0F), @0C95)
+0C9A: (07) jmp(@0C68)
+0C9D: (11) removeTask // STOP SCRIPT TASK
+
+0C9E: // START OF SCRIPT TASK
+0C9E: loc_0C9E:
+0C9E: (06) yieldTask // PAUSE SCRIPT TASK
+0C9F: (F8) SHAPE_0xF8 offset=0xf02a (bank1.mat) x=194 y=29
+0CA3: (06) yieldTask // PAUSE SCRIPT TASK
+0CA4: (F8) SHAPE_0xF8 offset=0xf042 (bank1.mat) x=196 y=29
+0CA8: (06) yieldTask // PAUSE SCRIPT TASK
+0CA9: (F8) SHAPE_0xF8 offset=0xf05a (bank1.mat) x=197 y=29
+0CAD: (06) yieldTask // PAUSE SCRIPT TASK
+0CAE: (F8) SHAPE_0xF8 offset=0xf072 (bank1.mat) x=197 y=29
+0CB2: (18) playSound(res=14, freq=27, vol=15, channel=0)
+0CB8: (06) yieldTask // PAUSE SCRIPT TASK
+0CB9: (F8) SHAPE_0xF8 offset=0xf05a (bank1.mat) x=197 y=29
+0CBD: (06) yieldTask // PAUSE SCRIPT TASK
+0CBE: (F8) SHAPE_0xF8 offset=0xf042 (bank1.mat) x=196 y=29
+0CC2: (06) yieldTask // PAUSE SCRIPT TASK
+0CC3: (F8) SHAPE_0xF8 offset=0xf02a (bank1.mat) x=194 y=29
+0CC7: (00) VAR(0x10) = 25
+0CCB: loc_0CCB:
+0CCB: (06) yieldTask // PAUSE SCRIPT TASK
+0CCC: (09) jmpIfVar(VAR(0x10), @0CCB)
+0CD0: (07) jmp(@0C9E)
+0CD3: (11) removeTask // STOP SCRIPT TASK
+
+0CD4: // START OF SCRIPT TASK
+0CD4: loc_0CD4:
+0CD4: (0B) setPalette(num=24)
+0CD7: (06) yieldTask // PAUSE SCRIPT TASK
+0CD8: (06) yieldTask // PAUSE SCRIPT TASK
+0CD9: (06) yieldTask // PAUSE SCRIPT TASK
+0CDA: (0B) setPalette(num=26)
+0CDD: (06) yieldTask // PAUSE SCRIPT TASK
+0CDE: (07) jmp(@0CD4)
+0CE1: (11) removeTask // STOP SCRIPT TASK
+
+0CE2: // START OF SCRIPT TASK
+0CE2: loc_0CE2:
+0CE2: (0B) setPalette(num=23)
+0CE5: (00) VAR(0x14) = 30
+0CE9: loc_0CE9:
+0CE9: (06) yieldTask // PAUSE SCRIPT TASK
+0CEA: (09) jmpIfVar(VAR(0x14), @0CE9)
+0CEE: (0B) setPalette(num=24)
+0CF1: (06) yieldTask // PAUSE SCRIPT TASK
+0CF2: (0B) setPalette(num=26)
+0CF5: (06) yieldTask // PAUSE SCRIPT TASK
+0CF6: (0B) setPalette(num=24)
+0CF9: (06) yieldTask // PAUSE SCRIPT TASK
+0CFA: (0B) setPalette(num=23)
+0CFD: (06) yieldTask // PAUSE SCRIPT TASK
+0CFE: (06) yieldTask // PAUSE SCRIPT TASK
+0CFF: (06) yieldTask // PAUSE SCRIPT TASK
+0D00: (06) yieldTask // PAUSE SCRIPT TASK
+0D01: (0B) setPalette(num=24)
+0D04: (06) yieldTask // PAUSE SCRIPT TASK
+0D05: (07) jmp(@0CE2)
+0D08: (11) removeTask // STOP SCRIPT TASK
+0D09: loc_0D09:
+0D09: (06) yieldTask // PAUSE SCRIPT TASK
+0D0A: (0D) selectPage(page=3)
+0D0C: (0E) fillPage(page=3, color=2)
+0D0F: (04) call(@1D6F)
+0D12: (FD) SHAPE_0xFD offset=0xfb26 (bank1.mat) x=160 y=101
+0D16: (9F) SHAPE_0x9F offset=0x3f6c (bank1.mat) x=187 y=101
+0D1A: (0D) selectPage(page=255)
+0D1C: (0E) fillPage(page=255, color=2)
+0D1F: (98) SHAPE_0x98 offset=0x3052 (bank1.mat) x=160 y=100
+0D23: (F5) SHAPE_0xF5 offset=0xea1c (bank1.mat) x=160 y=100
+0D27: (F5) SHAPE_0xF5 offset=0xea30 (bank1.mat) x=160 y=100
+0D2B: (0F) copyPage(src=255, dst=0)
+0D2E: (0B) setPalette(num=22)
+0D31: (06) yieldTask // PAUSE SCRIPT TASK
+0D32: (C4) SHAPE_0xC4 offset=0x887c (bank1.mat) x=160 y=100
+0D36: (18) playSound(res=44, freq=20, vol=63, channel=3)
+0D3C: (06) yieldTask // PAUSE SCRIPT TASK
+0D3D: (C4) SHAPE_0xC4 offset=0x8890 (bank1.mat) x=160 y=100
+0D41: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0D47: (06) yieldTask // PAUSE SCRIPT TASK
+0D48: (C4) SHAPE_0xC4 offset=0x8958 (bank1.mat) x=160 y=100
+0D4C: (18) playSound(res=44, freq=20, vol=63, channel=3)
+0D52: (06) yieldTask // PAUSE SCRIPT TASK
+0D53: (C5) SHAPE_0xC5 offset=0x8a24 (bank1.mat) x=160 y=100
+0D57: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0D5D: (06) yieldTask // PAUSE SCRIPT TASK
+0D5E: (C5) SHAPE_0xC5 offset=0x8ae0 (bank1.mat) x=160 y=100
+0D62: (18) playSound(res=44, freq=20, vol=63, channel=3)
+0D68: (06) yieldTask // PAUSE SCRIPT TASK
+0D69: (C5) SHAPE_0xC5 offset=0x8b90 (bank1.mat) x=160 y=100
+0D6D: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0D73: (06) yieldTask // PAUSE SCRIPT TASK
+0D74: (C6) SHAPE_0xC6 offset=0x8c04 (bank1.mat) x=160 y=100
+0D78: (18) playSound(res=44, freq=20, vol=63, channel=3)
+0D7E: (06) yieldTask // PAUSE SCRIPT TASK
+0D7F: (C6) SHAPE_0xC6 offset=0x8c68 (bank1.mat) x=160 y=100
+0D83: (18) playSound(res=44, freq=10, vol=63, channel=3)
+0D89: (06) yieldTask // PAUSE SCRIPT TASK
+0D8A: (C6) SHAPE_0xC6 offset=0x8cd8 (bank1.mat) x=160 y=100
+0D8E: (06) yieldTask // PAUSE SCRIPT TASK
+0D8F: (C6) SHAPE_0xC6 offset=0x8d4a (bank1.mat) x=160 y=100
+0D93: (06) yieldTask // PAUSE SCRIPT TASK
+0D94: (C6) SHAPE_0xC6 offset=0x8da0 (bank1.mat) x=160 y=100
+0D98: (06) yieldTask // PAUSE SCRIPT TASK
+0D99: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0D9F: (C6) SHAPE_0xC6 offset=0x8df0 (bank1.mat) x=160 y=100
+0DA3: (06) yieldTask // PAUSE SCRIPT TASK
+0DA4: (C7) SHAPE_0xC7 offset=0x8e10 (bank1.mat) x=160 y=100
+0DA8: (06) yieldTask // PAUSE SCRIPT TASK
+0DA9: (C7) SHAPE_0xC7 offset=0x8e30 (bank1.mat) x=160 y=100
+0DAD: (06) yieldTask // PAUSE SCRIPT TASK
+0DAE: (C7) SHAPE_0xC7 offset=0x8e3e (bank1.mat) x=160 y=100
+0DB2: (06) yieldTask // PAUSE SCRIPT TASK
+0DB3: (18) playSound(res=14, freq=2, vol=63, channel=3)
+0DB9: (00) VAR(0x01) = 18
+0DBD: loc_0DBD:
+0DBD: (06) yieldTask // PAUSE SCRIPT TASK
+0DBE: (09) jmpIfVar(VAR(0x01), @0DBD)
+0DC2: (0B) setPalette(num=21)
+0DC5: (C7) SHAPE_0xC7 offset=0x8e48 (bank1.mat) x=160 y=100
+0DC9: (18) playSound(res=14, freq=20, vol=63, channel=3)
+0DCF: (06) yieldTask // PAUSE SCRIPT TASK
+0DD0: (C7) SHAPE_0xC7 offset=0x8eb0 (bank1.mat) x=160 y=100
+0DD4: (18) playSound(res=14, freq=20, vol=63, channel=3)
+0DDA: (06) yieldTask // PAUSE SCRIPT TASK
+0DDB: (C8) SHAPE_0xC8 offset=0x9084 (bank1.mat) x=160 y=100
+0DDF: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0DE5: (06) yieldTask // PAUSE SCRIPT TASK
+0DE6: (C8) SHAPE_0xC8 offset=0x91f8 (bank1.mat) x=160 y=100
+0DEA: (18) playSound(res=14, freq=20, vol=63, channel=3)
+0DF0: (06) yieldTask // PAUSE SCRIPT TASK
+0DF1: (C9) SHAPE_0xC9 offset=0x9328 (bank1.mat) x=160 y=100
+0DF5: (18) playSound(res=14, freq=20, vol=63, channel=3)
+0DFB: (06) yieldTask // PAUSE SCRIPT TASK
+0DFC: (CA) SHAPE_0xCA offset=0x944c (bank1.mat) x=160 y=100
+0E00: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0E06: (06) yieldTask // PAUSE SCRIPT TASK
+0E07: (CA) SHAPE_0xCA offset=0x9550 (bank1.mat) x=160 y=100
+0E0B: (18) playSound(res=14, freq=20, vol=63, channel=3)
+0E11: (06) yieldTask // PAUSE SCRIPT TASK
+0E12: (6A) SHAPE_0x6A offset=0x9550 (bank1.mat) x=160 y=100
+0E18: (18) playSound(res=10, freq=10, vol=63, channel=3)
+0E1E: (06) yieldTask // PAUSE SCRIPT TASK
+0E1F: (07) jmp(@07A5)
+0E22: (11) removeTask // STOP SCRIPT TASK
+
+0E23: // START OF SCRIPT TASK
+0E23: (0D) selectPage(page=3)
+0E25: (0E) fillPage(page=3, color=1)
+0E28: (95) SHAPE_0x95 offset=0x2bf2 (bank1.mat) x=160 y=100
+0E2C: (E5) SHAPE_0xE5 offset=0xcbbc (bank1.mat) x=160 y=100
+0E30: (E5) SHAPE_0xE5 offset=0xcbcc (bank1.mat) x=160 y=100
+0E34: (0D) selectPage(page=255)
+0E36: (11) removeTask // STOP SCRIPT TASK
+0E37: loc_0E37:
+0E37: (0F) copyPage(src=3, dst=0)
+0E3A: (0B) setPalette(num=22)
+0E3D: (00) VAR(0x01) = 10
+0E41: (1A) playMusic(res=0, delay=12000, pos=15)
+0E47: loc_0E47:
+0E47: (06) yieldTask // PAUSE SCRIPT TASK
+0E48: (09) jmpIfVar(VAR(0x01), @0E47)
+0E4C: (C1) SHAPE_0xC1 offset=0x83a8 (bank1.mat) x=160 y=100
+0E50: (18) playSound(res=44, freq=30, vol=63, channel=3)
+0E56: (06) yieldTask // PAUSE SCRIPT TASK
+0E57: (C1) SHAPE_0xC1 offset=0x83c8 (bank1.mat) x=160 y=100
+0E5B: (06) yieldTask // PAUSE SCRIPT TASK
+0E5C: (C2) SHAPE_0xC2 offset=0x84d4 (bank1.mat) x=160 y=100
+0E60: (18) playSound(res=44, freq=27, vol=57, channel=3)
+0E66: (06) yieldTask // PAUSE SCRIPT TASK
+0E67: (C2) SHAPE_0xC2 offset=0x859c (bank1.mat) x=160 y=100
+0E6B: (18) playSound(res=44, freq=25, vol=50, channel=3)
+0E71: (06) yieldTask // PAUSE SCRIPT TASK
+0E72: (C3) SHAPE_0xC3 offset=0x8664 (bank1.mat) x=160 y=100
+0E76: (18) playSound(res=10, freq=20, vol=40, channel=3)
+0E7C: (06) yieldTask // PAUSE SCRIPT TASK
+0E7D: (C3) SHAPE_0xC3 offset=0x8714 (bank1.mat) x=160 y=100
+0E81: (18) playSound(res=10, freq=15, vol=30, channel=3)
+0E87: (06) yieldTask // PAUSE SCRIPT TASK
+0E88: (C3) SHAPE_0xC3 offset=0x87a8 (bank1.mat) x=160 y=100
+0E8C: (18) playSound(res=44, freq=10, vol=28, channel=3)
+0E92: (06) yieldTask // PAUSE SCRIPT TASK
+0E93: (C4) SHAPE_0xC4 offset=0x8824 (bank1.mat) x=160 y=100
+0E97: (18) playSound(res=10, freq=30, vol=63, channel=3)
+0E9D: (06) yieldTask // PAUSE SCRIPT TASK
+0E9E: (C4) SHAPE_0xC4 offset=0x8860 (bank1.mat) x=160 y=100
+0EA2: (18) playSound(res=10, freq=30, vol=63, channel=3)
+0EA8: (06) yieldTask // PAUSE SCRIPT TASK
+0EA9: (00) VAR(0x01) = 7
+0EAD: loc_0EAD:
+0EAD: (06) yieldTask // PAUSE SCRIPT TASK
+0EAE: (09) jmpIfVar(VAR(0x01), @0EAD)
+0EB2: (0B) setPalette(num=21)
+0EB5: (BA) SHAPE_0xBA offset=0x75c0 (bank1.mat) x=160 y=100
+0EB9: (18) playSound(res=10, freq=30, vol=63, channel=3)
+0EBF: (06) yieldTask // PAUSE SCRIPT TASK
+0EC0: (BB) SHAPE_0xBB offset=0x760c (bank1.mat) x=160 y=100
+0EC4: (18) playSound(res=10, freq=30, vol=63, channel=3)
+0ECA: (06) yieldTask // PAUSE SCRIPT TASK
+0ECB: (0E) fillPage(page=255, color=15)
+0ECE: (18) playSound(res=10, freq=30, vol=63, channel=2)
+0ED4: (18) playSound(res=10, freq=10, vol=63, channel=3)
+0EDA: (06) yieldTask // PAUSE SCRIPT TASK
+0EDB: (BB) SHAPE_0xBB offset=0x76fc (bank1.mat) x=160 y=100
+0EDF: (18) playSound(res=10, freq=30, vol=63, channel=3)
+0EE5: (06) yieldTask // PAUSE SCRIPT TASK
+0EE6: (BB) SHAPE_0xBB offset=0x77e4 (bank1.mat) x=160 y=100
+0EEA: (18) playSound(res=10, freq=30, vol=63, channel=3)
+0EF0: (06) yieldTask // PAUSE SCRIPT TASK
+0EF1: (BC) SHAPE_0xBC offset=0x78f4 (bank1.mat) x=160 y=100
+0EF5: (18) playSound(res=10, freq=5, vol=63, channel=2)
+0EFB: (06) yieldTask // PAUSE SCRIPT TASK
+0EFC: (BD) SHAPE_0xBD offset=0x7ac0 (bank1.mat) x=160 y=100
+0F00: (18) playSound(res=15, freq=20, vol=63, channel=3)
+0F06: (06) yieldTask // PAUSE SCRIPT TASK
+0F07: (BE) SHAPE_0xBE offset=0x7c78 (bank1.mat) x=160 y=100
+0F0B: (18) playSound(res=10, freq=20, vol=50, channel=2)
+0F11: (18) playSound(res=10, freq=30, vol=63, channel=3)
+0F17: (06) yieldTask // PAUSE SCRIPT TASK
+0F18: (BE) SHAPE_0xBE offset=0x7db8 (bank1.mat) x=160 y=100
+0F1C: (18) playSound(res=44, freq=2, vol=63, channel=3)
+0F22: (06) yieldTask // PAUSE SCRIPT TASK
+0F23: (BF) SHAPE_0xBF offset=0x7edc (bank1.mat) x=160 y=100
+0F27: (18) playSound(res=44, freq=2, vol=63, channel=3)
+0F2D: (06) yieldTask // PAUSE SCRIPT TASK
+0F2E: (BF) SHAPE_0xBF offset=0x7fe4 (bank1.mat) x=160 y=100
+0F32: (18) playSound(res=10, freq=20, vol=63, channel=3)
+0F38: (06) yieldTask // PAUSE SCRIPT TASK
+0F39: (C0) SHAPE_0xC0 offset=0x80ac (bank1.mat) x=160 y=100
+0F3D: (18) playSound(res=10, freq=2, vol=50, channel=3)
+0F43: (06) yieldTask // PAUSE SCRIPT TASK
+0F44: (C0) SHAPE_0xC0 offset=0x8174 (bank1.mat) x=160 y=100
+0F48: (18) playSound(res=44, freq=10, vol=63, channel=3)
+0F4E: (18) playSound(res=44, freq=2, vol=63, channel=2)
+0F54: (06) yieldTask // PAUSE SCRIPT TASK
+0F55: (C1) SHAPE_0xC1 offset=0x8218 (bank1.mat) x=160 y=100
+0F59: (18) playSound(res=10, freq=2, vol=40, channel=3)
+0F5F: (06) yieldTask // PAUSE SCRIPT TASK
+0F60: (C1) SHAPE_0xC1 offset=0x827c (bank1.mat) x=160 y=100
+0F64: (18) playSound(res=44, freq=2, vol=63, channel=3)
+0F6A: (06) yieldTask // PAUSE SCRIPT TASK
+0F6B: (C1) SHAPE_0xC1 offset=0x82d4 (bank1.mat) x=160 y=100
+0F6F: (18) playSound(res=10, freq=20, vol=50, channel=3)
+0F75: (06) yieldTask // PAUSE SCRIPT TASK
+0F76: (C1) SHAPE_0xC1 offset=0x8324 (bank1.mat) x=160 y=100
+0F7A: (18) playSound(res=44, freq=2, vol=50, channel=3)
+0F80: (06) yieldTask // PAUSE SCRIPT TASK
+0F81: (C1) SHAPE_0xC1 offset=0x8364 (bank1.mat) x=160 y=100
+0F85: (06) yieldTask // PAUSE SCRIPT TASK
+0F86: (18) playSound(res=14, freq=5, vol=63, channel=3)
+0F8C: (18) playSound(res=14, freq=1, vol=63, channel=2)
+0F92: (07) jmp(@0D09)
+0F95: (11) removeTask // STOP SCRIPT TASK
+
+0F96: // START OF SCRIPT TASK
+0F96: (0E) fillPage(page=255, color=4)
+0F99: (F5) SHAPE_0xF5 offset=0xea92 (bank1.mat) x=160 y=100
+0F9D: (0F) copyPage(src=255, dst=0)
+0FA0: (0B) setPalette(num=19)
+0FA3: (00) VAR(0xFF) = 6
+0FA7: (AC) SHAPE_0xAC offset=0x59ba (bank1.mat) x=160 y=100
+0FAB: (06) yieldTask // PAUSE SCRIPT TASK
+0FAC: (AC) SHAPE_0xAC offset=0x59c6 (bank1.mat) x=160 y=100
+0FB0: (06) yieldTask // PAUSE SCRIPT TASK
+0FB1: (AC) SHAPE_0xAC offset=0x59d2 (bank1.mat) x=160 y=100
+0FB5: (06) yieldTask // PAUSE SCRIPT TASK
+0FB6: (AC) SHAPE_0xAC offset=0x59de (bank1.mat) x=160 y=100
+0FBA: (06) yieldTask // PAUSE SCRIPT TASK
+0FBB: (AC) SHAPE_0xAC offset=0x59ea (bank1.mat) x=160 y=100
+0FBF: (06) yieldTask // PAUSE SCRIPT TASK
+0FC0: (AC) SHAPE_0xAC offset=0x59f6 (bank1.mat) x=160 y=100
+0FC4: (06) yieldTask // PAUSE SCRIPT TASK
+0FC5: (AD) SHAPE_0xAD offset=0x5a02 (bank1.mat) x=160 y=100
+0FC9: (06) yieldTask // PAUSE SCRIPT TASK
+0FCA: (AD) SHAPE_0xAD offset=0x5a0e (bank1.mat) x=160 y=100
+0FCE: (06) yieldTask // PAUSE SCRIPT TASK
+0FCF: (AD) SHAPE_0xAD offset=0x5a1a (bank1.mat) x=160 y=100
+0FD3: (06) yieldTask // PAUSE SCRIPT TASK
+0FD4: (AD) SHAPE_0xAD offset=0x5a26 (bank1.mat) x=160 y=100
+0FD8: (18) playSound(res=63, freq=20, vol=63, channel=3)
+0FDE: (06) yieldTask // PAUSE SCRIPT TASK
+0FDF: (00) VAR(0xFF) = 4
+0FE3: (AD) SHAPE_0xAD offset=0x5a32 (bank1.mat) x=160 y=100
+0FE7: (06) yieldTask // PAUSE SCRIPT TASK
+0FE8: (AD) SHAPE_0xAD offset=0x5a3e (bank1.mat) x=158 y=96
+0FEC: (06) yieldTask // PAUSE SCRIPT TASK
+0FED: (AD) SHAPE_0xAD offset=0x5a3e (bank1.mat) x=185 y=114
+0FF1: (06) yieldTask // PAUSE SCRIPT TASK
+0FF2: (AD) SHAPE_0xAD offset=0x5a3e (bank1.mat) x=196 y=123
+0FF6: (06) yieldTask // PAUSE SCRIPT TASK
+0FF7: (AD) SHAPE_0xAD offset=0x5a3e (bank1.mat) x=207 y=125
+0FFB: (06) yieldTask // PAUSE SCRIPT TASK
+0FFC: (AD) SHAPE_0xAD offset=0x5a3e (bank1.mat) x=212 y=132
+1000: (06) yieldTask // PAUSE SCRIPT TASK
+1001: (AD) SHAPE_0xAD offset=0x5a3e (bank1.mat) x=212 y=135
+1005: (06) yieldTask // PAUSE SCRIPT TASK
+1006: (0B) setPalette(num=20)
+1009: (00) VAR(0xFF) = 9
+100D: (0E) fillPage(page=255, color=4)
+1010: (F5) SHAPE_0xF5 offset=0xeb16 (bank1.mat) x=160 y=100
+1014: (0F) copyPage(src=255, dst=0)
+1017: (B6) SHAPE_0xB6 offset=0x6c04 (bank1.mat) x=154 y=123
+101B: (B3) SHAPE_0xB3 offset=0x660e (bank1.mat) x=180 y=100
+101F: (06) yieldTask // PAUSE SCRIPT TASK
+1020: (B6) SHAPE_0xB6 offset=0x6d68 (bank1.mat) x=154 y=123
+1024: (B2) SHAPE_0xB2 offset=0x64f0 (bank1.mat) x=180 y=100
+1028: (06) yieldTask // PAUSE SCRIPT TASK
+1029: (B7) SHAPE_0xB7 offset=0x6ed8 (bank1.mat) x=154 y=123
+102D: (B1) SHAPE_0xB1 offset=0x63a4 (bank1.mat) x=180 y=100
+1031: (06) yieldTask // PAUSE SCRIPT TASK
+1032: (B8) SHAPE_0xB8 offset=0x7048 (bank1.mat) x=154 y=123
+1036: (B3) SHAPE_0xB3 offset=0x6672 (bank1.mat) x=180 y=100
+103A: (06) yieldTask // PAUSE SCRIPT TASK
+103B: (B8) SHAPE_0xB8 offset=0x71b8 (bank1.mat) x=154 y=123
+103F: (B3) SHAPE_0xB3 offset=0x67c6 (bank1.mat) x=180 y=100
+1043: (18) playSound(res=64, freq=20, vol=40, channel=3)
+1049: (06) yieldTask // PAUSE SCRIPT TASK
+104A: (B9) SHAPE_0xB9 offset=0x7310 (bank1.mat) x=154 y=123
+104E: (B4) SHAPE_0xB4 offset=0x692c (bank1.mat) x=180 y=100
+1052: (00) VAR(0x02) = 3
+1056: loc_1056:
+1056: (00) VAR(0x01) = 2
+105A: loc_105A:
+105A: (06) yieldTask // PAUSE SCRIPT TASK
+105B: (BA) SHAPE_0xBA offset=0x7468 (bank1.mat) x=154 y=123
+105F: (B5) SHAPE_0xB5 offset=0x6a84 (bank1.mat) x=180 y=100
+1063: (0A) jmpIf(VAR(0xF4) == 43, @108E)
+1069: (09) jmpIfVar(VAR(0x01), @105A)
+106D: (00) VAR(0x01) = 4
+1071: (18) playSound(res=65, freq=20, vol=63, channel=3)
+1077: loc_1077:
+1077: (06) yieldTask // PAUSE SCRIPT TASK
+1078: (DD) SHAPE_0xDD offset=0xbb0a (bank1.mat) x=154 y=123
+107C: (B5) SHAPE_0xB5 offset=0x6a84 (bank1.mat) x=181 y=100
+1080: (0A) jmpIf(VAR(0xF4) == 43, @108E)
+1086: (09) jmpIfVar(VAR(0x01), @1077)
+108A: (09) jmpIfVar(VAR(0x02), @1056)
+108E: loc_108E:
+108E: (08) installTask(2, @1441)
+1092: (11) removeTask // STOP SCRIPT TASK
+
+1093: // START OF SCRIPT TASK
+1093: (0E) fillPage(page=255, color=2)
+1096: (A7) SHAPE_0xA7 offset=0x4f70 (bank1.mat) x=145 y=117
+109A: (E2) SHAPE_0xE2 offset=0xc4a8 (bank1.mat) x=160 y=100
+109E: (A7) SHAPE_0xA7 offset=0x4f24 (bank1.mat) x=145 y=108
+10A2: (E2) SHAPE_0xE2 offset=0xc436 (bank1.mat) x=145 y=108
+10A6: (A6) SHAPE_0xA6 offset=0x4d8a (bank1.mat) x=95 y=100
+10AA: (0F) copyPage(src=255, dst=0)
+10AD: (0B) setPalette(num=18)
+10B0: (11) removeTask // STOP SCRIPT TASK
+
+10B1: // START OF SCRIPT TASK
+10B1: (08) installTask(6, @11EE)
+10B5: (08) installTask(7, @1201)
+10B9: (08) installTask(3, @11DB)
+10BD: (08) installTask(1, @11C7)
+10C1: (00) VAR(0x03) = 195
+10C5: (00) VAR(0x04) = 100
+10C9: (00) VAR(0x01) = 7
+10CD: loc_10CD:
+10CD: (06) yieldTask // PAUSE SCRIPT TASK
+10CE: (09) jmpIfVar(VAR(0x01), @10CD)
+10D2: (0D) selectPage(page=0)
+10D4: (F9) SHAPE_0xF9 offset=0xf24c (bank1.mat) x=200 y=102
+10D8: (F9) SHAPE_0xF9 offset=0xf27c (bank1.mat) x=125 y=99
+10DC: (0D) selectPage(page=255)
+10DE: (06) yieldTask // PAUSE SCRIPT TASK
+10DF: (00) VAR(0x01) = 8
+10E3: loc_10E3:
+10E3: (06) yieldTask // PAUSE SCRIPT TASK
+10E4: (09) jmpIfVar(VAR(0x01), @10E3)
+10E8: (08) installTask(60, @0159)
+10EC: (08) installTask(3, @007D)
+10F0: (08) installTask(6, @007D)
+10F4: (08) installTask(7, @007D)
+10F8: (0D) selectPage(page=0)
+10FA: (00) VAR(0xFF) = 1
+10FE: (00) VAR(0x01) = 6
+1102: loc_1102:
+1102: (06) yieldTask // PAUSE SCRIPT TASK
+1103: (03) VAR(0x03) -= 2
+1107: (03) VAR(0x04) += 1
+110B: (09) jmpIfVar(VAR(0x01), @1102)
+110F: (00) VAR(0x01) = 4
+1113: loc_1113:
+1113: (06) yieldTask // PAUSE SCRIPT TASK
+1114: (03) VAR(0x03) -= 3
+1118: (03) VAR(0x04) += 0
+111C: (09) jmpIfVar(VAR(0x01), @1113)
+1120: (00) VAR(0x01) = 10
+1124: loc_1124:
+1124: (06) yieldTask // PAUSE SCRIPT TASK
+1125: (03) VAR(0x03) -= 3
+1129: (03) VAR(0x04) -= 1
+112D: (09) jmpIfVar(VAR(0x01), @1124)
+1131: (00) VAR(0x01) = 4
+1135: loc_1135:
+1135: (06) yieldTask // PAUSE SCRIPT TASK
+1136: (03) VAR(0x03) -= 2
+113A: (03) VAR(0x04) -= 1
+113E: (09) jmpIfVar(VAR(0x01), @1135)
+1142: (08) installTask(60, @014A)
+1146: (06) yieldTask // PAUSE SCRIPT TASK
+1147: (08) installTask(1, @11D1)
+114B: (03) VAR(0x03) -= 1
+114F: (03) VAR(0x04) -= 1
+1153: (00) VAR(0x01) = 5
+1157: loc_1157:
+1157: (06) yieldTask // PAUSE SCRIPT TASK
+1158: (03) VAR(0x03) -= 1
+115C: (03) VAR(0x04) -= 1
+1160: (09) jmpIfVar(VAR(0x01), @1157)
+1164: (00) VAR(0x01) = 10
+1168: loc_1168:
+1168: (06) yieldTask // PAUSE SCRIPT TASK
+1169: (09) jmpIfVar(VAR(0x01), @1168)
+116D: (0D) selectPage(page=0)
+116F: (F9) SHAPE_0xF9 offset=0xf2f8 (bank1.mat) x=131 y=48
+1173: (0D) selectPage(page=255)
+1175: (18) playSound(res=5, freq=30, vol=63, channel=2)
+117B: (06) yieldTask // PAUSE SCRIPT TASK
+117C: (F9) SHAPE_0xF9 offset=0xf2a0 (bank1.mat) x=117 y=39
+1180: (F9) SHAPE_0xF9 offset=0xf2b6 (bank1.mat) x=137 y=64
+1184: (F9) SHAPE_0xF9 offset=0xf2cc (bank1.mat) x=143 y=40
+1188: (F9) SHAPE_0xF9 offset=0xf2e2 (bank1.mat) x=129 y=56
+118C: (06) yieldTask // PAUSE SCRIPT TASK
+118D: (F9) SHAPE_0xF9 offset=0xf2e2 (bank1.mat) x=121 y=64
+1191: (F9) SHAPE_0xF9 offset=0xf2cc (bank1.mat) x=153 y=33
+1195: (F9) SHAPE_0xF9 offset=0xf2b6 (bank1.mat) x=143 y=73
+1199: (F9) SHAPE_0xF9 offset=0xf2a0 (bank1.mat) x=107 y=31
+119D: (06) yieldTask // PAUSE SCRIPT TASK
+119E: (F9) SHAPE_0xF9 offset=0xf2a0 (bank1.mat) x=96 y=20
+11A2: (F9) SHAPE_0xF9 offset=0xf2b6 (bank1.mat) x=149 y=83
+11A6: (F9) SHAPE_0xF9 offset=0xf2cc (bank1.mat) x=168 y=21
+11AA: (F9) SHAPE_0xF9 offset=0xf2e2 (bank1.mat) x=114 y=71
+11AE: (08) installTask(6, @007D)
+11B2: (08) installTask(7, @007D)
+11B6: (08) installTask(3, @007D)
+11BA: (08) installTask(1, @1219)
+11BE: (08) installTask(2, @122B)
+11C2: (08) installTask(5, @007D)
+11C6: (11) removeTask // STOP SCRIPT TASK
+
+11C7: // START OF SCRIPT TASK
+11C7: loc_11C7:
+11C7: (54) SHAPE_0x54 offset=0xf220 (bank1.mat) x=3 y=4
+11CC: (06) yieldTask // PAUSE SCRIPT TASK
+11CD: (07) jmp(@11C7)
+11D0: (11) removeTask // STOP SCRIPT TASK
+
+11D1: // START OF SCRIPT TASK
+11D1: loc_11D1:
+11D1: (54) SHAPE_0x54 offset=0xfbb6 (bank1.mat) x=3 y=4
+11D6: (06) yieldTask // PAUSE SCRIPT TASK
+11D7: (07) jmp(@11D1)
+11DA: (11) removeTask // STOP SCRIPT TASK
+
+11DB: // START OF SCRIPT TASK
+11DB: loc_11DB:
+11DB: (F1) SHAPE_0xF1 offset=0xe2a2 (bank1.mat) x=160 y=100
+11DF: (06) yieldTask // PAUSE SCRIPT TASK
+11E0: (F1) SHAPE_0xF1 offset=0xe306 (bank1.mat) x=160 y=100
+11E4: (06) yieldTask // PAUSE SCRIPT TASK
+11E5: (F1) SHAPE_0xF1 offset=0xe36e (bank1.mat) x=160 y=100
+11E9: (06) yieldTask // PAUSE SCRIPT TASK
+11EA: (07) jmp(@11DB)
+11ED: (11) removeTask // STOP SCRIPT TASK
+
+11EE: // START OF SCRIPT TASK
+11EE: loc_11EE:
+11EE: (EF) SHAPE_0xEF offset=0xde40 (bank1.mat) x=160 y=100
+11F2: (06) yieldTask // PAUSE SCRIPT TASK
+11F3: (EF) SHAPE_0xEF offset=0xdedc (bank1.mat) x=160 y=100
+11F7: (06) yieldTask // PAUSE SCRIPT TASK
+11F8: (EF) SHAPE_0xEF offset=0xdf4c (bank1.mat) x=160 y=100
+11FC: (06) yieldTask // PAUSE SCRIPT TASK
+11FD: (07) jmp(@11EE)
+1200: (11) removeTask // STOP SCRIPT TASK
+
+1201: // START OF SCRIPT TASK
+1201: loc_1201:
+1201: (EF) SHAPE_0xEF offset=0xdfd4 (bank1.mat) x=160 y=100
+1205: (06) yieldTask // PAUSE SCRIPT TASK
+1206: (F0) SHAPE_0xF0 offset=0xe08c (bank1.mat) x=160 y=100
+120A: (06) yieldTask // PAUSE SCRIPT TASK
+120B: (F0) SHAPE_0xF0 offset=0xe13e (bank1.mat) x=160 y=100
+120F: (06) yieldTask // PAUSE SCRIPT TASK
+1210: (F0) SHAPE_0xF0 offset=0xe1f0 (bank1.mat) x=160 y=100
+1214: (06) yieldTask // PAUSE SCRIPT TASK
+1215: (07) jmp(@1201)
+1218: (11) removeTask // STOP SCRIPT TASK
+
+1219: // START OF SCRIPT TASK
+1219: (0E) fillPage(page=255, color=2)
+121C: (F1) SHAPE_0xF1 offset=0xe3e4 (bank1.mat) x=160 y=100
+1220: (F4) SHAPE_0xF4 offset=0xe98a (bank1.mat) x=160 y=100
+1224: (0B) setPalette(num=9)
+1227: (0F) copyPage(src=255, dst=0)
+122A: (11) removeTask // STOP SCRIPT TASK
+
+122B: // START OF SCRIPT TASK
+122B: (08) installTask(1, @1866)
+122F: (08) installTask(10, @1592)
+1233: (08) installTask(16, @1599)
+1237: (00) VAR(0xFF) = 4
+123B: (00) VAR(0x01) = 1
+123F: loc_123F:
+123F: (06) yieldTask // PAUSE SCRIPT TASK
+1240: (09) jmpIfVar(VAR(0x01), @123F)
+1244: (0F) copyPage(src=0, dst=3)
+1247: (00) VAR(0x01) = 15
+124B: loc_124B:
+124B: (06) yieldTask // PAUSE SCRIPT TASK
+124C: (09) jmpIfVar(VAR(0x01), @124B)
+1250: (0D) selectPage(page=0)
+1252: (12) drawString(str=0x002, x=1, y=24, color=6)
+1258: (0D) selectPage(page=255)
+125A: (00) VAR(0x01) = 10
+125E: loc_125E:
+125E: (06) yieldTask // PAUSE SCRIPT TASK
+125F: (09) jmpIfVar(VAR(0x01), @125E)
+1263: (00) VAR(0x01) = 20
+1267: (0D) selectPage(page=0)
+1269: (12) drawString(str=0x007, x=1, y=150, color=6)
+126F: (0D) selectPage(page=255)
+1271: loc_1271:
+1271: (06) yieldTask // PAUSE SCRIPT TASK
+1272: (12) drawString(str=0x021, x=3, y=150, color=6)
+1278: (09) jmpIfVar(VAR(0x01), @1271)
+127C: (08) installTask(12, @1632)
+1280: (08) installTask(5, @15BC)
+1284: (00) VAR(0x01) = 50
+1288: loc_1288:
+1288: (06) yieldTask // PAUSE SCRIPT TASK
+1289: (09) jmpIfVar(VAR(0x01), @1288)
+128D: (0F) copyPage(src=3, dst=0)
+1290: (08) installTask(11, @16BE)
+1294: (00) VAR(0x01) = 20
+1298: loc_1298:
+1298: (06) yieldTask // PAUSE SCRIPT TASK
+1299: (09) jmpIfVar(VAR(0x01), @1298)
+129D: (0F) copyPage(src=0, dst=3)
+12A0: (0D) selectPage(page=0)
+12A2: (12) drawString(str=0x01A, x=20, y=60, color=6)
+12A8: (12) drawString(str=0x038, x=5, y=20, color=5)
+12AE: (0D) selectPage(page=255)
+12B0: (00) VAR(0x01) = 10
+12B4: loc_12B4:
+12B4: (06) yieldTask // PAUSE SCRIPT TASK
+12B5: (12) drawString(str=0x021, x=26, y=60, color=6)
+12BB: (09) jmpIfVar(VAR(0x01), @12B4)
+12BF: (00) VAR(0x01) = 15
+12C3: loc_12C3:
+12C3: (06) yieldTask // PAUSE SCRIPT TASK
+12C4: (12) drawString(str=0x021, x=27, y=68, color=6)
+12CA: (09) jmpIfVar(VAR(0x01), @12C3)
+12CE: (06) yieldTask // PAUSE SCRIPT TASK
+12CF: (12) drawString(str=0x021, x=29, y=84, color=6)
+12D5: (00) VAR(0x01) = 10
+12D9: loc_12D9:
+12D9: (06) yieldTask // PAUSE SCRIPT TASK
+12DA: (12) drawString(str=0x021, x=27, y=100, color=6)
+12E0: (09) jmpIfVar(VAR(0x01), @12D9)
+12E4: (0D) selectPage(page=0)
+12E6: (12) drawString(str=0x021, x=26, y=100, color=2)
+12EC: (0D) selectPage(page=255)
+12EE: (06) yieldTask // PAUSE SCRIPT TASK
+12EF: (0D) selectPage(page=0)
+12F1: (12) drawString(str=0x01C, x=26, y=100, color=6)
+12F7: (0D) selectPage(page=255)
+12F9: (12) drawString(str=0x021, x=26, y=100, color=6)
+12FF: (00) VAR(0x01) = 10
+1303: loc_1303:
+1303: (06) yieldTask // PAUSE SCRIPT TASK
+1304: (12) drawString(str=0x021, x=27, y=100, color=6)
+130A: (09) jmpIfVar(VAR(0x01), @1303)
+130E: (00) VAR(0x01) = 18
+1312: loc_1312:
+1312: (06) yieldTask // PAUSE SCRIPT TASK
+1313: (12) drawString(str=0x021, x=26, y=124, color=6)
+1319: (09) jmpIfVar(VAR(0x01), @1312)
+131D: (06) yieldTask // PAUSE SCRIPT TASK
+131E: (12) drawString(str=0x021, x=25, y=132, color=6)
+1324: (00) VAR(0x01) = 18
+1328: loc_1328:
+1328: (06) yieldTask // PAUSE SCRIPT TASK
+1329: (12) drawString(str=0x021, x=25, y=156, color=6)
+132F: (09) jmpIfVar(VAR(0x01), @1328)
+1333: (08) installTask(7, @15A0)
+1337: (00) VAR(0x01) = 37
+133B: loc_133B:
+133B: (06) yieldTask // PAUSE SCRIPT TASK
+133C: (09) jmpIfVar(VAR(0x01), @133B)
+1340: (0D) selectPage(page=0)
+1342: (12) drawString(str=0x194, x=36, y=170, color=6)
+1348: (0D) selectPage(page=255)
+134A: (00) VAR(0x01) = 15
+134E: loc_134E:
+134E: (06) yieldTask // PAUSE SCRIPT TASK
+134F: (09) jmpIfVar(VAR(0x01), @134E)
+1353: (0D) selectPage(page=3)
+1355: (F2) SHAPE_0xF2 offset=0xe5aa (bank1.mat) x=162 y=100
+1359: (F3) SHAPE_0xF3 offset=0xe77e (bank1.mat) x=234 y=163
+135D: (0D) selectPage(page=255)
+135F: (0F) copyPage(src=3, dst=0)
+1362: (06) yieldTask // PAUSE SCRIPT TASK
+1363: (0D) selectPage(page=0)
+1365: (12) drawString(str=0x022, x=8, y=2, color=6)
+136B: (0D) selectPage(page=255)
+136D: (08) installTask(7, @17D0)
+1371: (00) VAR(0x01) = 5
+1375: loc_1375:
+1375: (06) yieldTask // PAUSE SCRIPT TASK
+1376: (12) drawString(str=0x031, x=2, y=150, color=6)
+137C: (09) jmpIfVar(VAR(0x01), @1375)
+1380: (00) VAR(0x01) = 64
+1384: loc_1384:
+1384: (06) yieldTask // PAUSE SCRIPT TASK
+1385: (12) drawString(str=0x032, x=2, y=156, color=6)
+138B: (09) jmpIfVar(VAR(0x01), @1384)
+138F: (00) VAR(0xFF) = 5
+1393: (00) VAR(0x01) = 19
+1397: loc_1397:
+1397: (06) yieldTask // PAUSE SCRIPT TASK
+1398: (12) drawString(str=0x033, x=2, y=150, color=6)
+139E: (09) jmpIfVar(VAR(0x01), @1397)
+13A2: (00) VAR(0xFF) = 4
+13A6: (00) VAR(0x01) = 19
+13AA: loc_13AA:
+13AA: (06) yieldTask // PAUSE SCRIPT TASK
+13AB: (12) drawString(str=0x034, x=8, y=152, color=6)
+13B1: (09) jmpIfVar(VAR(0x01), @13AA)
+13B5: (00) VAR(0x01) = 25
+13B9: loc_13B9:
+13B9: (06) yieldTask // PAUSE SCRIPT TASK
+13BA: (12) drawString(str=0x035, x=2, y=140, color=6)
+13C0: (0A) jmpIf(VAR(0xF4) > 32, @13DF)
+13C6: (09) jmpIfVar(VAR(0x01), @13B9)
+13CA: (00) VAR(0x01) = 10
+13CE: loc_13CE:
+13CE: (06) yieldTask // PAUSE SCRIPT TASK
+13CF: (12) drawString(str=0x036, x=2, y=80, color=6)
+13D5: (0A) jmpIf(VAR(0xF4) > 32, @13DF)
+13DB: (09) jmpIfVar(VAR(0x01), @13CE)
+13DF: loc_13DF:
+13DF: (0F) copyPage(src=3, dst=0)
+13E2: (0D) selectPage(page=0)
+13E4: (12) drawString(str=0x023, x=0, y=80, color=6)
+13EA: (0D) selectPage(page=255)
+13EC: (00) VAR(0xFF) = 5
+13F0: (00) VAR(0x01) = 10
+13F4: (06) yieldTask // PAUSE SCRIPT TASK
+13F5: loc_13F5:
+13F5: (0A) jmpIf(VAR(0xF4) == 34, @1406)
+13FB: (12) drawString(str=0x024, x=28, y=80, color=6)
+1401: (06) yieldTask // PAUSE SCRIPT TASK
+1402: (09) jmpIfVar(VAR(0x01), @13F5)
+1406: loc_1406:
+1406: (00) VAR(0x01) = 10
+140A: loc_140A:
+140A: (0A) jmpIf(VAR(0xF4) == 35, @141B)
+1410: (12) drawString(str=0x025, x=28, y=80, color=6)
+1416: (06) yieldTask // PAUSE SCRIPT TASK
+1417: (09) jmpIfVar(VAR(0x01), @140A)
+141B: loc_141B:
+141B: (00) VAR(0x01) = 10
+141F: loc_141F:
+141F: (12) drawString(str=0x026, x=28, y=80, color=6)
+1425: (06) yieldTask // PAUSE SCRIPT TASK
+1426: (09) jmpIfVar(VAR(0x01), @141F)
+142A: (12) drawString(str=0x04C, x=28, y=80, color=6)
+1430: (08) installTask(16, @007D)
+1434: (08) installTask(10, @007D)
+1438: (08) installTask(2, @0F96)
+143C: (08) installTask(1, @007D)
+1440: (11) removeTask // STOP SCRIPT TASK
+
+1441: // START OF SCRIPT TASK
+1441: (0F) copyPage(src=3, dst=255)
+1444: (12) drawString(str=0x023, x=0, y=80, color=6)
+144A: (0F) copyPage(src=255, dst=0)
+144D: (00) VAR(0xFF) = 5
+1451: (08) installTask(3, @17A3)
+1455: (08) installTask(4, @007D)
+1459: (08) installTask(5, @007D)
+145D: (08) installTask(6, @007D)
+1461: (08) installTask(1, @1866)
+1465: (0B) setPalette(num=9)
+1468: (00) VAR(0x01) = 11
+146C: loc_146C:
+146C: (0A) jmpIf(VAR(0xF4) == 44, @147D)
+1472: (12) drawString(str=0x04B, x=28, y=80, color=6)
+1478: (06) yieldTask // PAUSE SCRIPT TASK
+1479: (09) jmpIfVar(VAR(0x01), @146C)
+147D: loc_147D:
+147D: (00) VAR(0x01) = 11
+1481: loc_1481:
+1481: (0A) jmpIf(VAR(0xF4) == 45, @1492)
+1487: (12) drawString(str=0x027, x=28, y=80, color=6)
+148D: (06) yieldTask // PAUSE SCRIPT TASK
+148E: (09) jmpIfVar(VAR(0x01), @1481)
+1492: loc_1492:
+1492: (00) VAR(0x01) = 11
+1496: loc_1496:
+1496: (0A) jmpIf(VAR(0xF4) == 46, @14A7)
+149C: (12) drawString(str=0x028, x=28, y=80, color=6)
+14A2: (06) yieldTask // PAUSE SCRIPT TASK
+14A3: (09) jmpIfVar(VAR(0x01), @1496)
+14A7: loc_14A7:
+14A7: (00) VAR(0x01) = 11
+14AB: loc_14AB:
+14AB: (0A) jmpIf(VAR(0xF4) == 47, @14BC)
+14B1: (12) drawString(str=0x029, x=28, y=80, color=13)
+14B7: (06) yieldTask // PAUSE SCRIPT TASK
+14B8: (09) jmpIfVar(VAR(0x01), @14AB)
+14BC: loc_14BC:
+14BC: (00) VAR(0x01) = 11
+14C0: loc_14C0:
+14C0: (0A) jmpIf(VAR(0xF4) == 48, @14D1)
+14C6: (12) drawString(str=0x02A, x=28, y=80, color=13)
+14CC: (06) yieldTask // PAUSE SCRIPT TASK
+14CD: (09) jmpIfVar(VAR(0x01), @14C0)
+14D1: loc_14D1:
+14D1: (12) drawString(str=0x02B, x=28, y=80, color=15)
+14D7: (0F) copyPage(src=3, dst=0)
+14DA: (00) VAR(0xFF) = 4
+14DE: (08) installTask(7, @17D0)
+14E2: (08) installTask(4, @007D)
+14E6: (08) installTask(5, @007D)
+14EA: (08) installTask(6, @007D)
+14EE: (00) VAR(0x01) = 40
+14F2: loc_14F2:
+14F2: (06) yieldTask // PAUSE SCRIPT TASK
+14F3: (0A) jmpIf(VAR(0xF4) != 49, @1503)
+14F9: (1A) playMusic(res=0, delay=0, pos=0)
+14FF: (00) VAR(0xF4) = 0
+1503: loc_1503:
+1503: (09) jmpIfVar(VAR(0x01), @14F2)
+1507: (0E) fillPage(page=255, color=0)
+150A: (0E) fillPage(page=0, color=0)
+150D: (08) installTask(3, @007D)
+1511: (08) installTask(1, @007D)
+1515: (08) installTask(7, @007D)
+1519: (0B) setPalette(num=25)
+151C: (0D) selectPage(page=0)
+151E: (12) drawString(str=0x1F8, x=5, y=80, color=15)
+1524: (0D) selectPage(page=255)
+1526: (00) VAR(0x03) = 50
+152A: loc_152A:
+152A: (06) yieldTask // PAUSE SCRIPT TASK
+152B: (09) jmpIfVar(VAR(0x03), @152A)
+152F: (0E) fillPage(page=0, color=0)
+1532: (0E) fillPage(page=255, color=0)
+1535: (08) installTask(2, @0639)
+1539: (11) removeTask // STOP SCRIPT TASK
+153A: loc_153A:
+153A: (12) drawString(str=0x044, x=2, y=20, color=5)
+1540: (06) yieldTask // PAUSE SCRIPT TASK
+1541: (12) drawString(str=0x045, x=2, y=20, color=5)
+1547: (06) yieldTask // PAUSE SCRIPT TASK
+1548: (07) jmp(@153A)
+154B: (11) removeTask // STOP SCRIPT TASK
+154C: loc_154C:
+154C: (12) drawString(str=0x03E, x=10, y=120, color=4)
+1552: (06) yieldTask // PAUSE SCRIPT TASK
+1553: (12) drawString(str=0x03F, x=10, y=120, color=4)
+1559: (06) yieldTask // PAUSE SCRIPT TASK
+155A: (12) drawString(str=0x046, x=11, y=120, color=4)
+1560: (06) yieldTask // PAUSE SCRIPT TASK
+1561: (12) drawString(str=0x047, x=11, y=120, color=4)
+1567: (06) yieldTask // PAUSE SCRIPT TASK
+1568: (12) drawString(str=0x040, x=10, y=120, color=4)
+156E: (06) yieldTask // PAUSE SCRIPT TASK
+156F: (07) jmp(@154C)
+1572: loc_1572:
+1572: (12) drawString(str=0x03F, x=11, y=132, color=4)
+1578: (06) yieldTask // PAUSE SCRIPT TASK
+1579: (12) drawString(str=0x041, x=11, y=132, color=4)
+157F: (06) yieldTask // PAUSE SCRIPT TASK
+1580: (12) drawString(str=0x042, x=11, y=132, color=4)
+1586: (06) yieldTask // PAUSE SCRIPT TASK
+1587: (12) drawString(str=0x043, x=11, y=132, color=4)
+158D: (06) yieldTask // PAUSE SCRIPT TASK
+158E: (07) jmp(@1572)
+1591: (11) removeTask // STOP SCRIPT TASK
+
+1592: // START OF SCRIPT TASK
+1592: loc_1592:
+1592: (0D) selectPage(page=0)
+1594: (06) yieldTask // PAUSE SCRIPT TASK
+1595: (07) jmp(@1592)
+1598: (11) removeTask // STOP SCRIPT TASK
+
+1599: // START OF SCRIPT TASK
+1599: loc_1599:
+1599: (0D) selectPage(page=255)
+159B: (06) yieldTask // PAUSE SCRIPT TASK
+159C: (07) jmp(@1599)
+159F: (11) removeTask // STOP SCRIPT TASK
+
+15A0: // START OF SCRIPT TASK
+15A0: loc_15A0:
+15A0: (00) VAR(0x03) = 10
+15A4: loc_15A4:
+15A4: (06) yieldTask // PAUSE SCRIPT TASK
+15A5: (12) drawString(str=0x039, x=5, y=170, color=6)
+15AB: (09) jmpIfVar(VAR(0x03), @15A4)
+15AF: (00) VAR(0x03) = 8
+15B3: loc_15B3:
+15B3: (06) yieldTask // PAUSE SCRIPT TASK
+15B4: (09) jmpIfVar(VAR(0x03), @15B3)
+15B8: (07) jmp(@15A0)
+15BB: (11) removeTask // STOP SCRIPT TASK
+
+15BC: // START OF SCRIPT TASK
+15BC: (06) yieldTask // PAUSE SCRIPT TASK
+15BD: (12) drawString(str=0x021, x=5, y=150, color=6)
+15C3: (06) yieldTask // PAUSE SCRIPT TASK
+15C4: (12) drawString(str=0x021, x=6, y=150, color=6)
+15CA: (06) yieldTask // PAUSE SCRIPT TASK
+15CB: (12) drawString(str=0x021, x=7, y=150, color=6)
+15D1: (06) yieldTask // PAUSE SCRIPT TASK
+15D2: (12) drawString(str=0x021, x=7, y=150, color=6)
+15D8: (06) yieldTask // PAUSE SCRIPT TASK
+15D9: (12) drawString(str=0x021, x=9, y=150, color=6)
+15DF: (06) yieldTask // PAUSE SCRIPT TASK
+15E0: (12) drawString(str=0x021, x=10, y=150, color=6)
+15E6: (06) yieldTask // PAUSE SCRIPT TASK
+15E7: (12) drawString(str=0x021, x=10, y=150, color=6)
+15ED: (06) yieldTask // PAUSE SCRIPT TASK
+15EE: (12) drawString(str=0x021, x=11, y=150, color=6)
+15F4: (06) yieldTask // PAUSE SCRIPT TASK
+15F5: (12) drawString(str=0x021, x=12, y=150, color=6)
+15FB: (06) yieldTask // PAUSE SCRIPT TASK
+15FC: (12) drawString(str=0x021, x=12, y=150, color=6)
+1602: (06) yieldTask // PAUSE SCRIPT TASK
+1603: (12) drawString(str=0x021, x=13, y=150, color=6)
+1609: (06) yieldTask // PAUSE SCRIPT TASK
+160A: (12) drawString(str=0x021, x=14, y=150, color=6)
+1610: (06) yieldTask // PAUSE SCRIPT TASK
+1611: (12) drawString(str=0x021, x=15, y=150, color=6)
+1617: (06) yieldTask // PAUSE SCRIPT TASK
+1618: (00) VAR(0x02) = 10
+161C: loc_161C:
+161C: (12) drawString(str=0x021, x=17, y=150, color=6)
+1622: (06) yieldTask // PAUSE SCRIPT TASK
+1623: (09) jmpIfVar(VAR(0x02), @161C)
+1627: (0D) selectPage(page=0)
+1629: (12) drawString(str=0x021, x=3, y=158, color=6)
+162F: (0D) selectPage(page=255)
+1631: (11) removeTask // STOP SCRIPT TASK
+
+1632: // START OF SCRIPT TASK
+1632: (12) drawString(str=0x00A, x=3, y=150, color=6)
+1638: (12) drawString(str=0x00B, x=4, y=150, color=6)
+163E: (18) playSound(res=51, freq=20, vol=63, channel=2)
+1644: (06) yieldTask // PAUSE SCRIPT TASK
+1645: (12) drawString(str=0x00C, x=5, y=150, color=6)
+164B: (18) playSound(res=51, freq=17, vol=63, channel=2)
+1651: (06) yieldTask // PAUSE SCRIPT TASK
+1652: (06) yieldTask // PAUSE SCRIPT TASK
+1653: (06) yieldTask // PAUSE SCRIPT TASK
+1654: (12) drawString(str=0x00D, x=7, y=150, color=6)
+165A: (12) drawString(str=0x00E, x=8, y=150, color=6)
+1660: (18) playSound(res=51, freq=20, vol=63, channel=2)
+1666: (06) yieldTask // PAUSE SCRIPT TASK
+1667: (12) drawString(str=0x00F, x=9, y=150, color=6)
+166D: (18) playSound(res=51, freq=20, vol=63, channel=2)
+1673: (06) yieldTask // PAUSE SCRIPT TASK
+1674: (06) yieldTask // PAUSE SCRIPT TASK
+1675: (12) drawString(str=0x010, x=10, y=150, color=6)
+167B: (18) playSound(res=51, freq=22, vol=63, channel=2)
+1681: (06) yieldTask // PAUSE SCRIPT TASK
+1682: (12) drawString(str=0x011, x=11, y=150, color=6)
+1688: (18) playSound(res=51, freq=21, vol=63, channel=2)
+168E: (06) yieldTask // PAUSE SCRIPT TASK
+168F: (06) yieldTask // PAUSE SCRIPT TASK
+1690: (12) drawString(str=0x012, x=12, y=150, color=6)
+1696: (18) playSound(res=51, freq=20, vol=63, channel=2)
+169C: (06) yieldTask // PAUSE SCRIPT TASK
+169D: (12) drawString(str=0x013, x=13, y=150, color=6)
+16A3: (18) playSound(res=51, freq=21, vol=63, channel=2)
+16A9: (06) yieldTask // PAUSE SCRIPT TASK
+16AA: (06) yieldTask // PAUSE SCRIPT TASK
+16AB: (12) drawString(str=0x003, x=15, y=150, color=6)
+16B1: (12) drawString(str=0x004, x=16, y=150, color=6)
+16B7: (18) playSound(res=51, freq=20, vol=63, channel=2)
+16BD: (11) removeTask // STOP SCRIPT TASK
+
+16BE: // START OF SCRIPT TASK
+16BE: (F4) SHAPE_0xF4 offset=0xe974 (bank1.mat) x=160 y=100
+16C2: (06) yieldTask // PAUSE SCRIPT TASK
+16C3: (F4) SHAPE_0xF4 offset=0xe950 (bank1.mat) x=160 y=100
+16C7: (06) yieldTask // PAUSE SCRIPT TASK
+16C8: (F3) SHAPE_0xF3 offset=0xe692 (bank1.mat) x=160 y=100
+16CC: (F3) SHAPE_0xF3 offset=0xe6fa (bank1.mat) x=19 y=8
+16D0: (F3) SHAPE_0xF3 offset=0xe752 (bank1.mat) x=21 y=8
+16D4: (F3) SHAPE_0xF3 offset=0xe7ae (bank1.mat) x=104 y=92
+16D8: (06) yieldTask // PAUSE SCRIPT TASK
+16D9: (F3) SHAPE_0xF3 offset=0xe6fa (bank1.mat) x=19 y=93
+16DD: (F3) SHAPE_0xF3 offset=0xe772 (bank1.mat) x=18 y=93
+16E1: (F3) SHAPE_0xF3 offset=0xe7ae (bank1.mat) x=104 y=7
+16E5: (11) removeTask // STOP SCRIPT TASK
+16E6: (F2) SHAPE_0xF2 offset=0xe5aa (bank1.mat) x=162 y=100
+16EA: (06) yieldTask // PAUSE SCRIPT TASK
+16EB: (F3) SHAPE_0xF3 offset=0xe77e (bank1.mat) x=234 y=163
+16EF: (11) removeTask // STOP SCRIPT TASK
+16F0: loc_16F0:
+16F0: (00) VAR(0x02) = 2
+16F4: loc_16F4:
+16F4: (06) yieldTask // PAUSE SCRIPT TASK
+16F5: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=165 y=74
+16F9: (06) yieldTask // PAUSE SCRIPT TASK
+16FA: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=178 y=43
+16FE: (06) yieldTask // PAUSE SCRIPT TASK
+16FF: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=202 y=22
+1703: (06) yieldTask // PAUSE SCRIPT TASK
+1704: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=235 y=16
+1708: (06) yieldTask // PAUSE SCRIPT TASK
+1709: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=11 y=27
+170E: (06) yieldTask // PAUSE SCRIPT TASK
+170F: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=33 y=52
+1714: (06) yieldTask // PAUSE SCRIPT TASK
+1715: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=40 y=83
+171A: (06) yieldTask // PAUSE SCRIPT TASK
+171B: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=31 y=113
+1720: (06) yieldTask // PAUSE SCRIPT TASK
+1721: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=8 y=136
+1726: (06) yieldTask // PAUSE SCRIPT TASK
+1727: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=225 y=145
+172B: (06) yieldTask // PAUSE SCRIPT TASK
+172C: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=189 y=130
+1730: (06) yieldTask // PAUSE SCRIPT TASK
+1731: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=170 y=104
+1735: (09) jmpIfVar(VAR(0x02), @16F4)
+1739: (00) VAR(0x02) = 3
+173D: loc_173D:
+173D: (06) yieldTask // PAUSE SCRIPT TASK
+173E: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=165 y=74
+1742: (06) yieldTask // PAUSE SCRIPT TASK
+1743: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=193 y=28
+1747: (06) yieldTask // PAUSE SCRIPT TASK
+1748: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=255 y=20
+174C: (06) yieldTask // PAUSE SCRIPT TASK
+174D: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=37 y=61
+1752: (06) yieldTask // PAUSE SCRIPT TASK
+1753: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=31 y=114
+1758: (06) yieldTask // PAUSE SCRIPT TASK
+1759: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=236 y=145
+175D: (06) yieldTask // PAUSE SCRIPT TASK
+175E: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=185 y=127
+1762: (09) jmpIfVar(VAR(0x02), @173D)
+1766: (0D) selectPage(page=0)
+1768: (F3) SHAPE_0xF3 offset=0xe7fe (bank1.mat) x=237 y=156
+176C: (0D) selectPage(page=255)
+176E: (06) yieldTask // PAUSE SCRIPT TASK
+176F: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=165 y=74
+1773: (06) yieldTask // PAUSE SCRIPT TASK
+1774: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=233 y=15
+1778: (06) yieldTask // PAUSE SCRIPT TASK
+1779: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=40 y=84
+177E: (06) yieldTask // PAUSE SCRIPT TASK
+177F: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=249 y=148
+1783: (06) yieldTask // PAUSE SCRIPT TASK
+1784: (F4) SHAPE_0xF4 offset=0xe92e (bank1.mat) x=237 y=156
+1788: (7A) SHAPE_0x7A offset=0xe92e (bank1.mat) x=31 y=150
+178E: (06) yieldTask // PAUSE SCRIPT TASK
+178F: (78) SHAPE_0x78 offset=0xe92e (bank1.mat) x=31 y=150
+1794: (06) yieldTask // PAUSE SCRIPT TASK
+1795: (7A) SHAPE_0x7A offset=0xe92e (bank1.mat) x=31 y=150
+179B: (06) yieldTask // PAUSE SCRIPT TASK
+179C: (7A) SHAPE_0x7A offset=0xe92e (bank1.mat) x=31 y=150
+17A2: (11) removeTask // STOP SCRIPT TASK
+
+17A3: // START OF SCRIPT TASK
+17A3: (06) yieldTask // PAUSE SCRIPT TASK
+17A4: (00) VAR(0x02) = 18
+17A8: loc_17A8:
+17A8: (12) drawString(str=0x014, x=10, y=150, color=5)
+17AE: (06) yieldTask // PAUSE SCRIPT TASK
+17AF: (12) drawString(str=0x015, x=10, y=150, color=5)
+17B5: (06) yieldTask // PAUSE SCRIPT TASK
+17B6: (12) drawString(str=0x016, x=9, y=150, color=5)
+17BC: (06) yieldTask // PAUSE SCRIPT TASK
+17BD: (12) drawString(str=0x017, x=11, y=150, color=5)
+17C3: (06) yieldTask // PAUSE SCRIPT TASK
+17C4: (12) drawString(str=0x018, x=10, y=150, color=5)
+17CA: (06) yieldTask // PAUSE SCRIPT TASK
+17CB: (09) jmpIfVar(VAR(0x02), @17A8)
+17CF: (11) removeTask // STOP SCRIPT TASK
+
+17D0: // START OF SCRIPT TASK
+17D0: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=164 y=123
+17D4: (06) yieldTask // PAUSE SCRIPT TASK
+17D5: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=164 y=118
+17D9: (06) yieldTask // PAUSE SCRIPT TASK
+17DA: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=164 y=110
+17DE: (06) yieldTask // PAUSE SCRIPT TASK
+17DF: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=164 y=99
+17E3: (00) VAR(0x02) = 1
+17E7: loc_17E7:
+17E7: (06) yieldTask // PAUSE SCRIPT TASK
+17E8: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=165 y=74
+17EC: (06) yieldTask // PAUSE SCRIPT TASK
+17ED: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=170 y=55
+17F1: (06) yieldTask // PAUSE SCRIPT TASK
+17F2: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=180 y=41
+17F6: (06) yieldTask // PAUSE SCRIPT TASK
+17F7: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=191 y=29
+17FB: (06) yieldTask // PAUSE SCRIPT TASK
+17FC: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=206 y=20
+1800: (06) yieldTask // PAUSE SCRIPT TASK
+1801: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=224 y=15
+1805: (06) yieldTask // PAUSE SCRIPT TASK
+1806: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=246 y=16
+180A: (06) yieldTask // PAUSE SCRIPT TASK
+180B: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=7 y=24
+1810: (06) yieldTask // PAUSE SCRIPT TASK
+1811: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=22 y=36
+1816: (06) yieldTask // PAUSE SCRIPT TASK
+1817: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=32 y=49
+181C: (06) yieldTask // PAUSE SCRIPT TASK
+181D: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=38 y=66
+1822: (06) yieldTask // PAUSE SCRIPT TASK
+1823: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=41 y=82
+1828: (06) yieldTask // PAUSE SCRIPT TASK
+1829: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=37 y=101
+182E: (06) yieldTask // PAUSE SCRIPT TASK
+182F: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=28 y=117
+1834: (06) yieldTask // PAUSE SCRIPT TASK
+1835: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=15 y=131
+183A: (06) yieldTask // PAUSE SCRIPT TASK
+183B: (78) SHAPE_0x78 offset=0xe7ea (bank1.mat) x=0 y=141
+1840: (06) yieldTask // PAUSE SCRIPT TASK
+1841: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=237 y=145
+1845: (06) yieldTask // PAUSE SCRIPT TASK
+1846: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=217 y=144
+184A: (06) yieldTask // PAUSE SCRIPT TASK
+184B: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=200 y=138
+184F: (06) yieldTask // PAUSE SCRIPT TASK
+1850: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=184 y=127
+1854: (06) yieldTask // PAUSE SCRIPT TASK
+1855: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=173 y=112
+1859: (06) yieldTask // PAUSE SCRIPT TASK
+185A: (F3) SHAPE_0xF3 offset=0xe7ea (bank1.mat) x=167 y=94
+185E: (09) jmpIfVar(VAR(0x02), @17E7)
+1862: (07) jmp(@16F0)
+1865: (11) removeTask // STOP SCRIPT TASK
+
+1866: // START OF SCRIPT TASK
+1866: loc_1866:
+1866: (F2) SHAPE_0xF2 offset=0xe448 (bank1.mat) x=58 y=100
+186A: (78) SHAPE_0x78 offset=0xe4d6 (bank1.mat) x=36 y=100
+186F: (06) yieldTask // PAUSE SCRIPT TASK
+1870: (F2) SHAPE_0xF2 offset=0xe4d6 (bank1.mat) x=58 y=100
+1874: (78) SHAPE_0x78 offset=0xe546 (bank1.mat) x=36 y=100
+1879: (06) yieldTask // PAUSE SCRIPT TASK
+187A: (F2) SHAPE_0xF2 offset=0xe546 (bank1.mat) x=58 y=100
+187E: (78) SHAPE_0x78 offset=0xe448 (bank1.mat) x=36 y=100
+1883: (06) yieldTask // PAUSE SCRIPT TASK
+1884: (07) jmp(@1866)
+1887: (11) removeTask // STOP SCRIPT TASK
+
+1888: // START OF SCRIPT TASK
+1888: (0E) fillPage(page=255, color=8)
+188B: (D7) SHAPE_0xD7 offset=0xafc2 (bank1.mat) x=160 y=100
+188F: (D8) SHAPE_0xD8 offset=0xb08e (bank1.mat) x=160 y=100
+1893: (A4) SHAPE_0xA4 offset=0x4982 (bank1.mat) x=110 y=101
+1897: (A5) SHAPE_0xA5 offset=0x4aba (bank1.mat) x=228 y=85
+189B: (0F) copyPage(src=255, dst=0)
+189E: (0B) setPalette(num=17)
+18A1: (11) removeTask // STOP SCRIPT TASK
+
+18A2: // START OF SCRIPT TASK
+18A2: (00) VAR(0xFF) = 3
+18A6: (1A) playMusic(res=0, delay=15900, pos=0)
+18AC: (08) installTask(3, @1941)
+18B0: (08) installTask(4, @1958)
+18B4: (08) installTask(5, @196F)
+18B8: (08) installTask(6, @19B6)
+18BC: (08) installTask(7, @1986)
+18C0: (08) installTask(10, @1592)
+18C4: (08) installTask(16, @1599)
+18C8: (08) installTask(8, @0397)
+18CC: (08) installTask(9, @03C3)
+18D0: (00) VAR(0x03) = 50
+18D4: loc_18D4:
+18D4: (06) yieldTask // PAUSE SCRIPT TASK
+18D5: (09) jmpIfVar(VAR(0x03), @18D4)
+18D9: (08) installTask(9, @007D)
+18DD: (08) installTask(17, @03D2)
+18E1: (00) VAR(0x03) = 10
+18E5: loc_18E5:
+18E5: (06) yieldTask // PAUSE SCRIPT TASK
+18E6: (09) jmpIfVar(VAR(0x03), @18E5)
+18EA: (0D) selectPage(page=0)
+18EC: (FB) SHAPE_0xFB offset=0xf606 (bank1.mat) x=228 y=44
+18F0: (FA) SHAPE_0xFA offset=0xf56e (bank1.mat) x=160 y=100
+18F4: (0D) selectPage(page=255)
+18F6: (08) installTask(17, @03D2)
+18FA: (00) VAR(0x03) = 10
+18FE: loc_18FE:
+18FE: (06) yieldTask // PAUSE SCRIPT TASK
+18FF: (09) jmpIfVar(VAR(0x03), @18FE)
+1903: (0D) selectPage(page=0)
+1905: (FB) SHAPE_0xFB offset=0xf606 (bank1.mat) x=228 y=44
+1909: (FA) SHAPE_0xFA offset=0xf5ca (bank1.mat) x=160 y=100
+190D: (0D) selectPage(page=255)
+190F: (08) installTask(17, @03D2)
+1913: (00) VAR(0x03) = 10
+1917: loc_1917:
+1917: (06) yieldTask // PAUSE SCRIPT TASK
+1918: (09) jmpIfVar(VAR(0x03), @1917)
+191C: (08) installTask(17, @007D)
+1920: (08) installTask(3, @007D)
+1924: (08) installTask(4, @007D)
+1928: (08) installTask(5, @007D)
+192C: (08) installTask(6, @007D)
+1930: (08) installTask(7, @007D)
+1934: (08) installTask(10, @007D)
+1938: (08) installTask(16, @007D)
+193C: (08) installTask(2, @017F)
+1940: (11) removeTask // STOP SCRIPT TASK
+
+1941: // START OF SCRIPT TASK
+1941: (00) VAR(0x01) = -10
+1945: (00) VAR(0x02) = 23
+1949: loc_1949:
+1949: (64) SHAPE_0x64 offset=0x4bca (bank1.mat) x=110 y=1
+194E: (03) VAR(0x01) += 10
+1952: (06) yieldTask // PAUSE SCRIPT TASK
+1953: (09) jmpIfVar(VAR(0x02), @1949)
+1957: (11) removeTask // STOP SCRIPT TASK
+
+1958: // START OF SCRIPT TASK
+1958: (00) VAR(0x04) = 50
+195C: (00) VAR(0x05) = 80
+1960: loc_1960:
+1960: (58) SHAPE_0x58 offset=0xaf5e (bank1.mat) x=4 y=100
+1965: (03) VAR(0x04) += 2
+1969: (06) yieldTask // PAUSE SCRIPT TASK
+196A: (09) jmpIfVar(VAR(0x05), @1960)
+196E: (11) removeTask // STOP SCRIPT TASK
+
+196F: // START OF SCRIPT TASK
+196F: (00) VAR(0x06) = 220
+1973: (00) VAR(0x07) = 23
+1977: loc_1977:
+1977: (06) yieldTask // PAUSE SCRIPT TASK
+1978: (64) SHAPE_0x64 offset=0xaf6a (bank1.mat) x=110 y=6
+197D: (03) VAR(0x06) -= 10
+1981: (09) jmpIfVar(VAR(0x07), @1977)
+1985: (11) removeTask // STOP SCRIPT TASK
+
+1986: // START OF SCRIPT TASK
+1986: loc_1986:
+1986: (06) yieldTask // PAUSE SCRIPT TASK
+1987: (00) VAR(0x08) = 127
+198B: (00) VAR(0x09) = 6
+198F: (00) VAR(0x0B) = 142
+1993: loc_1993:
+1993: (00) VAR(0x0A) = 2
+1997: loc_1997:
+1997: (06) yieldTask // PAUSE SCRIPT TASK
+1998: (74) SHAPE_0x74 offset=0xb17e (bank1.mat) x=24 y=8
+199D: (74) SHAPE_0x74 offset=0xb17e (bank1.mat) x=27 y=11
+19A2: (09) jmpIfVar(VAR(0x0A), @1997)
+19A6: (03) VAR(0x08) += 3
+19AA: (03) VAR(0x0B) -= 3
+19AE: (09) jmpIfVar(VAR(0x09), @1993)
+19B2: (07) jmp(@1986)
+19B5: (11) removeTask // STOP SCRIPT TASK
+
+19B6: // START OF SCRIPT TASK
+19B6: (06) yieldTask // PAUSE SCRIPT TASK
+19B7: (78) SHAPE_0x78 offset=0x4be2 (bank1.mat) x=62 y=139
+19BC: (78) SHAPE_0x78 offset=0x4be2 (bank1.mat) x=42 y=139
+19C1: (06) yieldTask // PAUSE SCRIPT TASK
+19C2: (78) SHAPE_0x78 offset=0x4be2 (bank1.mat) x=22 y=139
+19C7: (78) SHAPE_0x78 offset=0x4be2 (bank1.mat) x=2 y=139
+19CC: (06) yieldTask // PAUSE SCRIPT TASK
+19CD: (A5) SHAPE_0xA5 offset=0x4be2 (bank1.mat) x=238 y=139
+19D1: (A5) SHAPE_0xA5 offset=0x4be2 (bank1.mat) x=218 y=139
+19D5: (06) yieldTask // PAUSE SCRIPT TASK
+19D6: (A5) SHAPE_0xA5 offset=0x4be2 (bank1.mat) x=198 y=139
+19DA: (A5) SHAPE_0xA5 offset=0x4be2 (bank1.mat) x=178 y=139
+19DE: (06) yieldTask // PAUSE SCRIPT TASK
+19DF: (A5) SHAPE_0xA5 offset=0x4be2 (bank1.mat) x=158 y=139
+19E3: (06) yieldTask // PAUSE SCRIPT TASK
+19E4: (06) yieldTask // PAUSE SCRIPT TASK
+19E5: (06) yieldTask // PAUSE SCRIPT TASK
+19E6: (A6) SHAPE_0xA6 offset=0x4c62 (bank1.mat) x=59 y=140
+19EA: (A5) SHAPE_0xA5 offset=0x4bfa (bank1.mat) x=39 y=140
+19EE: (06) yieldTask // PAUSE SCRIPT TASK
+19EF: (A6) SHAPE_0xA6 offset=0x4c2e (bank1.mat) x=19 y=144
+19F3: (06) yieldTask // PAUSE SCRIPT TASK
+19F4: (48) SHAPE_0x48 offset=0x4c96 (bank1.mat) x=255 y=152
+19FA: (06) yieldTask // PAUSE SCRIPT TASK
+19FB: (A6) SHAPE_0xA6 offset=0x4cca (bank1.mat) x=25 y=167
+19FF: (06) yieldTask // PAUSE SCRIPT TASK
+1A00: (A6) SHAPE_0xA6 offset=0x4cfe (bank1.mat) x=26 y=183
+1A04: (06) yieldTask // PAUSE SCRIPT TASK
+1A05: (A6) SHAPE_0xA6 offset=0x4d32 (bank1.mat) x=70 y=193
+1A09: (06) yieldTask // PAUSE SCRIPT TASK
+1A0A: (A6) SHAPE_0xA6 offset=0x4d66 (bank1.mat) x=132 y=181
+1A0E: (06) yieldTask // PAUSE SCRIPT TASK
+1A0F: (A6) SHAPE_0xA6 offset=0x4d66 (bank1.mat) x=219 y=181
+1A13: (06) yieldTask // PAUSE SCRIPT TASK
+1A14: (78) SHAPE_0x78 offset=0x4d66 (bank1.mat) x=51 y=181
+1A19: (11) removeTask // STOP SCRIPT TASK
+
+1A1A: // START OF SCRIPT TASK
+1A1A: (0D) selectPage(page=0)
+1A1C: (00) VAR(0xFF) = 2
+1A20: (0E) fillPage(page=0, color=1)
+1A23: (0D) selectPage(page=255)
+1A25: (0E) fillPage(page=255, color=1)
+1A28: (08) installTask(60, @0161)
+1A2C: (0B) setPalette(num=13)
+1A2F: (00) VAR(0x01) = -905
+1A33: (00) VAR(0x03) = 50
+1A37: loc_1A37:
+1A37: (06) yieldTask // PAUSE SCRIPT TASK
+1A38: (03) VAR(0x01) += 5
+1A3C: (09) jmpIfVar(VAR(0x03), @1A37)
+1A40: (0D) selectPage(page=0)
+1A42: (12) drawString(str=0x1F5, x=0, y=60, color=15)
+1A48: (0D) selectPage(page=255)
+1A4A: (00) VAR(0x03) = 55
+1A4E: loc_1A4E:
+1A4E: (06) yieldTask // PAUSE SCRIPT TASK
+1A4F: (03) VAR(0x01) += 5
+1A53: (09) jmpIfVar(VAR(0x03), @1A4E)
+1A57: (00) VAR(0x03) = 25
+1A5B: loc_1A5B:
+1A5B: (06) yieldTask // PAUSE SCRIPT TASK
+1A5C: (03) VAR(0x01) += 4
+1A60: (09) jmpIfVar(VAR(0x03), @1A5B)
+1A64: (0D) selectPage(page=0)
+1A66: (12) drawString(str=0x1F5, x=0, y=60, color=1)
+1A6C: (12) drawString(str=0x1F6, x=21, y=110, color=15)
+1A72: (0D) selectPage(page=255)
+1A74: (00) VAR(0x03) = 100
+1A78: loc_1A78:
+1A78: (06) yieldTask // PAUSE SCRIPT TASK
+1A79: (03) VAR(0x01) += 3
+1A7D: (09) jmpIfVar(VAR(0x03), @1A78)
+1A81: (0D) selectPage(page=0)
+1A83: (12) drawString(str=0x1F6, x=21, y=110, color=1)
+1A89: (0D) selectPage(page=255)
+1A8B: (00) VAR(0x03) = 30
+1A8F: loc_1A8F:
+1A8F: (06) yieldTask // PAUSE SCRIPT TASK
+1A90: (03) VAR(0x01) += 2
+1A94: (09) jmpIfVar(VAR(0x03), @1A8F)
+1A98: (00) VAR(0x03) = 16
+1A9C: loc_1A9C:
+1A9C: (06) yieldTask // PAUSE SCRIPT TASK
+1A9D: (03) VAR(0x01) += 1
+1AA1: (09) jmpIfVar(VAR(0x03), @1A9C)
+1AA5: (0F) copyPage(src=254, dst=0)
+1AA8: (08) installTask(3, @007D)
+1AAC: (08) installTask(60, @014A)
+1AB0: (06) yieldTask // PAUSE SCRIPT TASK
+1AB1: (0B) setPalette(num=12)
+1AB4: (0F) copyPage(src=254, dst=0)
+1AB7: (0F) copyPage(src=254, dst=255)
+1ABA: (0E) fillPage(page=0, color=7)
+1ABD: (0D) selectPage(page=0)
+1ABF: (A0) SHAPE_0xA0 offset=0x418c (bank1.mat) x=150 y=100
+1AC3: (8C) SHAPE_0x8C offset=0x187e (bank1.mat) x=160 y=111
+1AC7: (0E) fillPage(page=3, color=2)
+1ACA: (0D) selectPage(page=3)
+1ACC: (E6) SHAPE_0xE6 offset=0xccba (bank1.mat) x=160 y=100
+1AD0: (0D) selectPage(page=255)
+1AD2: (06) yieldTask // PAUSE SCRIPT TASK
+1AD3: (00) VAR(0xFF) = 4
+1AD7: (0B) setPalette(num=6)
+1ADA: (FD) SHAPE_0xFD offset=0xfbd2 (bank1.mat) x=160 y=100
+1ADE: (06) yieldTask // PAUSE SCRIPT TASK
+1ADF: (FD) SHAPE_0xFD offset=0xfbf2 (bank1.mat) x=160 y=100
+1AE3: (06) yieldTask // PAUSE SCRIPT TASK
+1AE4: (FE) SHAPE_0xFE offset=0xfc06 (bank1.mat) x=160 y=100
+1AE8: (06) yieldTask // PAUSE SCRIPT TASK
+1AE9: (FE) SHAPE_0xFE offset=0xfc1a (bank1.mat) x=160 y=100
+1AED: (06) yieldTask // PAUSE SCRIPT TASK
+1AEE: (FE) SHAPE_0xFE offset=0xfc2e (bank1.mat) x=160 y=100
+1AF2: (06) yieldTask // PAUSE SCRIPT TASK
+1AF3: (FE) SHAPE_0xFE offset=0xfc42 (bank1.mat) x=160 y=100
+1AF7: (06) yieldTask // PAUSE SCRIPT TASK
+1AF8: (FE) SHAPE_0xFE offset=0xfc56 (bank1.mat) x=160 y=100
+1AFC: (06) yieldTask // PAUSE SCRIPT TASK
+1AFD: (FE) SHAPE_0xFE offset=0xfc76 (bank1.mat) x=160 y=100
+1B01: (06) yieldTask // PAUSE SCRIPT TASK
+1B02: (FE) SHAPE_0xFE offset=0xfc8a (bank1.mat) x=160 y=100
+1B06: (06) yieldTask // PAUSE SCRIPT TASK
+1B07: (FE) SHAPE_0xFE offset=0xfc9e (bank1.mat) x=160 y=100
+1B0B: (06) yieldTask // PAUSE SCRIPT TASK
+1B0C: (FE) SHAPE_0xFE offset=0xfcb2 (bank1.mat) x=160 y=100
+1B10: (06) yieldTask // PAUSE SCRIPT TASK
+1B11: (FE) SHAPE_0xFE offset=0xfcc6 (bank1.mat) x=160 y=100
+1B15: (06) yieldTask // PAUSE SCRIPT TASK
+1B16: (FE) SHAPE_0xFE offset=0xfcda (bank1.mat) x=160 y=100
+1B1A: (06) yieldTask // PAUSE SCRIPT TASK
+1B1B: (FE) SHAPE_0xFE offset=0xfcee (bank1.mat) x=160 y=100
+1B1F: (06) yieldTask // PAUSE SCRIPT TASK
+1B20: (FE) SHAPE_0xFE offset=0xfd0e (bank1.mat) x=160 y=100
+1B24: (06) yieldTask // PAUSE SCRIPT TASK
+1B25: (FE) SHAPE_0xFE offset=0xfd22 (bank1.mat) x=160 y=100
+1B29: (06) yieldTask // PAUSE SCRIPT TASK
+1B2A: (FE) SHAPE_0xFE offset=0xfd36 (bank1.mat) x=160 y=100
+1B2E: (06) yieldTask // PAUSE SCRIPT TASK
+1B2F: (FE) SHAPE_0xFE offset=0xfd4a (bank1.mat) x=160 y=100
+1B33: (06) yieldTask // PAUSE SCRIPT TASK
+1B34: (FE) SHAPE_0xFE offset=0xfd5e (bank1.mat) x=160 y=100
+1B38: (06) yieldTask // PAUSE SCRIPT TASK
+1B39: (FE) SHAPE_0xFE offset=0xfd72 (bank1.mat) x=160 y=100
+1B3D: (06) yieldTask // PAUSE SCRIPT TASK
+1B3E: (FE) SHAPE_0xFE offset=0xfd92 (bank1.mat) x=160 y=100
+1B42: (06) yieldTask // PAUSE SCRIPT TASK
+1B43: (FE) SHAPE_0xFE offset=0xfda6 (bank1.mat) x=160 y=100
+1B47: (06) yieldTask // PAUSE SCRIPT TASK
+1B48: (FE) SHAPE_0xFE offset=0xfdba (bank1.mat) x=160 y=100
+1B4C: (06) yieldTask // PAUSE SCRIPT TASK
+1B4D: (FE) SHAPE_0xFE offset=0xfdce (bank1.mat) x=160 y=100
+1B51: (06) yieldTask // PAUSE SCRIPT TASK
+1B52: (FE) SHAPE_0xFE offset=0xfde2 (bank1.mat) x=160 y=100
+1B56: (06) yieldTask // PAUSE SCRIPT TASK
+1B57: (FE) SHAPE_0xFE offset=0xfdf6 (bank1.mat) x=160 y=100
+1B5B: (06) yieldTask // PAUSE SCRIPT TASK
+1B5C: (FF) SHAPE_0xFF offset=0xfe0a (bank1.mat) x=160 y=100
+1B60: (06) yieldTask // PAUSE SCRIPT TASK
+1B61: (FF) SHAPE_0xFF offset=0xfe1e (bank1.mat) x=160 y=100
+1B65: (06) yieldTask // PAUSE SCRIPT TASK
+1B66: (FF) SHAPE_0xFF offset=0xfe3a (bank1.mat) x=160 y=100
+1B6A: (06) yieldTask // PAUSE SCRIPT TASK
+1B6B: (FF) SHAPE_0xFF offset=0xfe4a (bank1.mat) x=160 y=100
+1B6F: (06) yieldTask // PAUSE SCRIPT TASK
+1B70: (FF) SHAPE_0xFF offset=0xfe5a (bank1.mat) x=160 y=100
+1B74: (06) yieldTask // PAUSE SCRIPT TASK
+1B75: (FF) SHAPE_0xFF offset=0xfe6a (bank1.mat) x=160 y=100
+1B79: (06) yieldTask // PAUSE SCRIPT TASK
+1B7A: (06) yieldTask // PAUSE SCRIPT TASK
+1B7B: (18) playSound(res=54, freq=22, vol=63, channel=3)
+1B81: (08) installTask(1, @2022)
+1B85: (08) installTask(3, @2247)
+1B89: (0E) fillPage(page=0, color=7)
+1B8C: (0D) selectPage(page=0)
+1B8E: (A0) SHAPE_0xA0 offset=0x418c (bank1.mat) x=150 y=100
+1B92: (0D) selectPage(page=255)
+1B94: (00) VAR(0x05) = 25
+1B98: loc_1B98:
+1B98: (06) yieldTask // PAUSE SCRIPT TASK
+1B99: (09) jmpIfVar(VAR(0x05), @1B98)
+1B9D: (00) VAR(0x01) = 78
+1BA1: (00) VAR(0x02) = 232
+1BA5: (00) VAR(0x05) = 10
+1BA9: loc_1BA9:
+1BA9: (0D) selectPage(page=0)
+1BAB: (58) SHAPE_0x58 offset=0x4252 (bank1.mat) x=1 y=100
+1BB0: (58) SHAPE_0x58 offset=0x425e (bank1.mat) x=2 y=100
+1BB5: (03) VAR(0x01) += 2
+1BB9: (03) VAR(0x02) -= 2
+1BBD: (0D) selectPage(page=255)
+1BBF: (06) yieldTask // PAUSE SCRIPT TASK
+1BC0: (09) jmpIfVar(VAR(0x05), @1BA9)
+1BC4: (00) VAR(0x05) = 26
+1BC8: loc_1BC8:
+1BC8: (06) yieldTask // PAUSE SCRIPT TASK
+1BC9: (09) jmpIfVar(VAR(0x05), @1BC8)
+1BCD: (18) playSound(res=54, freq=15, vol=48, channel=3)
+1BD3: (0D) selectPage(page=0)
+1BD5: (A1) SHAPE_0xA1 offset=0x4246 (bank1.mat) x=165 y=100
+1BD9: (0D) selectPage(page=255)
+1BDB: (11) removeTask // STOP SCRIPT TASK
+
+1BDC: // START OF SCRIPT TASK
+1BDC: loc_1BDC:
+1BDC: (01) VAR(0x02) = VAR(0x01)
+1BDF: (64) SHAPE_0x64 offset=0x4158 (bank1.mat) x=153 y=2
+1BE4: (03) VAR(0x02) += 390
+1BE8: (64) SHAPE_0x64 offset=0x410c (bank1.mat) x=153 y=2
+1BED: (03) VAR(0x02) += 292
+1BF1: (64) SHAPE_0x64 offset=0x40ce (bank1.mat) x=153 y=2
+1BF6: (03) VAR(0x02) += 387
+1BFA: (64) SHAPE_0x64 offset=0x4082 (bank1.mat) x=153 y=2
+1BFF: (06) yieldTask // PAUSE SCRIPT TASK
+1C00: (07) jmp(@1BDC)
+1C03: (11) removeTask // STOP SCRIPT TASK
+1C04: (06) yieldTask // PAUSE SCRIPT TASK
+1C05: (11) removeTask // STOP SCRIPT TASK
+1C06: loc_1C06:
+1C06: (06) yieldTask // PAUSE SCRIPT TASK
+1C07: (9F) SHAPE_0x9F offset=0x3f6c (bank1.mat) x=187 y=101
+1C0B: (07) jmp(@1C06)
+1C0E: (11) removeTask // STOP SCRIPT TASK
+
+1C0F: // START OF SCRIPT TASK
+1C0F: (00) VAR(0x03) = 100
+1C13: (00) VAR(0x04) = 19
+1C17: loc_1C17:
+1C17: (0D) selectPage(page=0)
+1C19: (64) SHAPE_0x64 offset=0xdda8 (bank1.mat) x=160 y=3
+1C1E: (EE) SHAPE_0xEE offset=0xdd6e (bank1.mat) x=160 y=101
+1C22: (03) VAR(0x03) -= 1
+1C26: (0D) selectPage(page=255)
+1C28: (06) yieldTask // PAUSE SCRIPT TASK
+1C29: (09) jmpIfVar(VAR(0x04), @1C17)
+1C2D: (08) installTask(6, @1CF0)
+1C31: (11) removeTask // STOP SCRIPT TASK
+
+1C32: // START OF SCRIPT TASK
+1C32: (00) VAR(0xFF) = 3
+1C36: (00) VAR(0x01) = 46
+1C3A: (00) VAR(0x02) = 255
+1C3E: (0E) fillPage(page=255, color=2)
+1C41: (04) call(@1D6F)
+1C44: (0B) setPalette(num=8)
+1C47: (9F) SHAPE_0x9F offset=0x3e46 (bank1.mat) x=160 y=101
+1C4B: (9F) SHAPE_0x9F offset=0x3f6c (bank1.mat) x=187 y=101
+1C4F: (0F) copyPage(src=255, dst=0)
+1C52: (06) yieldTask // PAUSE SCRIPT TASK
+1C53: (08) installTask(3, @1C0F)
+1C57: (08) installTask(4, @1CAD)
+1C5B: (08) installTask(5, @1CD6)
+1C5F: (08) installTask(10, @1C9F)
+1C63: (08) installTask(11, @1D03)
+1C67: (08) installTask(14, @1CA6)
+1C6B: (0D) selectPage(page=0)
+1C6D: (12) drawString(str=0x1F7, x=1, y=10, color=8)
+1C73: (0D) selectPage(page=255)
+1C75: (00) VAR(0x01) = 80
+1C79: loc_1C79:
+1C79: (06) yieldTask // PAUSE SCRIPT TASK
+1C7A: (09) jmpIfVar(VAR(0x01), @1C79)
+1C7E: (08) installTask(1, @1093)
+1C82: (08) installTask(2, @10B1)
+1C86: (08) installTask(4, @007D)
+1C8A: (08) installTask(5, @007D)
+1C8E: (08) installTask(10, @007D)
+1C92: (08) installTask(11, @007D)
+1C96: (08) installTask(14, @007D)
+1C9A: (08) installTask(6, @007D)
+1C9E: (11) removeTask // STOP SCRIPT TASK
+
+1C9F: // START OF SCRIPT TASK
+1C9F: loc_1C9F:
+1C9F: (0D) selectPage(page=0)
+1CA1: (06) yieldTask // PAUSE SCRIPT TASK
+1CA2: (07) jmp(@1C9F)
+1CA5: (11) removeTask // STOP SCRIPT TASK
+
+1CA6: // START OF SCRIPT TASK
+1CA6: loc_1CA6:
+1CA6: (0D) selectPage(page=255)
+1CA8: (06) yieldTask // PAUSE SCRIPT TASK
+1CA9: (07) jmp(@1CA6)
+1CAC: (11) removeTask // STOP SCRIPT TASK
+
+1CAD: // START OF SCRIPT TASK
+1CAD: loc_1CAD:
+1CAD: (00) VAR(0x05) = 9
+1CB1: loc_1CB1:
+1CB1: (06) yieldTask // PAUSE SCRIPT TASK
+1CB2: (09) jmpIfVar(VAR(0x05), @1CB1)
+1CB6: (18) playSound(res=52, freq=20, vol=63, channel=2)
+1CBC: (00) VAR(0x05) = 7
+1CC0: (00) VAR(0x06) = 123
+1CC4: loc_1CC4:
+1CC4: (64) SHAPE_0x64 offset=0x06c0 (bank1.mat) x=204 y=6
+1CC9: (03) VAR(0x06) -= 2
+1CCD: (06) yieldTask // PAUSE SCRIPT TASK
+1CCE: (09) jmpIfVar(VAR(0x05), @1CC4)
+1CD2: (07) jmp(@1CAD)
+1CD5: (11) removeTask // STOP SCRIPT TASK
+
+1CD6: // START OF SCRIPT TASK
+1CD6: loc_1CD6:
+1CD6: (00) VAR(0x07) = 20
+1CDA: (00) VAR(0x08) = 123
+1CDE: loc_1CDE:
+1CDE: (64) SHAPE_0x64 offset=0x06a8 (bank1.mat) x=204 y=8
+1CE3: (03) VAR(0x08) -= 1
+1CE7: (06) yieldTask // PAUSE SCRIPT TASK
+1CE8: (09) jmpIfVar(VAR(0x07), @1CDE)
+1CEC: (07) jmp(@1CD6)
+1CEF: (11) removeTask // STOP SCRIPT TASK
+
+1CF0: // START OF SCRIPT TASK
+1CF0: loc_1CF0:
+1CF0: (EE) SHAPE_0xEE offset=0xddb8 (bank1.mat) x=160 y=100
+1CF4: (06) yieldTask // PAUSE SCRIPT TASK
+1CF5: (EE) SHAPE_0xEE offset=0xdde0 (bank1.mat) x=160 y=100
+1CF9: (06) yieldTask // PAUSE SCRIPT TASK
+1CFA: (EF) SHAPE_0xEF offset=0xde0c (bank1.mat) x=160 y=100
+1CFE: (06) yieldTask // PAUSE SCRIPT TASK
+1CFF: (07) jmp(@1CF0)
+1D02: (11) removeTask // STOP SCRIPT TASK
+
+1D03: // START OF SCRIPT TASK
+1D03: loc_1D03:
+1D03: (83) SHAPE_0x83 offset=0x077c (bank1.mat) x=221 y=123
+1D07: (83) SHAPE_0x83 offset=0x07d0 (bank1.mat) x=219 y=125
+1D0B: (84) SHAPE_0x84 offset=0x0818 (bank1.mat) x=217 y=127
+1D0F: (83) SHAPE_0x83 offset=0x0624 (bank1.mat) x=131 y=109
+1D13: (83) SHAPE_0x83 offset=0x0678 (bank1.mat) x=134 y=107
+1D17: (00) VAR(0x09) = 10
+1D1B: loc_1D1B:
+1D1B: (06) yieldTask // PAUSE SCRIPT TASK
+1D1C: (09) jmpIfVar(VAR(0x09), @1D1B)
+1D20: (84) SHAPE_0x84 offset=0x0818 (bank1.mat) x=221 y=123
+1D24: (83) SHAPE_0x83 offset=0x07d0 (bank1.mat) x=217 y=127
+1D28: (83) SHAPE_0x83 offset=0x077c (bank1.mat) x=219 y=125
+1D2C: (83) SHAPE_0x83 offset=0x0678 (bank1.mat) x=138 y=107
+1D30: (83) SHAPE_0x83 offset=0x0624 (bank1.mat) x=134 y=107
+1D34: (00) VAR(0x09) = 10
+1D38: loc_1D38:
+1D38: (06) yieldTask // PAUSE SCRIPT TASK
+1D39: (09) jmpIfVar(VAR(0x09), @1D38)
+1D3D: (83) SHAPE_0x83 offset=0x077c (bank1.mat) x=217 y=127
+1D41: (83) SHAPE_0x83 offset=0x07d0 (bank1.mat) x=221 y=123
+1D45: (84) SHAPE_0x84 offset=0x0818 (bank1.mat) x=219 y=125
+1D49: (83) SHAPE_0x83 offset=0x0624 (bank1.mat) x=138 y=107
+1D4D: (83) SHAPE_0x83 offset=0x0678 (bank1.mat) x=135 y=109
+1D51: (00) VAR(0x09) = 10
+1D55: loc_1D55:
+1D55: (06) yieldTask // PAUSE SCRIPT TASK
+1D56: (09) jmpIfVar(VAR(0x09), @1D55)
+1D5A: (83) SHAPE_0x83 offset=0x0678 (bank1.mat) x=131 y=109
+1D5E: (83) SHAPE_0x83 offset=0x0624 (bank1.mat) x=135 y=109
+1D62: (00) VAR(0x09) = 10
+1D66: loc_1D66:
+1D66: (06) yieldTask // PAUSE SCRIPT TASK
+1D67: (09) jmpIfVar(VAR(0x09), @1D66)
+1D6B: (07) jmp(@1D03)
+1D6E: (11) removeTask // STOP SCRIPT TASK
+
+1D6F: // func_1D6F
+1D6F: (9D) SHAPE_0x9D offset=0x3a70 (bank1.mat) x=156 y=94
+1D73: (99) SHAPE_0x99 offset=0x33a0 (bank1.mat) x=160 y=100
+1D77: (9D) SHAPE_0x9D offset=0x3bf8 (bank1.mat) x=161 y=99
+1D7B: (9B) SHAPE_0x9B offset=0x3658 (bank1.mat) x=205 y=101
+1D7F: (9D) SHAPE_0x9D offset=0x3ac4 (bank1.mat) x=90 y=79
+1D83: (9C) SHAPE_0x9C offset=0x3830 (bank1.mat) x=191 y=99
+1D87: (9C) SHAPE_0x9C offset=0x39d6 (bank1.mat) x=187 y=101
+1D8B: (E4) SHAPE_0xE4 offset=0xc80c (bank1.mat) x=191 y=99
+1D8F: (E3) SHAPE_0xE3 offset=0xc78e (bank1.mat) x=160 y=100
+1D93: (05) ret // RETURN FROM CALL
+
+1D94: // START OF SCRIPT TASK
+1D94: (0B) setPalette(num=7)
+1D97: (0D) selectPage(page=0)
+1D99: (0E) fillPage(page=0, color=5)
+1D9C: (91) SHAPE_0x91 offset=0x22bc (bank1.mat) x=133 y=90
+1DA0: (91) SHAPE_0x91 offset=0x2346 (bank1.mat) x=245 y=86
+1DA4: (78) SHAPE_0x78 offset=0x23ec (bank1.mat) x=31 y=118
+1DA9: (78) SHAPE_0x78 offset=0x2542 (bank1.mat) x=31 y=101
+1DAE: (92) SHAPE_0x92 offset=0x2536 (bank1.mat) x=248 y=100
+1DB2: (78) SHAPE_0x78 offset=0x2562 (bank1.mat) x=32 y=158
+1DB7: (0F) copyPage(src=0, dst=255)
+1DBA: (0D) selectPage(page=255)
+1DBC: (11) removeTask // STOP SCRIPT TASK
+
+1DBD: // START OF SCRIPT TASK
+1DBD: loc_1DBD:
+1DBD: (A0) SHAPE_0xA0 offset=0x4010 (bank1.mat) x=143 y=94
+1DC1: (06) yieldTask // PAUSE SCRIPT TASK
+1DC2: (07) jmp(@1DBD)
+1DC5: (11) removeTask // STOP SCRIPT TASK
+
+1DC6: // START OF SCRIPT TASK
+1DC6: (00) VAR(0x01) = 8
+1DCA: (00) VAR(0x02) = 143
+1DCE: (00) VAR(0x03) = 144
+1DD2: (00) VAR(0xFF) = 2
+1DD6: loc_1DD6:
+1DD6: (06) yieldTask // PAUSE SCRIPT TASK
+1DD7: (03) VAR(0x02) += 1
+1DDB: (03) VAR(0x03) -= 1
+1DDF: (58) SHAPE_0x58 offset=0x403c (bank1.mat) x=2 y=94
+1DE4: (58) SHAPE_0x58 offset=0x4046 (bank1.mat) x=3 y=94
+1DE9: (09) jmpIfVar(VAR(0x01), @1DD6)
+1DED: (00) VAR(0xFF) = 1
+1DF1: (A0) SHAPE_0xA0 offset=0x4010 (bank1.mat) x=143 y=94
+1DF5: (08) installTask(3, @007D)
+1DF9: (0F) copyPage(src=255, dst=0)
+1DFC: (00) VAR(0x01) = 50
+1E00: (0B) setPalette(num=10)
+1E03: loc_1E03:
+1E03: (06) yieldTask // PAUSE SCRIPT TASK
+1E04: (09) jmpIfVar(VAR(0x01), @1E03)
+1E08: (00) VAR(0xFF) = 1
+1E0C: (00) VAR(0x01) = 80
+1E10: (00) VAR(0x02) = 4
+1E14: (00) VAR(0x03) = 26
+1E18: (08) installTask(60, @0159)
+1E1C: loc_1E1C:
+1E1C: (0A) jmpIf(VAR(0x02) != 1, @1E26)
+1E22: (00) VAR(0x02) = 2
+1E26: loc_1E26:
+1E26: (01) VAR(0x04) = VAR(0x02)
+1E29: (03) VAR(0x02) -= 1
+1E2D: loc_1E2D:
+1E2D: (06) yieldTask // PAUSE SCRIPT TASK
+1E2E: (64) SHAPE_0x64 offset=0x4074 (bank1.mat) x=121 y=3
+1E33: (A0) SHAPE_0xA0 offset=0x4068 (bank1.mat) x=121 y=187
+1E37: (09) jmpIfVar(VAR(0x04), @1E2D)
+1E3B: (03) VAR(0x03) += 2
+1E3F: (09) jmpIfVar(VAR(0x01), @1E1C)
+1E43: (08) installTask(60, @014A)
+1E47: (06) yieldTask // PAUSE SCRIPT TASK
+1E48: (0F) copyPage(src=254, dst=0)
+1E4B: (0B) setPalette(num=16)
+1E4E: (00) VAR(0x01) = 30
+1E52: loc_1E52:
+1E52: (60) SHAPE_0x60 offset=0xc3e0 (bank1.mat) x=193 y=255
+1E58: (06) yieldTask // PAUSE SCRIPT TASK
+1E59: (09) jmpIfVar(VAR(0x01), @1E52)
+1E5D: (00) VAR(0x01) = 30
+1E61: loc_1E61:
+1E61: (60) SHAPE_0x60 offset=0xc3e0 (bank1.mat) x=196 y=255
+1E67: (06) yieldTask // PAUSE SCRIPT TASK
+1E68: (09) jmpIfVar(VAR(0x01), @1E61)
+1E6C: (00) VAR(0x01) = 30
+1E70: loc_1E70:
+1E70: (60) SHAPE_0x60 offset=0xc3e0 (bank1.mat) x=189 y=255
+1E76: (06) yieldTask // PAUSE SCRIPT TASK
+1E77: (09) jmpIfVar(VAR(0x01), @1E70)
+1E7B: (00) VAR(0x01) = 30
+1E7F: loc_1E7F:
+1E7F: (60) SHAPE_0x60 offset=0xc3e0 (bank1.mat) x=193 y=255
+1E85: (06) yieldTask // PAUSE SCRIPT TASK
+1E86: (09) jmpIfVar(VAR(0x01), @1E7F)
+1E8A: (00) VAR(0x01) = 30
+1E8E: loc_1E8E:
+1E8E: (60) SHAPE_0x60 offset=0xc3e0 (bank1.mat) x=196 y=255
+1E94: (06) yieldTask // PAUSE SCRIPT TASK
+1E95: (09) jmpIfVar(VAR(0x01), @1E8E)
+1E99: (08) installTask(2, @1A1A)
+1E9D: (08) installTask(3, @1BDC)
+1EA1: (11) removeTask // STOP SCRIPT TASK
+
+1EA2: // START OF SCRIPT TASK
+1EA2: (0E) fillPage(page=0, color=6)
+1EA5: (0D) selectPage(page=0)
+1EA7: (A2) SHAPE_0xA2 offset=0x4558 (bank1.mat) x=130 y=58
+1EAB: (E7) SHAPE_0xE7 offset=0xce8a (bank1.mat) x=160 y=100
+1EAF: (0D) selectPage(page=255)
+1EB1: (0F) copyPage(src=0, dst=255)
+1EB4: (0B) setPalette(num=15)
+1EB7: (00) VAR(0x01) = 152
+1EBB: (00) VAR(0x02) = 92
+1EBF: (00) VAR(0x03) = 0
+1EC3: (00) VAR(0x1E) = 0
+1EC7: (00) VAR(0x04) = 5
+1ECB: (00) VAR(0xFF) = 4
+1ECF: loc_1ECF:
+1ECF: (06) yieldTask // PAUSE SCRIPT TASK
+1ED0: (09) jmpIfVar(VAR(0x04), @1ECF)
+1ED4: (03) VAR(0x01) += 14
+1ED8: (06) yieldTask // PAUSE SCRIPT TASK
+1ED9: (03) VAR(0x01) += 14
+1EDD: (06) yieldTask // PAUSE SCRIPT TASK
+1EDE: (00) VAR(0x03) = 0
+1EE2: (00) VAR(0x1E) = 1
+1EE6: (00) VAR(0x04) = 4
+1EEA: loc_1EEA:
+1EEA: (06) yieldTask // PAUSE SCRIPT TASK
+1EEB: (09) jmpIfVar(VAR(0x04), @1EEA)
+1EEF: (03) VAR(0x01) -= 9
+1EF3: (03) VAR(0x02) += 9
+1EF7: (06) yieldTask // PAUSE SCRIPT TASK
+1EF8: (03) VAR(0x01) -= 9
+1EFC: (03) VAR(0x02) += 9
+1F00: (06) yieldTask // PAUSE SCRIPT TASK
+1F01: (03) VAR(0x01) -= 10
+1F05: (03) VAR(0x02) += 9
+1F09: (06) yieldTask // PAUSE SCRIPT TASK
+1F0A: (00) VAR(0x03) = 0
+1F0E: (00) VAR(0x1E) = 2
+1F12: (00) VAR(0x04) = 4
+1F16: loc_1F16:
+1F16: (06) yieldTask // PAUSE SCRIPT TASK
+1F17: (09) jmpIfVar(VAR(0x04), @1F16)
+1F1B: (00) VAR(0x04) = 4
+1F1F: (00) VAR(0x1E) = 2
+1F23: (00) VAR(0x03) = 0
+1F27: loc_1F27:
+1F27: (06) yieldTask // PAUSE SCRIPT TASK
+1F28: (09) jmpIfVar(VAR(0x04), @1F27)
+1F2C: (00) VAR(0x04) = 3
+1F30: loc_1F30:
+1F30: (03) VAR(0x01) += 15
+1F34: (03) VAR(0x02) -= 15
+1F38: (06) yieldTask // PAUSE SCRIPT TASK
+1F39: (09) jmpIfVar(VAR(0x04), @1F30)
+1F3D: (03) VAR(0x01) += 11
+1F41: (03) VAR(0x02) -= 9
+1F45: (06) yieldTask // PAUSE SCRIPT TASK
+1F46: (00) VAR(0x03) = 0
+1F4A: (00) VAR(0x1E) = 3
+1F4E: (00) VAR(0x04) = 4
+1F52: loc_1F52:
+1F52: (06) yieldTask // PAUSE SCRIPT TASK
+1F53: (09) jmpIfVar(VAR(0x04), @1F52)
+1F57: (00) VAR(0x04) = 3
+1F5B: loc_1F5B:
+1F5B: (03) VAR(0x02) += 18
+1F5F: (06) yieldTask // PAUSE SCRIPT TASK
+1F60: (09) jmpIfVar(VAR(0x04), @1F5B)
+1F64: (00) VAR(0x03) = 0
+1F68: (00) VAR(0x1E) = 4
+1F6C: (00) VAR(0x04) = 3
+1F70: loc_1F70:
+1F70: (06) yieldTask // PAUSE SCRIPT TASK
+1F71: (09) jmpIfVar(VAR(0x04), @1F70)
+1F75: (00) VAR(0x04) = 2
+1F79: (03) VAR(0x02) += 1
+1F7D: loc_1F7D:
+1F7D: (03) VAR(0x01) -= 14
+1F81: (03) VAR(0x02) += 0
+1F85: (06) yieldTask // PAUSE SCRIPT TASK
+1F86: (09) jmpIfVar(VAR(0x04), @1F7D)
+1F8A: (00) VAR(0x1E) = 5
+1F8E: (00) VAR(0x03) = 0
+1F92: (00) VAR(0x04) = 6
+1F96: loc_1F96:
+1F96: (06) yieldTask // PAUSE SCRIPT TASK
+1F97: (09) jmpIfVar(VAR(0x04), @1F96)
+1F9B: (08) installTask(2, @20B1)
+1F9F: (08) installTask(3, @007D)
+1FA3: (11) removeTask // STOP SCRIPT TASK
+
+1FA4: // START OF SCRIPT TASK
+1FA4: loc_1FA4:
+1FA4: (54) SHAPE_0x54 offset=0x1d7a (bank1.mat) x=1 y=2
+1FA9: (06) yieldTask // PAUSE SCRIPT TASK
+1FAA: (0A) jmpIf(VAR(0x03) != 0, @1FA4)
+1FB0: (00) VAR(0x03) = 255
+1FB4: (54) SHAPE_0x54 offset=0x1dfa (bank1.mat) x=1 y=2
+1FB9: (06) yieldTask // PAUSE SCRIPT TASK
+1FBA: (54) SHAPE_0x54 offset=0x1e82 (bank1.mat) x=1 y=2
+1FBF: (06) yieldTask // PAUSE SCRIPT TASK
+1FC0: (54) SHAPE_0x54 offset=0x1f0e (bank1.mat) x=1 y=2
+1FC5: (04) call(@1FD9)
+1FC8: (06) yieldTask // PAUSE SCRIPT TASK
+1FC9: (54) SHAPE_0x54 offset=0x1c72 (bank1.mat) x=1 y=2
+1FCE: (06) yieldTask // PAUSE SCRIPT TASK
+1FCF: (54) SHAPE_0x54 offset=0x1cf6 (bank1.mat) x=1 y=2
+1FD4: (06) yieldTask // PAUSE SCRIPT TASK
+1FD5: (07) jmp(@1FA4)
+1FD8: (11) removeTask // STOP SCRIPT TASK
+
+1FD9: // func_1FD9
+1FD9: (0A) jmpIf(VAR(0x1E) != 0, @1FE5)
+1FDF: (18) playSound(res=11, freq=20, vol=63, channel=2)
+1FE5: loc_1FE5:
+1FE5: (0A) jmpIf(VAR(0x1E) != 1, @1FF1)
+1FEB: (18) playSound(res=11, freq=22, vol=63, channel=2)
+1FF1: loc_1FF1:
+1FF1: (0A) jmpIf(VAR(0x1E) != 2, @1FFD)
+1FF7: (18) playSound(res=11, freq=18, vol=63, channel=2)
+1FFD: loc_1FFD:
+1FFD: (0A) jmpIf(VAR(0x1E) != 3, @2009)
+2003: (18) playSound(res=11, freq=18, vol=63, channel=2)
+2009: loc_2009:
+2009: (0A) jmpIf(VAR(0x1E) != 4, @2015)
+200F: (18) playSound(res=11, freq=20, vol=63, channel=2)
+2015: loc_2015:
+2015: (0A) jmpIf(VAR(0x1E) != 5, @2021)
+201B: (18) playSound(res=11, freq=20, vol=63, channel=2)
+2021: loc_2021:
+2021: (05) ret // RETURN FROM CALL
+
+2022: // START OF SCRIPT TASK
+2022: (00) VAR(0x04) = 64
+2026: (00) VAR(0x06) = 15
+202A: loc_202A:
+202A: (03) VAR(0x04) += 3
+202E: (06) yieldTask // PAUSE SCRIPT TASK
+202F: (09) jmpIfVar(VAR(0x06), @202A)
+2033: (00) VAR(0x06) = 10
+2037: loc_2037:
+2037: (03) VAR(0x04) += 5
+203B: (06) yieldTask // PAUSE SCRIPT TASK
+203C: (09) jmpIfVar(VAR(0x06), @2037)
+2040: (00) VAR(0x06) = 20
+2044: loc_2044:
+2044: (03) VAR(0x04) += 9
+2048: (06) yieldTask // PAUSE SCRIPT TASK
+2049: (09) jmpIfVar(VAR(0x06), @2044)
+204D: (08) installTask(2, @007D)
+2051: (0E) fillPage(page=255, color=9)
+2054: (06) yieldTask // PAUSE SCRIPT TASK
+2055: (0B) setPalette(num=14)
+2058: (0F) copyPage(src=3, dst=0)
+205B: (0D) selectPage(page=0)
+205D: (A2) SHAPE_0xA2 offset=0x446c (bank1.mat) x=160 y=100
+2061: (A2) SHAPE_0xA2 offset=0x44b0 (bank1.mat) x=160 y=100
+2065: (0D) selectPage(page=255)
+2067: (0E) fillPage(page=255, color=9)
+206A: (06) yieldTask // PAUSE SCRIPT TASK
+206B: (08) installTask(3, @21D3)
+206F: (18) playSound(res=54, freq=20, vol=63, channel=3)
+2075: (00) VAR(0x04) = 339
+2079: (00) VAR(0x06) = 20
+207D: loc_207D:
+207D: (03) VAR(0x04) -= 9
+2081: (06) yieldTask // PAUSE SCRIPT TASK
+2082: (09) jmpIfVar(VAR(0x06), @207D)
+2086: (00) VAR(0x06) = 10
+208A: loc_208A:
+208A: (03) VAR(0x04) -= 5
+208E: (06) yieldTask // PAUSE SCRIPT TASK
+208F: (09) jmpIfVar(VAR(0x06), @208A)
+2093: (00) VAR(0x06) = 5
+2097: loc_2097:
+2097: (03) VAR(0x04) -= 3
+209B: (06) yieldTask // PAUSE SCRIPT TASK
+209C: (09) jmpIfVar(VAR(0x06), @2097)
+20A0: (08) installTask(1, @007D)
+20A4: (08) installTask(2, @1EA2)
+20A8: (08) installTask(3, @1FA4)
+20AC: (08) installTask(4, @007D)
+20B0: (11) removeTask // STOP SCRIPT TASK
+
+20B1: // START OF SCRIPT TASK
+20B1: (00) VAR(0x04) = 94
+20B5: (0B) setPalette(num=14)
+20B8: (00) VAR(0x01) = 100
+20BC: (00) VAR(0x02) = 100
+20C0: (00) VAR(0x03) = 9
+20C4: (08) installTask(4, @219D)
+20C8: (0F) copyPage(src=3, dst=0)
+20CB: (0F) copyPage(src=0, dst=255)
+20CE: (18) playSound(res=12, freq=15, vol=63, channel=2)
+20D4: loc_20D4:
+20D4: (03) VAR(0x01) -= 20
+20D8: (03) VAR(0x02) += 20
+20DC: (64) SHAPE_0x64 offset=0x446c (bank1.mat) x=160 y=1
+20E1: (64) SHAPE_0x64 offset=0x44b0 (bank1.mat) x=160 y=2
+20E6: (69) SHAPE_0x69 offset=0x42be (bank1.mat) x=160 y=111
+20EC: (06) yieldTask // PAUSE SCRIPT TASK
+20ED: (09) jmpIfVar(VAR(0x03), @20D4)
+20F1: (69) SHAPE_0x69 offset=0x42be (bank1.mat) x=160 y=111
+20F7: (08) installTask(8, @21D3)
+20FB: (08) installTask(9, @21C4)
+20FF: (08) installTask(5, @216E)
+2103: (00) VAR(0x03) = 7
+2107: loc_2107:
+2107: (03) VAR(0x04) -= 3
+210B: (06) yieldTask // PAUSE SCRIPT TASK
+210C: (09) jmpIfVar(VAR(0x03), @2107)
+2110: (18) playSound(res=12, freq=10, vol=50, channel=2)
+2116: (00) VAR(0x03) = 3
+211A: loc_211A:
+211A: (03) VAR(0x01) += 20
+211E: (03) VAR(0x02) -= 20
+2122: (03) VAR(0x04) += 0
+2126: (06) yieldTask // PAUSE SCRIPT TASK
+2127: (09) jmpIfVar(VAR(0x03), @211A)
+212B: (08) installTask(8, @007D)
+212F: (03) VAR(0x01) += 20
+2133: (03) VAR(0x02) -= 20
+2137: (06) yieldTask // PAUSE SCRIPT TASK
+2138: (00) VAR(0x03) = 5
+213C: loc_213C:
+213C: (03) VAR(0x01) += 20
+2140: (03) VAR(0x02) -= 20
+2144: (69) SHAPE_0x69 offset=0x431e (bank1.mat) x=160 y=111
+214A: (06) yieldTask // PAUSE SCRIPT TASK
+214B: (09) jmpIfVar(VAR(0x03), @213C)
+214F: (18) playSound(res=54, freq=15, vol=63, channel=2)
+2155: (08) installTask(5, @007D)
+2159: (08) installTask(4, @007D)
+215D: (08) installTask(8, @007D)
+2161: (08) installTask(9, @007D)
+2165: (08) installTask(1, @1888)
+2169: (08) installTask(2, @18A2)
+216D: (11) removeTask // STOP SCRIPT TASK
+
+216E: // START OF SCRIPT TASK
+216E: loc_216E:
+216E: (00) VAR(0x06) = 122
+2172: (00) VAR(0x07) = 130
+2176: (00) VAR(0x08) = 5
+217A: loc_217A:
+217A: (00) VAR(0x09) = 3
+217E: loc_217E:
+217E: (58) SHAPE_0x58 offset=0x06a8 (bank1.mat) x=6 y=16
+2183: (58) SHAPE_0x58 offset=0x06a8 (bank1.mat) x=7 y=18
+2188: (06) yieldTask // PAUSE SCRIPT TASK
+2189: (09) jmpIfVar(VAR(0x09), @217E)
+218D: (03) VAR(0x06) += 2
+2191: (03) VAR(0x07) -= 2
+2195: (09) jmpIfVar(VAR(0x08), @217A)
+2199: (07) jmp(@216E)
+219C: (11) removeTask // STOP SCRIPT TASK
+
+219D: // START OF SCRIPT TASK
+219D: loc_219D:
+219D: (06) yieldTask // PAUSE SCRIPT TASK
+219E: (0D) selectPage(page=0)
+21A0: (83) SHAPE_0x83 offset=0x06cc (bank1.mat) x=96 y=131
+21A4: (0D) selectPage(page=255)
+21A6: (00) VAR(0x05) = 3
+21AA: loc_21AA:
+21AA: (06) yieldTask // PAUSE SCRIPT TASK
+21AB: (09) jmpIfVar(VAR(0x05), @21AA)
+21AF: (0D) selectPage(page=0)
+21B1: (83) SHAPE_0x83 offset=0x06a8 (bank1.mat) x=96 y=131
+21B5: (0D) selectPage(page=255)
+21B7: (00) VAR(0x05) = 4
+21BB: loc_21BB:
+21BB: (06) yieldTask // PAUSE SCRIPT TASK
+21BC: (09) jmpIfVar(VAR(0x05), @21BB)
+21C0: (07) jmp(@219D)
+21C3: (11) removeTask // STOP SCRIPT TASK
+
+21C4: // START OF SCRIPT TASK
+21C4: loc_21C4:
+21C4: (64) SHAPE_0x64 offset=0x446c (bank1.mat) x=160 y=1
+21C9: (64) SHAPE_0x64 offset=0x44b0 (bank1.mat) x=160 y=2
+21CE: (06) yieldTask // PAUSE SCRIPT TASK
+21CF: (07) jmp(@21C4)
+21D2: (11) removeTask // STOP SCRIPT TASK
+
+21D3: // START OF SCRIPT TASK
+21D3: loc_21D3:
+21D3: (69) SHAPE_0x69 offset=0x42be (bank1.mat) x=160 y=111
+21D9: (06) yieldTask // PAUSE SCRIPT TASK
+21DA: (69) SHAPE_0x69 offset=0x42d6 (bank1.mat) x=160 y=111
+21E0: (06) yieldTask // PAUSE SCRIPT TASK
+21E1: (69) SHAPE_0x69 offset=0x42ee (bank1.mat) x=160 y=111
+21E7: (06) yieldTask // PAUSE SCRIPT TASK
+21E8: (69) SHAPE_0x69 offset=0x4306 (bank1.mat) x=160 y=111
+21EE: (06) yieldTask // PAUSE SCRIPT TASK
+21EF: (69) SHAPE_0x69 offset=0x431e (bank1.mat) x=160 y=111
+21F5: (06) yieldTask // PAUSE SCRIPT TASK
+21F6: (69) SHAPE_0x69 offset=0x4336 (bank1.mat) x=160 y=111
+21FC: (06) yieldTask // PAUSE SCRIPT TASK
+21FD: (69) SHAPE_0x69 offset=0x434e (bank1.mat) x=160 y=111
+2203: (06) yieldTask // PAUSE SCRIPT TASK
+2204: (69) SHAPE_0x69 offset=0x4366 (bank1.mat) x=160 y=111
+220A: (06) yieldTask // PAUSE SCRIPT TASK
+220B: (69) SHAPE_0x69 offset=0x434e (bank1.mat) x=160 y=111
+2211: (06) yieldTask // PAUSE SCRIPT TASK
+2212: (69) SHAPE_0x69 offset=0x4336 (bank1.mat) x=160 y=111
+2218: (06) yieldTask // PAUSE SCRIPT TASK
+2219: (69) SHAPE_0x69 offset=0x431e (bank1.mat) x=160 y=111
+221F: (06) yieldTask // PAUSE SCRIPT TASK
+2220: (69) SHAPE_0x69 offset=0x4306 (bank1.mat) x=160 y=111
+2226: (06) yieldTask // PAUSE SCRIPT TASK
+2227: (69) SHAPE_0x69 offset=0x42ee (bank1.mat) x=160 y=111
+222D: (06) yieldTask // PAUSE SCRIPT TASK
+222E: (69) SHAPE_0x69 offset=0x42d6 (bank1.mat) x=160 y=111
+2234: (06) yieldTask // PAUSE SCRIPT TASK
+2235: (69) SHAPE_0x69 offset=0x42be (bank1.mat) x=160 y=111
+223B: (06) yieldTask // PAUSE SCRIPT TASK
+223C: (69) SHAPE_0x69 offset=0x42a6 (bank1.mat) x=160 y=111
+2242: (06) yieldTask // PAUSE SCRIPT TASK
+2243: (07) jmp(@21D3)
+2246: (11) removeTask // STOP SCRIPT TASK
+
+2247: // START OF SCRIPT TASK
+2247: loc_2247:
+2247: (69) SHAPE_0x69 offset=0x187e (bank1.mat) x=160 y=111
+224D: (06) yieldTask // PAUSE SCRIPT TASK
+224E: (69) SHAPE_0x69 offset=0x18f6 (bank1.mat) x=160 y=111
+2254: (06) yieldTask // PAUSE SCRIPT TASK
+2255: (18) playSound(res=60, freq=10, vol=15, channel=2)
+225B: (69) SHAPE_0x69 offset=0x1972 (bank1.mat) x=160 y=111
+2261: (06) yieldTask // PAUSE SCRIPT TASK
+2262: (69) SHAPE_0x69 offset=0x19f2 (bank1.mat) x=160 y=111
+2268: (06) yieldTask // PAUSE SCRIPT TASK
+2269: (69) SHAPE_0x69 offset=0x1a72 (bank1.mat) x=160 y=111
+226F: (06) yieldTask // PAUSE SCRIPT TASK
+2270: (69) SHAPE_0x69 offset=0x1af2 (bank1.mat) x=160 y=111
+2276: (06) yieldTask // PAUSE SCRIPT TASK
+2277: (69) SHAPE_0x69 offset=0x1b72 (bank1.mat) x=160 y=111
+227D: (06) yieldTask // PAUSE SCRIPT TASK
+227E: (69) SHAPE_0x69 offset=0x1bf2 (bank1.mat) x=160 y=111
+2284: (06) yieldTask // PAUSE SCRIPT TASK
+2285: (69) SHAPE_0x69 offset=0x1b72 (bank1.mat) x=160 y=111
+228B: (18) playSound(res=60, freq=11, vol=20, channel=2)
+2291: (06) yieldTask // PAUSE SCRIPT TASK
+2292: (69) SHAPE_0x69 offset=0x1af2 (bank1.mat) x=160 y=111
+2298: (06) yieldTask // PAUSE SCRIPT TASK
+2299: (69) SHAPE_0x69 offset=0x1a72 (bank1.mat) x=160 y=111
+229F: (06) yieldTask // PAUSE SCRIPT TASK
+22A0: (69) SHAPE_0x69 offset=0x19f2 (bank1.mat) x=160 y=111
+22A6: (06) yieldTask // PAUSE SCRIPT TASK
+22A7: (69) SHAPE_0x69 offset=0x1972 (bank1.mat) x=160 y=111
+22AD: (06) yieldTask // PAUSE SCRIPT TASK
+22AE: (69) SHAPE_0x69 offset=0x18f6 (bank1.mat) x=160 y=111
+22B4: (06) yieldTask // PAUSE SCRIPT TASK
+22B5: (69) SHAPE_0x69 offset=0x187e (bank1.mat) x=160 y=111
+22BB: (06) yieldTask // PAUSE SCRIPT TASK
+22BC: (69) SHAPE_0x69 offset=0x180a (bank1.mat) x=160 y=111
+22C2: (06) yieldTask // PAUSE SCRIPT TASK
+22C3: (07) jmp(@2247)
+22C6: (11) removeTask // STOP SCRIPT TASK
+
+22C7: // START OF SCRIPT TASK
+22C7: loc_22C7:
+22C7: (86) SHAPE_0x86 offset=0x0cb8 (bank1.mat) x=90 y=101
+22CB: (06) yieldTask // PAUSE SCRIPT TASK
+22CC: (07) jmp(@22C7)
+22CF: (11) removeTask // STOP SCRIPT TASK
+
+22D0: // START OF SCRIPT TASK
+22D0: (0D) selectPage(page=0)
+22D2: (0E) fillPage(page=0, color=2)
+22D5: (0B) setPalette(num=1)
+22D8: (84) SHAPE_0x84 offset=0x0830 (bank1.mat) x=192 y=59
+22DC: (84) SHAPE_0x84 offset=0x0830 (bank1.mat) x=45 y=50
+22E0: (86) SHAPE_0x86 offset=0x0c88 (bank1.mat) x=247 y=108
+22E4: (85) SHAPE_0x85 offset=0x0a90 (bank1.mat) x=171 y=100
+22E8: (78) SHAPE_0x78 offset=0x0bfc (bank1.mat) x=19 y=44
+22ED: (78) SHAPE_0x78 offset=0x0a84 (bank1.mat) x=12 y=79
+22F2: (78) SHAPE_0x78 offset=0x0b4a (bank1.mat) x=41 y=91
+22F7: (85) SHAPE_0x85 offset=0x0b56 (bank1.mat) x=251 y=98
+22FB: (78) SHAPE_0x78 offset=0x0b62 (bank1.mat) x=53 y=96
+2300: (78) SHAPE_0x78 offset=0x0b6e (bank1.mat) x=28 y=101
+2305: (78) SHAPE_0x78 offset=0x0b8e (bank1.mat) x=101 y=119
+230A: (83) SHAPE_0x83 offset=0x0704 (bank1.mat) x=190 y=143
+230E: (83) SHAPE_0x83 offset=0x073c (bank1.mat) x=19 y=78
+2312: (83) SHAPE_0x83 offset=0x071c (bank1.mat) x=160 y=78
+2316: (84) SHAPE_0x84 offset=0x094c (bank1.mat) x=196 y=94
+231A: (84) SHAPE_0x84 offset=0x094c (bank1.mat) x=61 y=94
+231E: (86) SHAPE_0x86 offset=0x0d98 (bank1.mat) x=161 y=96
+2322: (83) SHAPE_0x83 offset=0x0748 (bank1.mat) x=244 y=78
+2326: (83) SHAPE_0x83 offset=0x075c (bank1.mat) x=245 y=78
+232A: (84) SHAPE_0x84 offset=0x09b6 (bank1.mat) x=245 y=78
+232E: (85) SHAPE_0x85 offset=0x0b2a (bank1.mat) x=29 y=32
+2332: (85) SHAPE_0x85 offset=0x0a74 (bank1.mat) x=194 y=43
+2336: (85) SHAPE_0x85 offset=0x0a64 (bank1.mat) x=75 y=120
+233A: (85) SHAPE_0x85 offset=0x0a54 (bank1.mat) x=89 y=123
+233E: (85) SHAPE_0x85 offset=0x0a54 (bank1.mat) x=105 y=123
+2342: (85) SHAPE_0x85 offset=0x0a54 (bank1.mat) x=180 y=123
+2346: (85) SHAPE_0x85 offset=0x0a54 (bank1.mat) x=181 y=123
+234A: (85) SHAPE_0x85 offset=0x0a64 (bank1.mat) x=210 y=120
+234E: (84) SHAPE_0x84 offset=0x09ca (bank1.mat) x=62 y=114
+2352: (84) SHAPE_0x84 offset=0x09f2 (bank1.mat) x=45 y=121
+2356: (84) SHAPE_0x84 offset=0x09f2 (bank1.mat) x=140 y=116
+235A: (84) SHAPE_0x84 offset=0x09f2 (bank1.mat) x=63 y=126
+235E: (85) SHAPE_0x85 offset=0x0a24 (bank1.mat) x=137 y=59
+2362: (85) SHAPE_0x85 offset=0x0a24 (bank1.mat) x=103 y=121
+2366: (84) SHAPE_0x84 offset=0x09ca (bank1.mat) x=152 y=117
+236A: (85) SHAPE_0x85 offset=0x0a24 (bank1.mat) x=42 y=117
+236E: (84) SHAPE_0x84 offset=0x09ca (bank1.mat) x=180 y=55
+2372: (85) SHAPE_0x85 offset=0x0a24 (bank1.mat) x=19 y=113
+2376: (83) SHAPE_0x83 offset=0x0704 (bank1.mat) x=142 y=125
+237A: (83) SHAPE_0x83 offset=0x0704 (bank1.mat) x=11 y=126
+237E: (85) SHAPE_0x85 offset=0x0b36 (bank1.mat) x=108 y=138
+2382: (86) SHAPE_0x86 offset=0x0ce4 (bank1.mat) x=208 y=114
+2386: (86) SHAPE_0x86 offset=0x0d30 (bank1.mat) x=163 y=111
+238A: (86) SHAPE_0x86 offset=0x0d64 (bank1.mat) x=221 y=91
+238E: (86) SHAPE_0x86 offset=0x0d30 (bank1.mat) x=83 y=109
+2392: (86) SHAPE_0x86 offset=0x0dca (bank1.mat) x=251 y=116
+2396: (78) SHAPE_0x78 offset=0x0e02 (bank1.mat) x=2 y=131
+239B: (87) SHAPE_0x87 offset=0x0e0e (bank1.mat) x=2 y=26
+239F: (87) SHAPE_0x87 offset=0x0e1a (bank1.mat) x=31 y=12
+23A3: (87) SHAPE_0x87 offset=0x0e26 (bank1.mat) x=32 y=169
+23A7: (8B) SHAPE_0x8B offset=0x17fe (bank1.mat) x=7 y=175
+23AB: (11) removeTask // STOP SCRIPT TASK
+
+23AC: // START OF SCRIPT TASK
+23AC: (06) yieldTask // PAUSE SCRIPT TASK
+23AD: (18) playSound(res=8, freq=1, vol=45, channel=3)
+23B3: (18) playSound(res=8, freq=5, vol=45, channel=2)
+23B9: (00) VAR(0xFF) = 4
+23BD: (00) VAR(0x01) = 18
+23C1: loc_23C1:
+23C1: (06) yieldTask // PAUSE SCRIPT TASK
+23C2: (09) jmpIfVar(VAR(0x01), @23C1)
+23C6: (18) playSound(res=9, freq=20, vol=30, channel=0)
+23CC: (18) playSound(res=9, freq=20, vol=63, channel=1)
+23D2: (00) VAR(0xFF) = 3
+23D6: (82) SHAPE_0x82 offset=0x0404 (bank1.mat) x=158 y=100
+23DA: (6A) SHAPE_0x6A offset=0x0938 (bank1.mat) x=43 y=132
+23E0: (7A) SHAPE_0x7A offset=0x0938 (bank1.mat) x=136 y=136
+23E6: (06) yieldTask // PAUSE SCRIPT TASK
+23E7: (82) SHAPE_0x82 offset=0x0410 (bank1.mat) x=188 y=101
+23EB: (84) SHAPE_0x84 offset=0x0938 (bank1.mat) x=125 y=107
+23EF: (78) SHAPE_0x78 offset=0x0938 (bank1.mat) x=58 y=111
+23F4: (06) yieldTask // PAUSE SCRIPT TASK
+23F5: (84) SHAPE_0x84 offset=0x083c (bank1.mat) x=133 y=100
+23F9: (82) SHAPE_0x82 offset=0x041c (bank1.mat) x=189 y=99
+23FD: (6A) SHAPE_0x6A offset=0x0938 (bank1.mat) x=210 y=117
+2403: (7A) SHAPE_0x7A offset=0x0938 (bank1.mat) x=83 y=118
+2409: (06) yieldTask // PAUSE SCRIPT TASK
+240A: (84) SHAPE_0x84 offset=0x0858 (bank1.mat) x=153 y=102
+240E: (82) SHAPE_0x82 offset=0x0428 (bank1.mat) x=188 y=100
+2412: (7A) SHAPE_0x7A offset=0x0938 (bank1.mat) x=5 y=120
+2418: (7A) SHAPE_0x7A offset=0x0938 (bank1.mat) x=81 y=122
+241E: (06) yieldTask // PAUSE SCRIPT TASK
+241F: (84) SHAPE_0x84 offset=0x0874 (bank1.mat) x=128 y=107
+2423: (82) SHAPE_0x82 offset=0x0438 (bank1.mat) x=188 y=100
+2427: (7A) SHAPE_0x7A offset=0x0938 (bank1.mat) x=49 y=119
+242D: (06) yieldTask // PAUSE SCRIPT TASK
+242E: (82) SHAPE_0x82 offset=0x044c (bank1.mat) x=188 y=101
+2432: (84) SHAPE_0x84 offset=0x088c (bank1.mat) x=85 y=110
+2436: (7A) SHAPE_0x7A offset=0x0938 (bank1.mat) x=71 y=120
+243C: (06) yieldTask // PAUSE SCRIPT TASK
+243D: (82) SHAPE_0x82 offset=0x0460 (bank1.mat) x=187 y=101
+2441: (84) SHAPE_0x84 offset=0x089c (bank1.mat) x=64 y=114
+2445: (06) yieldTask // PAUSE SCRIPT TASK
+2446: (82) SHAPE_0x82 offset=0x0470 (bank1.mat) x=212 y=96
+244A: (84) SHAPE_0x84 offset=0x08b0 (bank1.mat) x=42 y=117
+244E: (06) yieldTask // PAUSE SCRIPT TASK
+244F: (82) SHAPE_0x82 offset=0x048c (bank1.mat) x=212 y=96
+2453: (84) SHAPE_0x84 offset=0x08c4 (bank1.mat) x=49 y=119
+2457: (06) yieldTask // PAUSE SCRIPT TASK
+2458: (82) SHAPE_0x82 offset=0x04b0 (bank1.mat) x=211 y=96
+245C: (84) SHAPE_0x84 offset=0x08c4 (bank1.mat) x=44 y=118
+2460: (06) yieldTask // PAUSE SCRIPT TASK
+2461: (82) SHAPE_0x82 offset=0x04f4 (bank1.mat) x=212 y=96
+2465: (84) SHAPE_0x84 offset=0x08d8 (bank1.mat) x=45 y=120
+2469: (06) yieldTask // PAUSE SCRIPT TASK
+246A: (82) SHAPE_0x82 offset=0x0510 (bank1.mat) x=212 y=96
+246E: (84) SHAPE_0x84 offset=0x08d8 (bank1.mat) x=39 y=118
+2472: (06) yieldTask // PAUSE SCRIPT TASK
+2473: (82) SHAPE_0x82 offset=0x0548 (bank1.mat) x=213 y=96
+2477: (84) SHAPE_0x84 offset=0x08ec (bank1.mat) x=40 y=120
+247B: (06) yieldTask // PAUSE SCRIPT TASK
+247C: (82) SHAPE_0x82 offset=0x0568 (bank1.mat) x=216 y=100
+2480: (84) SHAPE_0x84 offset=0x08ec (bank1.mat) x=36 y=121
+2484: (06) yieldTask // PAUSE SCRIPT TASK
+2485: (82) SHAPE_0x82 offset=0x0590 (bank1.mat) x=216 y=100
+2489: (84) SHAPE_0x84 offset=0x0900 (bank1.mat) x=42 y=120
+248D: (06) yieldTask // PAUSE SCRIPT TASK
+248E: (0B) setPalette(num=5)
+2491: (00) VAR(0x01) = 20
+2495: (0D) selectPage(page=0)
+2497: (82) SHAPE_0x82 offset=0x05b8 (bank1.mat) x=215 y=100
+249B: (0F) copyPage(src=0, dst=255)
+249E: (0D) selectPage(page=255)
+24A0: (00) VAR(0xFF) = 2
+24A4: loc_24A4:
+24A4: (84) SHAPE_0x84 offset=0x0900 (bank1.mat) x=42 y=120
+24A8: (E1) SHAPE_0xE1 offset=0xc328 (bank1.mat) x=160 y=100
+24AC: (06) yieldTask // PAUSE SCRIPT TASK
+24AD: (09) jmpIfVar(VAR(0x01), @24A4)
+24B1: (0B) setPalette(num=3)
+24B4: (00) VAR(0x01) = 30
+24B8: loc_24B8:
+24B8: (E1) SHAPE_0xE1 offset=0xc318 (bank1.mat) x=160 y=100
+24BC: (06) yieldTask // PAUSE SCRIPT TASK
+24BD: (09) jmpIfVar(VAR(0x01), @24B8)
+24C1: (07) jmp(@03E6)
+24C4: (11) removeTask // STOP SCRIPT TASK
+
+24C5: // START OF SCRIPT TASK
+24C5: (06) yieldTask // PAUSE SCRIPT TASK
+24C6: (18) playSound(res=13, freq=20, vol=25, channel=2)
+24CC: (00) VAR(0xFF) = 3
+24D0: (00) VAR(0x01) = 50
+24D4: (06) yieldTask // PAUSE SCRIPT TASK
+24D5: (18) playSound(res=60, freq=20, vol=1, channel=1)
+24DB: (87) SHAPE_0x87 offset=0x0f72 (bank1.mat) x=229 y=98
+24DF: (06) yieldTask // PAUSE SCRIPT TASK
+24E0: (87) SHAPE_0x87 offset=0x0f7e (bank1.mat) x=230 y=97
+24E4: (06) yieldTask // PAUSE SCRIPT TASK
+24E5: (87) SHAPE_0x87 offset=0x0fa2 (bank1.mat) x=230 y=97
+24E9: (06) yieldTask // PAUSE SCRIPT TASK
+24EA: (87) SHAPE_0x87 offset=0x0fca (bank1.mat) x=230 y=98
+24EE: (06) yieldTask // PAUSE SCRIPT TASK
+24EF: (87) SHAPE_0x87 offset=0x0ff2 (bank1.mat) x=229 y=97
+24F3: (06) yieldTask // PAUSE SCRIPT TASK
+24F4: (88) SHAPE_0x88 offset=0x101a (bank1.mat) x=229 y=97
+24F8: (18) playSound(res=60, freq=20, vol=63, channel=0)
+24FE: (06) yieldTask // PAUSE SCRIPT TASK
+24FF: (88) SHAPE_0x88 offset=0x1048 (bank1.mat) x=230 y=97
+2503: (06) yieldTask // PAUSE SCRIPT TASK
+2504: (88) SHAPE_0x88 offset=0x105e (bank1.mat) x=229 y=98
+2508: (06) yieldTask // PAUSE SCRIPT TASK
+2509: (88) SHAPE_0x88 offset=0x1082 (bank1.mat) x=230 y=97
+250D: (06) yieldTask // PAUSE SCRIPT TASK
+250E: (88) SHAPE_0x88 offset=0x10b6 (bank1.mat) x=231 y=98
+2512: (06) yieldTask // PAUSE SCRIPT TASK
+2513: (88) SHAPE_0x88 offset=0x10e2 (bank1.mat) x=230 y=97
+2517: (06) yieldTask // PAUSE SCRIPT TASK
+2518: (88) SHAPE_0x88 offset=0x110a (bank1.mat) x=231 y=98
+251C: (06) yieldTask // PAUSE SCRIPT TASK
+251D: (88) SHAPE_0x88 offset=0x113e (bank1.mat) x=231 y=97
+2521: (06) yieldTask // PAUSE SCRIPT TASK
+2522: (88) SHAPE_0x88 offset=0x1158 (bank1.mat) x=232 y=97
+2526: (06) yieldTask // PAUSE SCRIPT TASK
+2527: (88) SHAPE_0x88 offset=0x117e (bank1.mat) x=232 y=97
+252B: (18) playSound(res=60, freq=10, vol=63, channel=0)
+2531: (06) yieldTask // PAUSE SCRIPT TASK
+2532: (88) SHAPE_0x88 offset=0x11ac (bank1.mat) x=231 y=97
+2536: (06) yieldTask // PAUSE SCRIPT TASK
+2537: (88) SHAPE_0x88 offset=0x11c6 (bank1.mat) x=232 y=97
+253B: (06) yieldTask // PAUSE SCRIPT TASK
+253C: (89) SHAPE_0x89 offset=0x1200 (bank1.mat) x=232 y=97
+2540: (06) yieldTask // PAUSE SCRIPT TASK
+2541: (89) SHAPE_0x89 offset=0x122a (bank1.mat) x=231 y=98
+2545: (06) yieldTask // PAUSE SCRIPT TASK
+2546: (89) SHAPE_0x89 offset=0x1278 (bank1.mat) x=230 y=97
+254A: (06) yieldTask // PAUSE SCRIPT TASK
+254B: (89) SHAPE_0x89 offset=0x1292 (bank1.mat) x=226 y=96
+254F: (06) yieldTask // PAUSE SCRIPT TASK
+2550: (89) SHAPE_0x89 offset=0x12ac (bank1.mat) x=230 y=96
+2554: (06) yieldTask // PAUSE SCRIPT TASK
+2555: (89) SHAPE_0x89 offset=0x12f2 (bank1.mat) x=230 y=96
+2559: (06) yieldTask // PAUSE SCRIPT TASK
+255A: (18) playSound(res=60, freq=15, vol=15, channel=2)
+2560: (89) SHAPE_0x89 offset=0x130c (bank1.mat) x=230 y=96
+2564: (06) yieldTask // PAUSE SCRIPT TASK
+2565: (89) SHAPE_0x89 offset=0x1326 (bank1.mat) x=230 y=96
+2569: (06) yieldTask // PAUSE SCRIPT TASK
+256A: (89) SHAPE_0x89 offset=0x1340 (bank1.mat) x=230 y=96
+256E: (06) yieldTask // PAUSE SCRIPT TASK
+256F: (89) SHAPE_0x89 offset=0x135a (bank1.mat) x=230 y=96
+2573: (06) yieldTask // PAUSE SCRIPT TASK
+2574: (89) SHAPE_0x89 offset=0x1374 (bank1.mat) x=230 y=96
+2578: (06) yieldTask // PAUSE SCRIPT TASK
+2579: (89) SHAPE_0x89 offset=0x13ea (bank1.mat) x=230 y=96
+257D: (06) yieldTask // PAUSE SCRIPT TASK
+257E: (8A) SHAPE_0x8A offset=0x1404 (bank1.mat) x=230 y=96
+2582: (06) yieldTask // PAUSE SCRIPT TASK
+2583: (8A) SHAPE_0x8A offset=0x141e (bank1.mat) x=230 y=96
+2587: (06) yieldTask // PAUSE SCRIPT TASK
+2588: (8A) SHAPE_0x8A offset=0x143c (bank1.mat) x=230 y=96
+258C: (06) yieldTask // PAUSE SCRIPT TASK
+258D: (8A) SHAPE_0x8A offset=0x145a (bank1.mat) x=230 y=96
+2591: (06) yieldTask // PAUSE SCRIPT TASK
+2592: (8A) SHAPE_0x8A offset=0x1478 (bank1.mat) x=230 y=96
+2596: (06) yieldTask // PAUSE SCRIPT TASK
+2597: (8A) SHAPE_0x8A offset=0x14f6 (bank1.mat) x=230 y=96
+259B: (06) yieldTask // PAUSE SCRIPT TASK
+259C: (0D) selectPage(page=0)
+259E: (E1) SHAPE_0xE1 offset=0xc3cc (bank1.mat) x=160 y=100
+25A2: (E1) SHAPE_0xE1 offset=0xc368 (bank1.mat) x=160 y=100
+25A6: (0D) selectPage(page=255)
+25A8: (8A) SHAPE_0x8A offset=0x1514 (bank1.mat) x=230 y=96
+25AC: (06) yieldTask // PAUSE SCRIPT TASK
+25AD: (0D) selectPage(page=0)
+25AF: (E1) SHAPE_0xE1 offset=0xc3cc (bank1.mat) x=160 y=100
+25B3: (0D) selectPage(page=255)
+25B5: (8A) SHAPE_0x8A offset=0x1532 (bank1.mat) x=125 y=98
+25B9: (06) yieldTask // PAUSE SCRIPT TASK
+25BA: (8A) SHAPE_0x8A offset=0x1584 (bank1.mat) x=125 y=98
+25BE: (06) yieldTask // PAUSE SCRIPT TASK
+25BF: (8A) SHAPE_0x8A offset=0x15b6 (bank1.mat) x=125 y=98
+25C3: (06) yieldTask // PAUSE SCRIPT TASK
+25C4: (8A) SHAPE_0x8A offset=0x15d0 (bank1.mat) x=125 y=98
+25C8: (06) yieldTask // PAUSE SCRIPT TASK
+25C9: (00) VAR(0xFF) = 2
+25CD: (8A) SHAPE_0x8A offset=0x15ea (bank1.mat) x=125 y=98
+25D1: (06) yieldTask // PAUSE SCRIPT TASK
+25D2: (8B) SHAPE_0x8B offset=0x1658 (bank1.mat) x=125 y=98
+25D6: (06) yieldTask // PAUSE SCRIPT TASK
+25D7: (8B) SHAPE_0x8B offset=0x166a (bank1.mat) x=125 y=98
+25DB: (06) yieldTask // PAUSE SCRIPT TASK
+25DC: (8B) SHAPE_0x8B offset=0x16a2 (bank1.mat) x=125 y=98
+25E0: (06) yieldTask // PAUSE SCRIPT TASK
+25E1: (8B) SHAPE_0x8B offset=0x16ea (bank1.mat) x=125 y=98
+25E5: (18) playSound(res=60, freq=10, vol=20, channel=2)
+25EB: (06) yieldTask // PAUSE SCRIPT TASK
+25EC: (8B) SHAPE_0x8B offset=0x1712 (bank1.mat) x=125 y=98
+25F0: (06) yieldTask // PAUSE SCRIPT TASK
+25F1: (8B) SHAPE_0x8B offset=0x1712 (bank1.mat) x=94 y=97
+25F5: (06) yieldTask // PAUSE SCRIPT TASK
+25F6: (8B) SHAPE_0x8B offset=0x1712 (bank1.mat) x=71 y=115
+25FA: (06) yieldTask // PAUSE SCRIPT TASK
+25FB: (00) VAR(0xFF) = 2
+25FF: (00) VAR(0x01) = 30
+2603: loc_2603:
+2603: (06) yieldTask // PAUSE SCRIPT TASK
+2604: (09) jmpIfVar(VAR(0x01), @2603)
+2608: (00) VAR(0xFF) = 2
+260C: (E1) SHAPE_0xE1 offset=0xc368 (bank1.mat) x=160 y=100
+2610: (0D) selectPage(page=0)
+2612: (E1) SHAPE_0xE1 offset=0xc33c (bank1.mat) x=160 y=100
+2616: (0D) selectPage(page=255)
+2618: (18) playSound(res=13, freq=12, vol=63, channel=3)
+261E: (00) VAR(0x01) = 20
+2622: loc_2622:
+2622: (06) yieldTask // PAUSE SCRIPT TASK
+2623: (09) jmpIfVar(VAR(0x01), @2622)
+2627: (08) installTask(1, @1D94)
+262B: (08) installTask(2, @1DC6)
+262F: (08) installTask(3, @1DBD)
+2633: (11) removeTask // STOP SCRIPT TASK
+
+2634: // START OF SCRIPT TASK
+2634: (0E) fillPage(page=0, color=2)
+2637: (0D) selectPage(page=0)
+2639: (0B) setPalette(num=4)
+263C: (E4) SHAPE_0xE4 offset=0xc9c0 (bank1.mat) x=192 y=100
+2640: (8B) SHAPE_0x8B offset=0x1742 (bank1.mat) x=14 y=80
+2644: (8B) SHAPE_0x8B offset=0x1752 (bank1.mat) x=189 y=68
+2648: (8B) SHAPE_0x8B offset=0x1762 (bank1.mat) x=64 y=70
+264C: (8B) SHAPE_0x8B offset=0x177e (bank1.mat) x=244 y=56
+2650: (8B) SHAPE_0x8B offset=0x17a2 (bank1.mat) x=246 y=56
+2654: (8B) SHAPE_0x8B offset=0x17be (bank1.mat) x=247 y=50
+2658: (8B) SHAPE_0x8B offset=0x17d6 (bank1.mat) x=117 y=86
+265C: (8B) SHAPE_0x8B offset=0x17f2 (bank1.mat) x=61 y=69
+2660: (E4) SHAPE_0xE4 offset=0xc9d0 (bank1.mat) x=160 y=100
+2664: (E1) SHAPE_0xE1 offset=0xc33c (bank1.mat) x=160 y=100
+2668: (11) removeTask // STOP SCRIPT TASK
+
+2669: // START OF SCRIPT TASK
+2669: loc_2669:
+2669: (8B) SHAPE_0x8B offset=0x1742 (bank1.mat) x=14 y=80
+266D: (06) yieldTask // PAUSE SCRIPT TASK
+266E: (07) jmp(@2669)
+2671: (11) removeTask // STOP SCRIPT TASK
