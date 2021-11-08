@@ -56,8 +56,13 @@ function read_byte( ) {
 	return value;
 }
 
-function read_word( ) {
-	const value = ( bytecode[ bytecode_offset ] << 8) | bytecode[ bytecode_offset + 1 ];
+function read_uint16(buf, offset) {
+	return ( buf[ offset ] << 8) | buf[ offset + 1 ];
+}
+
+function read_word() {
+	// const value = ( bytecode[ bytecode_offset ] << 8) | bytecode[ bytecode_offset + 1 ];
+	const value = read_uint16(bytecode, bytecode_offset)
 	bytecode_offset += 2;
 	return value;
 }
@@ -411,7 +416,6 @@ function restart( part ) {
 		polygons1 = load( data16, size16 );
 		polygons2 = null;
 	} else if ( part == 16001 ) { // introduction
-		debugger;
 		palette   = load( data17, size17 );
 		bytecode  = load( data18, size18 );
 		polygons1 = load( data19, size19 );
@@ -863,9 +867,11 @@ const INTERVAL = 50;
 var canvas;
 var timer;
 var mixer;
+var player;
 
 function init( name ) {
 	canvas = document.getElementById( name );
+	player = new SfxPlayer()
 	document.onkeydown = function( e ) { set_key_pressed( e.keyCode, 1 ); }
 	document.onkeyup   = function( e ) { set_key_pressed( e.keyCode, 0 ); }
 	reset( );
@@ -944,7 +950,7 @@ function play_music(resNum, delay, pos) {
 	if (resNum !== 0) {
 		debugger
 		// _ply->loadSfxModule(resNum, delay, pos);
-		load_sfx_module(resNum, delay, pos)
+		player.loadSfxModule(resNum, delay, pos)
 		// _ply->start();
 		// _mix->playSfxMusic(resNum);
 	} else if (delay !== 0) {
@@ -955,11 +961,14 @@ function play_music(resNum, delay, pos) {
 	}
 }
 
+
+
 // Mixer
 function load_sfx_module(resNum, delay, pos) {
 	// MemEntry *me = &_res->_memList[resNum];
 	const mem = modules[resNum]
-	const buf = load(mem[0], mem[1]);
+	// faire avant
+	// const buf = load(mem[0], mem[1]);
 	debugger
 }
 
