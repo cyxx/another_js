@@ -56,13 +56,13 @@ function read_byte( ) {
 	return value;
 }
 
-function read_uint16(buf, offset) {
+function read_be_uint16(buf, offset) {
 	return ( buf[ offset ] << 8) | buf[ offset + 1 ];
 }
 
 function read_word() {
 	// const value = ( bytecode[ bytecode_offset ] << 8) | bytecode[ bytecode_offset + 1 ];
-	const value = read_uint16(bytecode, bytecode_offset)
+	const value = read_be_uint16(bytecode, bytecode_offset)
 	bytecode_offset += 2;
 	return value;
 }
@@ -874,6 +874,8 @@ function init( name ) {
 	player = new SfxPlayer()
 	document.onkeydown = function( e ) { set_key_pressed( e.keyCode, 1 ); }
 	document.onkeyup   = function( e ) { set_key_pressed( e.keyCode, 0 ); }
+	load_modules()
+	load_sounds()
 	reset( );
 	if ( timer ) {
 		clearInterval( timer );
@@ -961,7 +963,19 @@ function play_music(resNum, delay, pos) {
 	}
 }
 
+function load_modules() {
+	Object.entries(modules).forEach(([,module]) => {
+		const [data, size] = module
+		module.push(load(data, size))
+	})
+}
 
+function load_sounds() {
+	Object.entries(sounds).forEach(([,sound]) => {
+		const [data, size] = sound
+		sound.push(load(data, size))
+	})
+}
 
 // Mixer
 function load_sfx_module(resNum, delay, pos) {
