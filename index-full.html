@@ -15,6 +15,11 @@
 				Use arrow keys to control the player and Space/Enter to run.
 			</p>
 			</div>
+			<div>
+				<button onclick="init('screen')">
+					Ready!
+				</button>
+			</div>
 			<div align="center" style="width: 640px;">
 				<canvas id="screen" width="640" height="400"></canvas>
 				<p></p>
@@ -50,7 +55,7 @@
 		<script type="text/javascript" src="another-full.js"></script>
 		<!-- <script type="text/javascript" src="another.min.js"></script> -->
 		<script type="text/javascript">
-			init( "screen" );
+			// init( "screen" );
 			function onPauseClick( ) {
 				if ( pause( ) ) {
 					pauseButton.value = "Play";
