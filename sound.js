@@ -109,7 +109,7 @@ class SfxPlayer {
     }
 
 	onSFXPlayerProcessorMessage(event) {
-		console.log('Message from sfplayer processor', event)
+		// console.log('Message from sfplayer processor', event)
         const data = event.data
 		switch(data.message) {
             case 'syncVar':
