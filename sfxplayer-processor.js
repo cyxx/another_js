@@ -72,6 +72,15 @@ const CreateSfxPattern = () => ({
 	sampleVolume: 0
 })
 
+const F32Max = (input) => {
+    if (input > 1.0) {
+        return 1.0
+    } else if (input < -1.0) {
+        return -1.0
+    }
+    return input
+}
+
 class SfxPlayerProcessor extends AudioWorkletProcessor {
     _ready = false
     _delay = 0
@@ -156,9 +165,9 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
         // console.log('***notes end')
 		for (let i = 0; i < len; ++i) {
             // left
-            out[0][i] = (s8buf[2*i] / 128.0)
+            out[0][i] = F32Max((s8buf[2*i] / 128.0) + inp[0][i])
             // right
-            out[1][i] = (s8buf[(2*i) + 1] / 128.0)
+            out[1][i] = F32Max((s8buf[(2*i) + 1] / 128.0) + inp[1][i])
 		}
 	}
 
@@ -404,13 +413,13 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
         }
     }
 
-    process(inputs, outputs, params) {
+    process(inputs, outputs) {
         if (this._ready && this._playing) {
-            this.mixSfxPlayer(null, outputs[0], outputs[0][0].length)
+            this.mixSfxPlayer(inputs[0], outputs[0], outputs[0][0].length)
         }
 
         return true
-    }    
+    }
 }
 
 registerProcessor('sfxplayer-processor', SfxPlayerProcessor)

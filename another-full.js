@@ -55,6 +55,7 @@ var task_num;
 var task_paused;
 
 var next_part;
+var current_part = 0;
 
 var delay = 0;
 var timestamp;
@@ -102,6 +103,12 @@ var opcodes = {
 		const num = read_byte( );
 		const imm = to_signed( read_word( ), 16 );
 		vars[ num ] += imm;
+		// gun sound workaround to do
+		if (current_part === 16006) {
+			debugger
+			// snd_playSound(0x5B, 1, 64, 1);
+		}
+
 	},
 	0x04 : function( ) { // call
 		const addr = read_word( );
@@ -258,8 +265,7 @@ var opcodes = {
 		const freq    = read_byte( );
 		const volume  = read_byte( );
 		const channel = read_byte( );
-		// play_sound()
-		// debugger
+		play_sound(num, freq, volume, channel)
 	},
 	0x19 : function( ) { // load_resource
 		const num = read_word( );
@@ -378,6 +384,7 @@ function update_input( ) {
 function run_tasks( ) {
 	if ( next_part != 0 ) {
 		restart( next_part );
+		current_part = next_part;
 		next_part = 0;
 	}
 	for ( var i = 0; i < tasks.length; ++i ) {
@@ -962,10 +969,11 @@ function update_screen( offset ) {
 }
 
 function play_music(resNum, delay, pos) {
+	return
 	if (resNum !== 0) {
 		// _ply->loadSfxModule(resNum, delay, pos);
 		player.loadSfxModule(resNum, delay, pos)
-		player.start()
+		player.startMusic()
 		mixer.playSfxMusic(resNum)
 	} else if (delay !== 0) {
 		player.setEventsDelay(delay, true)
@@ -982,14 +990,24 @@ function play_sound(resNum, freq, vol, channel) {
 	if (vol > 63) {
 		vol = 63
 	}
-	const [,,me] = sounds[resNum]
-	if (me) {
-		// assert(freq < 40);
-		if (freq >= 40) {
-			console.error(`Assertion failed: $({freq} < 40`)
+	try {
+		// if (resNum !== 0x9)
+		// 	return
+		// else
+		// 	debugger
+
+		const [,,me] = sounds[resNum]
+		if (me) {
+			// assert(freq < 40);
+			if (freq >= 40) {
+				console.error(`Assertion failed: $({freq} < 40`)
+			}
+			mixer.playSoundRaw(channel & 3, me, _freqTable[freq], vol)
 		}
-		mixer.playSoundRaw(channel & 3, me, _freqTable[freq], vol)
-	}	
+	} catch(e) {
+		console.error(`Could not play raw sound ${resNum}`)
+		debugger
+	}
 }
 
 function load_modules() {

@@ -10,49 +10,23 @@ const CreateSfxMod = () => ({
     }))
 })
 
-class Frac {
-	static BITS = 16;
-	static MASK = (1 << Frac.BITS) - 1
-	inc = 0
-	offset = 0
-
-	reset(n, d) {
-		this.inc = ((n << Frac.BITS) / d) >> 0
-		this.offset = 0
-	}
-
-	getInt() {
-		return this.offset >> Frac.BITS
-	}
-	getFrac() {
-		return offset & Frac.MASK
-	}
-	interpolate(sample1, sample2) {
-		const fp = this.getFrac()
-		return ((sample1 * (Frac.MASK - fp) + sample2 * fp) >> Frac.BITS) >> 0
-	}
-}
-
-const CreateChannel = () => ({
-    sampleData: null,
-    sampleLen: 0,
-    sampleLoopPos: 0,
-    sampleLoopLen: 0,
+const createSfx = () => ({
+    sample: null,
     volume: 0,
-    pos: new Frac()
+    loops: 0,
+    loop: 0
 })
 
 class SfxPlayer {
     _delay = 0
     _resNum = 0
     _sfxMod = CreateSfxMod()
-	_playing = false
 	_rate = 0
-	_samplesLeft = 0
     _channels = new Array(4).fill(null)
 
     // new
     _audioContext = null
+    _sfxRawWorklet = null
     _sfxPlayerWorklet = null
 
     constructor() {
@@ -73,25 +47,39 @@ class SfxPlayer {
             this._rate = this._audioContext.sampleRate
     
             await this._audioContext.audioWorklet.addModule('sfxplayer-processor.js')
+            await this._audioContext.audioWorklet.addModule('sfxraw-processor.js')
             // const filterNode = this._audioContext.createBiquadFilter()
             // filterNode.frequency.value = 22050
-    
-            this._sfxPlayerWorklet = new AudioWorkletNode(this._audioContext, 'sfxplayer-processor', {
+            this._sfxRawWorklet = new AudioWorkletNode(this._audioContext, 'sfxraw-processor', {
                 outputChannelCount: [2],
                 numberOfInputs: 0,
                 numberOfOutputs: 1
-            });
-            this._sfxPlayerWorklet.port.onmessage = this.onSFXPlayerProcessorMessage.bind(this)
-            this._sfxPlayerWorklet.port.start()        
+            })
 
-			// this._sfxPlayerWorklet.connect(filterNode)
-			// filterNode.connect(this._audioContext.destination)
-            this._sfxPlayerWorklet.connect(this._audioContext.destination)
+            this._sfxRawWorklet.port.onmessage = this.onSFXRawProcessorMessage.bind(this)
+            this._sfxRawWorklet.port.start()
 
-			this.postMessageToSFXPlayerProcessor({
+            // this._sfxPlayerWorklet = new AudioWorkletNode(this._audioContext, 'sfxplayer-processor', {
+            //     outputChannelCount: [2],
+            //     numberOfInputs: 1,
+            //     numberOfOutputs: 1
+            // });
+            // this._sfxPlayerWorklet.port.onmessage = this.onSFXPlayerProcessorMessage.bind(this)
+            // this._sfxPlayerWorklet.port.start()
+
+            // this._sfxRawWorklet.connect(this._sfxPlayerWorklet)
+            // this._sfxPlayerWorklet.connect(this._audioContext.destination)
+            this._sfxRawWorklet.connect(this._audioContext.destination)
+
+			// this.postMessageToSFXPlayerProcessor({
+			// 	message: 'init',
+			// 	mixingRate: this._rate,
+			// })
+
+			this.postMessageToSFXRawProcessor({
 				message: 'init',
 				mixingRate: this._rate,
-			})
+			})            
 
         } catch(e) {
             console.error(`Error during initAudio: ${e} ${e.stack}`)
@@ -129,13 +117,33 @@ class SfxPlayer {
         }
 	}
 
+	onSFXRawProcessorMessage(event) {
+		// console.log('Message from sfplayer processor', event)
+        const data = event.data
+        debugger
+		// switch(data.message) {
+        //     case 'syncVar':
+        //         const { variable, value } = data
+        //         vars[variable] = value
+        //         break
+        // }
+	}    
+
     postMessageToSFXPlayerProcessor(message) {
 		if (this._sfxPlayerWorklet) {
 			this._sfxPlayerWorklet.port.postMessage(message)
 		} else {
 			console.warn('Cannot send message to sfx player processor: not available')
 		}
-	}	
+    }
+
+    postMessageToSFXRawProcessor(message) {
+		if (this._sfxRawWorklet) {
+			this._sfxRawWorklet.port.postMessage(message)
+		} else {
+			console.warn('Cannot send message to raw player processor: not available')
+		}
+	}
 
     loadSfxModule(resNum, delay, pos) {
         const [data, size] = modules[resNum]
@@ -189,7 +197,7 @@ class SfxPlayer {
         }
     }
 
-    start() {
+    startMusic() {
         // console.log("SfxPlayer::start()")
         // this._sfxMod.curPos = 0
         this.postMessageToSFXPlayerProcessor({
@@ -197,25 +205,25 @@ class SfxPlayer {
         })
     }
     
-    stop() {
+    stopMusic() {
         this.postMessageToSFXPlayerProcessor({
             message: 'stop'
         })
-        // console.log("SfxPlayer::stop()")
-        // this._playing = false
-        // this._resNum = 0
     }
 
-    play(rate) {
-        // this._playing = true
-        // this._rate = rate
-        // this._samplesLeft = 0
-        // // memset(_channels, 0, sizeof(_channels));
-        // this._channels = this._channels.map(() => CreateChannel())
+    playMusic() {
         this.postMessageToSFXPlayerProcessor({
             message: 'play',
-            mixingRate: rate
+            mixingRate: this._rate
         })
+    }
+
+    playSoundRaw(sample, channel) {
+        this.postMessageToSFXRawProcessor({
+            message: 'play',
+            sample,
+            channel
+        })        
     }
 }
 
@@ -233,17 +241,51 @@ class Mixer {
         console.log(`Mixer::playSfxMusic(${num}`)
         if (/*this._impl && */this._sfx) {
             this.stopSfxMusic()
-            this._sfx.play(44100)
+            this._sfx.playMusic()
             // return this._impl.playSfxMusic(this._sfx)
         }
     }
 
     stopSfxMusic() {
         if (this._sfx) {
-            this._sfx.stop()
+            this._sfx.stopMusic()
             // no need to call _impl->stopSfxMusic()
             // because sfx.stop will cause the mixing to stop
         }
+    }
+
+    playSoundRaw(channel, data, freq, volume) {
+        // todo
+		let len = read_be_uint16(data) * 2
+		const loopLen = read_be_uint16(data, 2) * 2
+		if (loopLen !== 0) {
+			len = loopLen
+		}
+        const sample = new Int8Array(data.buffer, 8, len || (data.byteLength - 8))
+        // convert signed 8bit mono freq hz to host/stereo/host_freq
+		// uint8_t *sample = convertMono8(&_cvt, data + 8, freq, len, &sampleLen);
+		if (sample) {
+            const raw = createSfx()
+            raw.loops = (loopLen !== 0) ? -1 : 0
+            raw.volume = volume
+            raw.freq = freq
+            raw.sample = sample
+
+            this._sfx.playSoundRaw(raw, channel)
+            // create sample:
+            // send play event
+			// Mix_Chunk *chunk = Mix_QuickLoad_RAW(sample, sampleLen);
+			// playSound(channel, volume, chunk, (loopLen != 0) ? -1 : 0);
+			// _samples[channel] = sample;
+
+		}        
+    }
+
+    stopSound(channel) {
+        debugger
+        this._sfx.stopSound(channel)
+        // Mix_HaltChannel(channel);
+		// freeSound(channel);
     }
 }
 
