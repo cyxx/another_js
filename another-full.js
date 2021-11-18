@@ -968,8 +968,7 @@ function play_music(resNum, delay, pos) {
 		player.start()
 		mixer.playSfxMusic(resNum)
 	} else if (delay !== 0) {
-		debugger
-		// _ply->setEventsDelay(delay);
+		player.setEventsDelay(delay, true)
 	} else {
 		mixer.stopSfxMusic()
 	}

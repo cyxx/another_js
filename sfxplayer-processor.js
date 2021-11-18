@@ -100,11 +100,12 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
                 this.play(mixingRate)
                 break
 
-            case 'load':
+            case 'load': {
                 const { sfxMod, delay } = event.data
                 this._delay = delay
                 this.load(sfxMod)
                 break
+            }
 
             case 'stop':
                 this.stop()
@@ -114,18 +115,16 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
                 this.start()
                 break
 
-            case 'setEventsDelay':
-                this.delay(delay)
+            case 'setEventsDelay': {
+                const { delay } = event.data
+                this._delay = delay
                 break
+            }
         }
     }
 
     postMessage(message) {
         this.port.postMessage(message)
-    }
-
-    delay(delay) {
-        this._delay = (delay * 60 / 7050) >> 0
     }
 
     load(sfxMod) {
@@ -153,23 +152,13 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
     mixSfxPlayer(inp, out, len) {
 		// len /= 2
 		const s8buf = new Int8Array(len * 2).fill(0)
-		// memset(s8buf, 0, len);
-        // console.log('***notes start')
 		this.readSamples(s8buf, len)
         // console.log('***notes end')
 		for (let i = 0; i < len; ++i) {
-			// out[i * 2] = 256 * s8buf[i]
-            out[i] = (s8buf[2*i] / 128.0) + (s8buf[(2*i) + 1] / 128.0)
-            if (Math.abs(out[i] > 1)) {
-                debugger
-            }
-            // if (i < 10) {
-            //     console.log(out[i])
-            // }
-            // if (i === 0) {
-            //     console.log(256 * s8buf[i])
-            // }
-            // out[i * 2] = Math.random() - 1
+            // left
+            out[0][i] = (s8buf[2*i] / 128.0)
+            // right
+            out[1][i] = (s8buf[(2*i) + 1] / 128.0)
 		}
 	}
 
@@ -417,7 +406,7 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
 
     process(inputs, outputs, params) {
         if (this._ready && this._playing) {
-            this.mixSfxPlayer(null, outputs[0][0], outputs[0][0].length)
+            this.mixSfxPlayer(null, outputs[0], outputs[0][0].length)
         }
 
         return true

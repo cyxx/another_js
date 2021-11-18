@@ -77,7 +77,7 @@ class SfxPlayer {
             // filterNode.frequency.value = 22050
     
             this._sfxPlayerWorklet = new AudioWorkletNode(this._audioContext, 'sfxplayer-processor', {
-                outputChannelCount: [1],
+                outputChannelCount: [2],
                 numberOfInputs: 0,
                 numberOfOutputs: 1
             });
@@ -94,7 +94,7 @@ class SfxPlayer {
 			})
 
         } catch(e) {
-            console.error(`Error during initAudio: ${e}`)
+            console.error(`Error during initAudio: ${e} ${e.stack}`)
         }
     }
 
@@ -106,6 +106,16 @@ class SfxPlayer {
         if (this._audioContext && this._audioContext.state === 'suspended') {
 			this._audioContext.resume()
 		}
+    }
+
+    setEventsDelay(delay, shouldSend = false) {
+        this._delay = (delay * 60 / 7050) >> 0
+        if (shouldSend) {
+            this.postMessageToSFXPlayerProcessor({
+                message: 'setEventsDelay',
+                delay: this._delay
+            })            
+        }
     }
 
 	onSFXPlayerProcessorMessage(event) {
@@ -139,12 +149,12 @@ class SfxPlayer {
             for (let i = 0; i < 0x80; ++i) {
                 this._sfxMod.orderTable[i] = buf[0x40 + i]
             }
+
             if (delay === 0) {
-                this._delay = read_be_uint16(buf)
-            } else {
-                this._delay = delay
+                delay = read_be_uint16(buf)
             }
-            this._delay = (this._delay * 60 / 7050) >> 0
+            
+            this.setEventsDelay(delay)
             this._sfxMod.data = new Uint8Array(buf.buffer,  0xC0)
             console.log(`SfxPlayer::loadSfxModule() eventDelay = ${this._delay} ms`)
             this.prepareInstruments(new Uint8Array(buf.buffer, 2))
