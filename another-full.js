@@ -862,6 +862,7 @@ function reset( ) {
 	next_part = 16001;
 	timestamp = rewind_timestamp = Date.now( );
 	rewind_buffer.length = 0;
+	mixer.stopSfxMusic();
 }
 
 function tick( ) {
