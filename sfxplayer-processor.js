@@ -165,9 +165,9 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
         // console.log('***notes end')
 		for (let i = 0; i < len; ++i) {
             // left
-            out[0][i] = F32Max((s8buf[2*i] / 128.0) + inp[0][i])
+            out[0][i] = F32Max((s8buf[2*i] / 128.0)/* + inp[0][i]*/)
             // right
-            out[1][i] = F32Max((s8buf[(2*i) + 1] / 128.0) + inp[1][i])
+            out[1][i] = F32Max((s8buf[(2*i) + 1] / 128.0)/* + inp[0][i]*/)
 		}
 	}
 

@@ -4,6 +4,7 @@ const KEY_RIGHT  = 2;
 const KEY_DOWN   = 3;
 const KEY_LEFT   = 4;
 const KEY_ACTION = 5;
+let playedSounds = 0;
 
 var keyboard = new Array( 6 );
 
@@ -969,7 +970,6 @@ function update_screen( offset ) {
 }
 
 function play_music(resNum, delay, pos) {
-	return
 	if (resNum !== 0) {
 		// _ply->loadSfxModule(resNum, delay, pos);
 		player.loadSfxModule(resNum, delay, pos)
@@ -995,14 +995,15 @@ function play_sound(resNum, freq, vol, channel) {
 		// 	return
 		// else
 		// 	debugger
-
-		const [,,me] = sounds[resNum]
-		if (me) {
-			// assert(freq < 40);
-			if (freq >= 40) {
-				console.error(`Assertion failed: $({freq} < 40`)
+		if (sounds[resNum]) {
+			const [,,me] = sounds[resNum]
+			if (me) {
+				// assert(freq < 40);
+				if (freq >= 40) {
+					console.error(`Assertion failed: $({freq} < 40`)
+				}
+				mixer.playSoundRaw(channel & 3, me, _freqTable[freq], vol)
 			}
-			mixer.playSoundRaw(channel & 3, me, _freqTable[freq], vol)
 		}
 	} catch(e) {
 		console.error(`Could not play raw sound ${resNum}`)

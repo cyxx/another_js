@@ -51,7 +51,7 @@ class SfxPlayer {
             // const filterNode = this._audioContext.createBiquadFilter()
             // filterNode.frequency.value = 22050
             this._sfxRawWorklet = new AudioWorkletNode(this._audioContext, 'sfxraw-processor', {
-                outputChannelCount: [2],
+                outputChannelCount: [1],
                 numberOfInputs: 0,
                 numberOfOutputs: 1
             })
@@ -59,22 +59,22 @@ class SfxPlayer {
             this._sfxRawWorklet.port.onmessage = this.onSFXRawProcessorMessage.bind(this)
             this._sfxRawWorklet.port.start()
 
-            // this._sfxPlayerWorklet = new AudioWorkletNode(this._audioContext, 'sfxplayer-processor', {
-            //     outputChannelCount: [2],
-            //     numberOfInputs: 1,
-            //     numberOfOutputs: 1
-            // });
-            // this._sfxPlayerWorklet.port.onmessage = this.onSFXPlayerProcessorMessage.bind(this)
-            // this._sfxPlayerWorklet.port.start()
+            this._sfxPlayerWorklet = new AudioWorkletNode(this._audioContext, 'sfxplayer-processor', {
+                outputChannelCount: [2],
+                numberOfInputs: 0,
+                numberOfOutputs: 1
+            });
+            this._sfxPlayerWorklet.port.onmessage = this.onSFXPlayerProcessorMessage.bind(this)
+            this._sfxPlayerWorklet.port.start()
 
-            // this._sfxRawWorklet.connect(this._sfxPlayerWorklet)
-            // this._sfxPlayerWorklet.connect(this._audioContext.destination)
             this._sfxRawWorklet.connect(this._audioContext.destination)
+            this._sfxPlayerWorklet.connect(this._audioContext.destination)
+            //this._sfxRawWorklet.connect(this._audioContext.destination)
 
-			// this.postMessageToSFXPlayerProcessor({
-			// 	message: 'init',
-			// 	mixingRate: this._rate,
-			// })
+			this.postMessageToSFXPlayerProcessor({
+				message: 'init',
+				mixingRate: this._rate,
+			})
 
 			this.postMessageToSFXRawProcessor({
 				message: 'init',
@@ -223,7 +223,14 @@ class SfxPlayer {
             message: 'play',
             sample,
             channel
-        })        
+        })
+    }
+
+    stopSound(channel) {
+        this.postMessageToSFXRawProcessor({
+            message: 'stop',
+            channel
+        })
     }
 }
 
@@ -282,7 +289,6 @@ class Mixer {
     }
 
     stopSound(channel) {
-        debugger
         this._sfx.stopSound(channel)
         // Mix_HaltChannel(channel);
 		// freeSound(channel);

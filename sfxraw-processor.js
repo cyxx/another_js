@@ -36,7 +36,8 @@ class SfxRawProcessor extends AudioWorkletProcessor {
 
             case 'stop': {
                 const { channel } = event.data
-                debugger
+                const chan = this._channels[channel]
+                chan.playing = false
             }
         }
     }
@@ -56,9 +57,8 @@ class SfxRawProcessor extends AudioWorkletProcessor {
             for (let i = 0; i < this._channels.length; ++i) {
                 const chan = this._channels[i]
                 if (chan.playing) {
-                    const dest = i & 1
                     const sample = chan.sample[Math.floor(chan.pos)] * chan.volume / 63.0
-                    out[dest][j] += sample / 128.0
+                    out[0][j] += sample / 128.0
                     chan.pos += chan.speed
                     if (chan.pos > chan.sample.length - 1) {
                         if (chan.loops === -1)
