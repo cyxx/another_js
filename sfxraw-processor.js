@@ -28,8 +28,8 @@ class SfxRawProcessor extends AudioWorkletProcessor {
                 break
 
             case 'play': {
-                const { sample, channel } = event.data
-                this.play(sample, channel)
+                const { sound, channel } = event.data
+                this.play(sound, channel)
                 this._playing = true
                 break
             }
@@ -42,14 +42,14 @@ class SfxRawProcessor extends AudioWorkletProcessor {
         }
     }
 
-    play(sample, channel) {
+    play(sound, channel) {
         const chan = this._channels[channel]
         chan.playing = true
-        chan.sample = sample.sample
+        chan.sample = sound.sample
         chan.pos = 0
-        chan.speed = sample.freq / this._mixingRate
-        chan.loops = sample.loops
-        chan.volume = sample.volume
+        chan.speed = sound.freq / this._mixingRate
+        chan.loops = sound.loops
+        chan.volume = sound.volume
     }
 
     mixChannels(out, len) {

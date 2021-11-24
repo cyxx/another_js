@@ -281,7 +281,6 @@ var opcodes = {
 				draw_bitmap( num );
 			}
 		}
-		console.log( 'load num:' + num );
 	},
 	0x1a : function( ) { // play_music
 		const num      = read_word( );
@@ -413,7 +412,6 @@ function run_tasks( ) {
 }
 
 function load( data, size ) {
-	console.log(data.length, size)
 	data = atob( data );
 	if ( data.length != size ) {
 		var buf = pako.inflate( data );
@@ -862,7 +860,7 @@ function reset( ) {
 	next_part = 16001;
 	timestamp = rewind_timestamp = Date.now( );
 	rewind_buffer.length = 0;
-	mixer.stopSfxMusic();
+	player.stopMusic();
 }
 
 function tick( ) {
@@ -885,15 +883,12 @@ function tick( ) {
 const INTERVAL = 50;
 var canvas;
 var timer;
-var mixer;
 var player;
 
 async function init( name ) {
 	canvas = document.getElementById( name );
 	player = new SfxPlayer()
 	await player.init()
-	mixer = new Mixer(player)
-	mixer.init()
 	document.onkeydown = function( e ) { set_key_pressed( e.keyCode, 1 ); }
 	document.onkeyup   = function( e ) { set_key_pressed( e.keyCode, 0 ); }
 	load_modules()
@@ -975,17 +970,17 @@ function play_music(resNum, delay, pos) {
 		// _ply->loadSfxModule(resNum, delay, pos);
 		player.loadSfxModule(resNum, delay, pos)
 		player.startMusic()
-		mixer.playSfxMusic(resNum)
+		player.playMusic(resNum)
 	} else if (delay !== 0) {
 		player.setEventsDelay(delay, true)
 	} else {
-		mixer.stopSfxMusic()
+		player.stopMusic()
 	}
 }
 
 function play_sound(resNum, freq, vol, channel) {
 	if (vol === 0) {
-		mixer.stopSound(channel)
+		player.stopSound(channel)
 		return
 	}
 	if (vol > 63) {
@@ -1003,7 +998,7 @@ function play_sound(resNum, freq, vol, channel) {
 				if (freq >= 40) {
 					console.error(`Assertion failed: $({freq} < 40`)
 				}
-				mixer.playSoundRaw(channel & 3, me, _freqTable[freq], vol)
+				player.playSoundRaw(channel & 3, me, _freqTable[freq], vol)
 			}
 		}
 	} catch(e) {

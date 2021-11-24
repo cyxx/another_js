@@ -198,8 +198,6 @@ class SfxPlayer {
     }
 
     startMusic() {
-        // console.log("SfxPlayer::start()")
-        // this._sfxMod.curPos = 0
         this.postMessageToSFXPlayerProcessor({
             message: 'start'
         })
@@ -212,18 +210,33 @@ class SfxPlayer {
     }
 
     playMusic() {
+        this.stopMusic()
         this.postMessageToSFXPlayerProcessor({
             message: 'play',
             mixingRate: this._rate
         })
     }
 
-    playSoundRaw(sample, channel) {
-        this.postMessageToSFXRawProcessor({
-            message: 'play',
-            sample,
-            channel
-        })
+    playSoundRaw(channel, data, freq, volume) {
+		let len = read_be_uint16(data) * 2
+		const loopLen = read_be_uint16(data, 2) * 2
+		if (loopLen !== 0) {
+			len = loopLen
+		}
+        const sample = new Int8Array(data.buffer, 8, len || (data.byteLength - 8))
+        // convert signed 8bit mono freq hz to host/stereo/host_freq
+		if (sample) {
+            const sfx = createSfx()
+            sfx.loops = (loopLen !== 0) ? -1 : 0
+            sfx.volume = volume
+            sfx.freq = freq
+            sfx.sample = sample
+            this.postMessageToSFXRawProcessor({
+                message: 'play',
+                sound: sfx,
+                channel
+            })
+		}        
     }
 
     stopSound(channel) {
@@ -233,120 +246,3 @@ class SfxPlayer {
         })
     }
 }
-
-class Mixer {
-    constructor(sfx) {
-        this._sfx = sfx
-    }
-
-    init() {
-        // this._impl = new Mixer_impl()
-        // this._impl.init()
-    }
-
-    playSfxMusic(num) {
-        console.log(`Mixer::playSfxMusic(${num}`)
-        if (/*this._impl && */this._sfx) {
-            this.stopSfxMusic()
-            this._sfx.playMusic()
-            // return this._impl.playSfxMusic(this._sfx)
-        }
-    }
-
-    stopSfxMusic() {
-        if (this._sfx) {
-            this._sfx.stopMusic()
-            // no need to call _impl->stopSfxMusic()
-            // because sfx.stop will cause the mixing to stop
-        }
-    }
-
-    playSoundRaw(channel, data, freq, volume) {
-        // todo
-		let len = read_be_uint16(data) * 2
-		const loopLen = read_be_uint16(data, 2) * 2
-		if (loopLen !== 0) {
-			len = loopLen
-		}
-        const sample = new Int8Array(data.buffer, 8, len || (data.byteLength - 8))
-        // convert signed 8bit mono freq hz to host/stereo/host_freq
-		// uint8_t *sample = convertMono8(&_cvt, data + 8, freq, len, &sampleLen);
-		if (sample) {
-            const raw = createSfx()
-            raw.loops = (loopLen !== 0) ? -1 : 0
-            raw.volume = volume
-            raw.freq = freq
-            raw.sample = sample
-
-            this._sfx.playSoundRaw(raw, channel)
-            // create sample:
-            // send play event
-			// Mix_Chunk *chunk = Mix_QuickLoad_RAW(sample, sampleLen);
-			// playSound(channel, volume, chunk, (loopLen != 0) ? -1 : 0);
-			// _samples[channel] = sample;
-
-		}        
-    }
-
-    stopSound(channel) {
-        this._sfx.stopSound(channel)
-        // Mix_HaltChannel(channel);
-		// freeSound(channel);
-    }
-}
-
-// typedef struct Mix_Chunk {
-// 	int allocated;
-// 	Uint8 *abuf;
-// 	Uint32 alen;
-// 	Uint8 volume;		/* Per-sample volume, 0-128 */
-// } Mix_Chunk;
-
-// class Mixer_impl {
-//     static kMixFreq = 44100
-// 	static kMixBufSize = 4096
-// 	static kMixChannels = 4
-
-// 	// Mix_Chunk *_sounds[kMixChannels];
-//     _sounds = new Array(Mixer_impl.kMixChannels)
-//     _samples = new Array(Mixer_impl.kMixChannels)
-// 	// Mix_Music *_music;
-// 	// uint8_t *_samples[kMixChannels];
-// 	// SDL_AudioCVT _cvt;
-
-//     init() {
-// 		// memset(_sounds, 0, sizeof(_sounds));
-// 		this._music = null
-// 		// memset(_samples, 0, sizeof(_samples));
-
-// 		// Mix_Init(MIX_INIT_OGG | MIX_INIT_FLUIDSYNTH);
-// 		// if (Mix_OpenAudio(kMixFreq, AUDIO_S16SYS, 2, kMixBufSize) < 0) {
-// 		// 	warning("Mix_OpenAudio failed: %s", Mix_GetError());
-// 		// }
-// 		// Mix_AllocateChannels(kMixChannels);
-// 		// memset(&_cvt, 0, sizeof(_cvt));
-// 		// if (SDL_BuildAudioCVT(&_cvt, AUDIO_S8, 1, 11025, AUDIO_S16SYS, 2, kMixFreq) < 0) {
-// 		// 	warning("SDL_BuildAudioCVT failed: %s", SDL_GetError());
-// 		// }
-// 	}
-
-//     stopSfxMusic() {
-//         // Mix_HookMusic(0, 0);
-//     }
-
-// 	playSfxMusic(sfx) {
-//         debugger
-// 		// Mix_HookMusic(mixSfxPlayer, sfx);
-//         // sfx.
-// 	}
-
-// 	// static void mixSfxPlayer(void *data, uint8_t *s16buf, int len) {
-// 	// 	len /= 2;
-// 	// 	int8_t *s8buf = (int8_t *)alloca(len);
-// 	// 	memset(s8buf, 0, len);
-// 	// 	((SfxPlayer *)data)->readSamples(s8buf, len / 2);
-// 	// 	for (int i = 0; i < len; ++i) {
-// 	// 		*(int16_t *)&s16buf[i * 2] = 256 * (int16_t)s8buf[i];
-// 	// 	}
-// 	// }    
-// }
