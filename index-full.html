@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>Another World JS</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body style="margin: 0px auto; text-align: center; padding: 0px 0px; width: 800px; background: #e5e5e5; font-family: Arial; font-size: 14px;">
+		<div align="center" style="background-color: #fff; padding-top: 10px; width: 800px; text-align: center;">
+		<h1>Another World JS</h1>
+		<div align="center">
+			<div align="center" style="width: 640px; text-align: left;">
+			<p>
+				This is a JavaScript port of <a href="https://www.mobygames.com/game/out-of-this-world">Another World</a> using the DOS demo data files.
+			</p>
+			<p>
+				Use arrow keys to control the player and Space/Enter to run.
+			</p>
+			</div>
+			<div>
+				<button onclick="init('screen')">
+					Ready!
+				</button>
+			</div>
+			<div align="center" style="width: 640px;">
+				<canvas id="screen" width="640" height="400"></canvas>
+				<p></p>
+				<div align="left">
+					<input type="button" value="Pause"  onclick="onPauseClick()"  id="pauseButton" />
+					<input type="button" value="Reset"  onclick="onResetClick()"  id="resetButton" />
+					<input type="button" value="Rewind" onclick="onRewindClick()" id="rewindButton" />
+					<select onchange="onLanguageChange()" id="languageSelect">
+						<option>English</option>
+						<option>French</option>
+					</select>
+					Palette <select onchange="onPaletteChange()" id="paletteSelect">
+						<option>Amiga</option>
+						<option>EGA</option>
+					</select>
+					Part <select onchange="onPartChange()" id="partSelect">
+						<option>Introduction</option>
+						<option>Water</option>
+					</select>
+				</div>
+				<p></p>
+				<div align="left">
+					<input type="checkbox" onclick="onLowResolutionClick()" id="resolutionCheckbox">1991 screen resolution (320x200)</input>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #eeeeee; margin: 20px 0px 0px 0px; padding: 8px;">
+			<strong>another.js</strong> code is available on <a href="http://github.com/cyxx/another_js">github.com</a>.
+		</div>
+		<script type="text/javascript" src="pako_inflate.min2.js"></script>
+		<script type="text/javascript" src="sound.js"></script>
+		<script type="text/javascript" src="ootwdemo-sound.js"></script>
+		<script type="text/javascript" src="another-full.js"></script>
+		<!-- <script type="text/javascript" src="another.min.js"></script> -->
+		<script type="text/javascript">
+			// init( "screen" );
+			function onPauseClick( ) {
+				if ( pause( ) ) {
+					pauseButton.value = "Play";
+				} else {
+					pauseButton.value = "Pause";
+				}
+			}
+			function onResetClick( ) {
+				reset( );
+			}
+			function onRewindClick( ) {
+				rewind( );
+			}
+			function onLanguageChange( ) {
+				change_language( languageSelect.selectedIndex );
+				// ga( 'send', 'event', 'game', 'change', 'language', languageSelect.selectedIndex );
+			}
+			function onPaletteChange( ) {
+				change_palette( paletteSelect.selectedIndex );
+				// ga( 'send', 'event', 'game', 'change', 'palette', paletteSelect.selectedIndex );
+			}
+			function onPartChange( ) {
+				change_part( partSelect.selectedIndex );
+				// ga( 'send', 'event', 'game', 'change', 'part', partSelect.selectedIndex );
+			}
+			function onLowResolutionClick( ) {
+				set_1991_resolution( resolutionCheckbox.checked );
+			}
+		</script>
+		</div>
+	</body>
+</html>
