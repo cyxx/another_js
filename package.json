@@ -1,0 +1,23 @@
+{
+  "name": "another_js",
+  "version": "1.0.0",
+  "description": "Another World JS interpreter",
+  "main": "another-full.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warpdesign/another_js.git"
+  },
+  "author": "Nicolas Ramz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/warpdesign/another_js/issues"
+  },
+  "homepage": "https://github.com/warpdesign/another_js#readme",
+  "devDependencies": {
+    "http-server": "^14.0.0"
+  }
+}
