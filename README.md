@@ -22,13 +22,13 @@ The DOS demo version of the game can be played at [warpdesign.github.io/another_
 
 This port behaves the same as the original executable and interprets the game bytecode.
 
-The implementation of the 26 opcodes can be found [here](https://github.com/cyxx/another_js/blob/master/another.js#L71).
+The implementation of the 26 opcodes can be found [here](https://github.com/warpdesign/another_js/blob/master/another.js#L71).
 
 ## Data files
 
 As the game data files are not freely distributable, you will need to extract and convert your original files.
 
-This can be done using [extract.py](https://github.com/cyxx/another_js/blob/master/extract_dos.py).
+This can be done using [extract.py](https://github.com/warpdesign/another_js/blob/master/extract_dos.py).
 The script takes datafiles as input and outputs a .js file to be included in the main .html page.
 
 For example, the DOS demo data files can be converted with these commands :
