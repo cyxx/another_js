@@ -1,26 +1,28 @@
 
 # Another World JS
 
-This is a Javascript (HTML5) port of the game <a href="https://www.mobygames.com/game/out-of-this-world">Another World</a> designed by <a href="http://www.anotherworld.fr/">Eric Chahi</a>.
+This is a fork of [another_js](https://github.com/cyxx/another_js) written by [@cxyxx](https://github.com/cyxx) which adds the following features:
+
+* sound & music support (using Audio Worklet)
+* webpack build
+
+This is a Javascript (HTML5) port of the game <a href="https://www.mobygames.com/game/out-of-this-world">Another World</a> designed by <a href="http://www.anotherworld.fr/">Eric Chahi</a> with the following features:
+
+* switch between Amiga and EGA palettes
+* switch between the original 320x200 and 640x400 resolutions
+* rewind game play
 
 ![Screenshot Water](screenshot-water-640.png)
 
+## Demo
+
+The DOS demo version of the game can be played at [warpdesign.github.io/another_js](http://warpdesign.github.io/another_js)
 
 ## Internals
 
 This port behaves the same as the original executable and interprets the game bytecode.
 
 The implementation of the 26 opcodes can be found [here](https://github.com/cyxx/another_js/blob/master/another.js#L71).
-
-
-## Features
-
-This port has a few extra features, besides the ability to run in a browser :
-
-* switch between Amiga and EGA palettes
-* switch between the original 320x200 and 640x400 resolutions
-* rewind game play
-
 
 ## Data files
 
@@ -61,11 +63,3 @@ With the 15th anniversary edition data file :
 ```
 $ python extract_15th.py Pak01.pak > aw15thdemo.js
 ```
-
-## Status
-
-The DOS demo version of the game can be played at [cyxx.github.io/another_js](http://cyxx.github.io/another_js)
-
-Music and sounds are not played.
-
-Transparency with 15th anniversary edition backgrounds is not handled.

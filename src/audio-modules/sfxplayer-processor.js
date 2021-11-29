@@ -15,22 +15,14 @@ class Frac {
 	getFrac() {
 		return this.offset & Frac.MASK
 	}
-	interpolate(sample1, sample2, dbg) {
+	interpolate(sample1, sample2) {
 		const fp = this.getFrac()
-		if (dbg) {
-			console.log(`fp=${fp} MASK=${Frac.MASK} n1=${(sample1 * (Frac.MASK - fp) + sample2 * fp)}, n2=${(sample1 * (Frac.MASK - fp) + sample2 * fp) >> Frac.BITS}`)
-		}        
 		return ((sample1 * (Frac.MASK - fp) + sample2 * fp) >> Frac.BITS)
 	}
 }
 
 let prevL = 0
 let prevR = 0
-let toto = 0
-let hasSound = false
-let sounds = 0
-let samples = ""
-let filled = 0
 
 function nr(inp, len, out) {
     let inOffset = 0
@@ -177,7 +169,6 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
     }
 
     mixSamples(buf, len) {
-        hasSound = false
         buf.fill(0, 0, len * 2)
         const samplesPerTick = Math.floor(this._rate / Math.floor(1000 / this._delay))
         let offset = 0
@@ -193,12 +184,8 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
             this._samplesLeft -= count
             len -= count
             for (let i = 0; i < count; ++i) {
-                buf[offset] = this.mixChannel(buf[offset], this._channels[0], filled >= 409500 && filled < 409520)
-                if (filled >= 409500 && filled < 409520) {
-                    samples += ` ${buf[offset]}`
-                }
+                buf[offset] = this.mixChannel(buf[offset], this._channels[0])
                 buf[offset] = this.mixChannel(buf[offset], this._channels[3])
-                filled++
                 offset++
 
                 buf[offset] = this.mixChannel(buf[offset], this._channels[1])
@@ -208,7 +195,7 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
         }
     }
 
-    mixChannel(s, ch, dbg) {
+    mixChannel(s, ch) {
         if (ch.sampleLen === 0) {
             return s
         }
@@ -226,7 +213,7 @@ class SfxPlayerProcessor extends AudioWorkletProcessor {
                 return s
             }
         }
-        let sample = ch.pos.interpolate(ch.sampleData[pos1] << 24 >> 24, ch.sampleData[pos2] << 24 >> 24, dbg)
+        let sample = ch.pos.interpolate(ch.sampleData[pos1] << 24 >> 24, ch.sampleData[pos2] << 24 >> 24)
         sample = s + (((sample * ch.volume) / 64) >> 0)
         if (sample < -128) {
             sample = -128

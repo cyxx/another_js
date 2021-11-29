@@ -1,9 +1,51 @@
+import * as Res from './ootwdemo-data'
+import { SfxPlayer } from './sound'
+import pako from 'pako'
+import './main.css'
 
 const KEY_UP     = 1;
 const KEY_RIGHT  = 2;
 const KEY_DOWN   = 3;
 const KEY_LEFT   = 4;
 const KEY_ACTION = 5;
+
+function onPauseClick( ) {
+    if ( pause( ) ) {
+        pauseButton.value = "Play";
+    } else {
+        pauseButton.value = "Pause";
+    }
+}
+function onResetClick( ) {
+    reset( );
+}
+function onRewindClick( ) {
+    rewind( );
+}
+function onLanguageChange( e ) {
+    change_language( e.currentTarget.selectedIndex );
+}
+function onPaletteChange( e ) {
+    change_palette( e.currentTarget.selectedIndex );
+}
+function onPartChange( e ) {
+    change_part( e.currentTarget.selectedIndex );
+}
+function onLowResolutionClick( e ) {
+    set_1991_resolution( e.currentTarget.checked );
+}
+
+function bind_events() {
+	document.onkeydown = function( e ) { set_key_pressed( e.keyCode, 1 ); }
+	document.onkeyup   = function( e ) { set_key_pressed( e.keyCode, 0 ); }
+	pauseButton.onclick = onPauseClick
+	resetButton.onclick = onResetClick
+	rewindButton.onclick = onRewindClick
+	languageSelect.onchange = onLanguageChange
+	paletteSelect.onchange = onPaletteChange
+	partSelect.onchange = onPartChange
+	resolutionCheckbox.onclick = onLowResolutionClick
+}
 
 var keyboard = new Array( 6 );
 
@@ -25,6 +67,14 @@ function set_key_pressed( jcode, state ) {
 	}
 }
 
+const _freqTable = [
+	0x0CFF, 0x0DC3, 0x0E91, 0x0F6F, 0x1056, 0x114E, 0x1259, 0x136C, 
+	0x149F, 0x15D9, 0x1726, 0x1888, 0x19FD, 0x1B86, 0x1D21, 0x1EDE, 
+	0x20AB, 0x229C, 0x24B3, 0x26D7, 0x293F, 0x2BB2, 0x2E4C, 0x3110, 
+	0x33FB, 0x370D, 0x3A43, 0x3DDF, 0x4157, 0x4538, 0x4998, 0x4DAE, 
+	0x5240, 0x5764, 0x5C9A, 0x61C8, 0x6793, 0x6E19, 0x7485, 0x7BBD
+]
+
 const VAR_HERO_POS_UP_DOWN     = 0xe5;
 const VAR_SCROLL_Y             = 0xf9;
 const VAR_HERO_ACTION          = 0xfa;
@@ -33,6 +83,7 @@ const VAR_HERO_POS_LEFT_RIGHT  = 0xfc;
 const VAR_HERO_POS_MASK        = 0xfd;
 const VAR_HERO_ACTION_POS_MASK = 0xfe;
 const VAR_PAUSE_SLICES         = 0xff;
+const VAR_MUSIC_SYNC           = 0xf4;
 
 var vars = new Array( 256 );
 var tasks = new Array( 64 );
@@ -41,12 +92,12 @@ var bytecode;
 var palette;
 var polygons1;
 var polygons2;
-
 var bytecode_offset;
 var task_num;
 var task_paused;
 
 var next_part;
+var current_part = 0;
 
 var delay = 0;
 var timestamp;
@@ -57,8 +108,13 @@ function read_byte( ) {
 	return value;
 }
 
-function read_word( ) {
-	const value = ( bytecode[ bytecode_offset ] << 8) | bytecode[ bytecode_offset + 1 ];
+function read_be_uint16(buf, offset) {
+	return ( buf[ offset ] << 8) | buf[ offset + 1 ];
+}
+
+function read_word() {
+	// const value = ( bytecode[ bytecode_offset ] << 8) | bytecode[ bytecode_offset + 1 ];
+	const value = read_be_uint16(bytecode, bytecode_offset)
 	bytecode_offset += 2;
 	return value;
 }
@@ -72,6 +128,7 @@ var opcodes = {
 	0x00 : function( ) {
 		const num = read_byte( );
 		const imm = to_signed( read_word( ), 16 );
+		// console.log(`Script::op_movConst(0x%${num.toString(16)}, ${imm})`)
 		vars[ num ] = imm;
 	},
 	0x01 : function( ) {
@@ -88,16 +145,25 @@ var opcodes = {
 		const num = read_byte( );
 		const imm = to_signed( read_word( ), 16 );
 		vars[ num ] += imm;
+		// gun sound workaround to do
+		if (current_part === 16006) {
+			debugger
+			// snd_playSound(0x5B, 1, 64, 1);
+		}
+
 	},
 	0x04 : function( ) { // call
 		const addr = read_word( );
+		// console.log(`Script::op_call(0x${addr.toString(16)})`);
 		tasks[ task_num ].stack.push( bytecode_offset );
 		bytecode_offset = addr;
 	},
 	0x05 : function( ) { // ret
+		// console.log(`Script::op_ret()`)
 		bytecode_offset = tasks[ task_num ].stack.pop( );
 	},
 	0x06 : function( ) { // yield
+		// console.log(`Script::op_yieldTask()`)
 		task_paused = true;
 	},
 	0x07 : function( ) { // jmp
@@ -106,6 +172,7 @@ var opcodes = {
 	0x08 : function( ) { // install_task
 		const num  = read_byte( );
 		const addr = read_word( );
+		// console.log(`Script::op_installTask(0x${num.toString(16)}, 0x${addr.toString(16)})`)		
 		tasks[ num ].next_offset = addr;
 	},
 	0x09 : function( ) { // jmp_nz
@@ -240,26 +307,28 @@ var opcodes = {
 		const freq    = read_byte( );
 		const volume  = read_byte( );
 		const channel = read_byte( );
+		play_sound(num, freq, volume, channel)
 	},
 	0x19 : function( ) { // load_resource
 		const num = read_word( );
 		if ( num > 16000 ) {
 			next_part = num;
-		} else if ( num in bitmaps ) {
+		} else if ( num in Res.bitmaps ) {
 			if ( num >= 3000 ) {
 				// should also load t3%d.bmp files for transparency (color 0x10)
-				set_palette_bmp( load( bitmaps[ num ][ 0 ], 256 * 3 ) );
-				buffer8.set( load( bitmaps[ num ][ 1 ], SCREEN_W * SCREEN_H ) );
+				set_palette_bmp( load( Res.bitmaps[ num ][ 0 ], 256 * 3 ) );
+				buffer8.set( load( Res.bitmaps[ num ][ 1 ], SCREEN_W * SCREEN_H ) );
 			} else {
 				draw_bitmap( num );
 			}
 		}
-		console.log( 'load num:' + num );
 	},
 	0x1a : function( ) { // play_music
 		const num      = read_word( );
 		const period   = read_word( );
 		const position = read_byte( );
+		console.log(`Script::op_playMusic(0x${num.toString(16)}, ${period}, ${position})`)
+		play_music(num, period, position)
 	}
 };
 
@@ -356,6 +425,7 @@ function update_input( ) {
 function run_tasks( ) {
 	if ( next_part != 0 ) {
 		restart( next_part );
+		current_part = next_part;
 		next_part = 0;
 	}
 	for ( var i = 0; i < tasks.length; ++i ) {
@@ -385,7 +455,12 @@ function run_tasks( ) {
 function load( data, size ) {
 	data = atob( data );
 	if ( data.length != size ) {
-		var buf = pako.inflate( data );
+		var len = data.length;
+		var bytes = new Uint8Array(len);
+		for (var i = 0; i < len; i++) {
+			bytes[i] = data.charCodeAt(i);
+		}
+		var buf = pako.inflate( bytes );
 		console.assert( buf.length == size );
 		return buf;
 	}
@@ -398,49 +473,49 @@ function load( data, size ) {
 
 function restart( part ) {
 	if ( part == 16000 ) { // protection
-		palette   = load( data14, size14 );
-		bytecode  = load( data15, size15 );
-		polygons1 = load( data16, size16 );
+		palette   = load( Res.data14, Res.size14 );
+		bytecode  = load( Res.data15, Res.size15 );
+		polygons1 = load( Res.data16, Res.size16 );
 		polygons2 = null;
 	} else if ( part == 16001 ) { // introduction
-		palette   = load( data17, size17 );
-		bytecode  = load( data18, size18 );
-		polygons1 = load( data19, size19 );
+		palette   = load( Res.data17, Res.size17 );
+		bytecode  = load( Res.data18, Res.size18 );
+		polygons1 = load( Res.data19, Res.size19 );
 		polygons2 = null;
 	} else if ( part == 16002 ) { // water
-		palette   = load( data1a, size1a );
-		bytecode  = load( data1b, size1b );
-		polygons1 = load( data1c, size1c );
-		polygons2 = load( data11, size11 );
+		palette   = load( Res.data1a, Res.size1a );
+		bytecode  = load( Res.data1b, Res.size1b );
+		polygons1 = load( Res.data1c, Res.size1c );
+		polygons2 = load( Res.data11, Res.size11 );
 	} else if ( part == 16003 ) { // jail
-		palette   = load( data1d, size1d );
-		bytecode  = load( data1e, size1e );
-		polygons1 = load( data1f, size1f );
-		polygons2 = load( data11, size11 );
+		palette   = load( Res.data1d, Res.size1d );
+		bytecode  = load( Res.data1e, Res.size1e );
+		polygons1 = load( Res.data1f, Res.size1f );
+		polygons2 = load( Res.data11, Res.size11 );
 	} else if ( part == 16004 ) { // 'cite'
-		palette   = load( data20, size20 );
-		bytecode  = load( data21, size21 );
-		polygons1 = load( data22, size22 );
-		polygons2 = load( data11, size11 );
+		palette   = load( Res.data20, Res.size20 );
+		bytecode  = load( Res.data21, Res.size21 );
+		polygons1 = load( Res.data22, Res.size22 );
+		polygons2 = load( Res.data11, Res.size11 );
 	} else if ( part == 16005 ) { // 'arene'
-		palette   = load( data23, size23 );
-		bytecode  = load( data24, size24 );
-		polygons1 = load( data25, size25 );
-		polygons2 = load( data11, size11 );
+		palette   = load( Res.data23, Res.size23 );
+		bytecode  = load( Res.data24, Res.size24 );
+		polygons1 = load( Res.data25, Res.size25 );
+		polygons2 = load( Res.data11, Res.size11 );
 	} else if ( part == 16006 ) { // 'luxe'
-		palette   = load( data26, size26 );
-		bytecode  = load( data27, size27 );
-		polygons1 = load( data28, size28 );
-		polygons2 = load( data11, size11 );
+		palette   = load( Res.data26, Res.size26 );
+		bytecode  = load( Res.data27, Res.size27 );
+		polygons1 = load( Res.data28, Res.size28 );
+		polygons2 = load( Res.data11, Res.size11 );
 	} else if ( part == 16007 ) { // 'final'
-		palette   = load( data29, size29 );
-		bytecode  = load( data2a, size2a );
-		polygons1 = load( data2b, size2b );
-		polygons2 = load( data11, size11 );
+		palette   = load( Res.data29, Res.size29 );
+		bytecode  = load( Res.data2a, Res.size2a );
+		polygons1 = load( Res.data2b, Res.size2b );
+		polygons2 = load( Res.data11, Res.size11 );
 	} else if ( part == 16008 ) { // password screen
-		palette   = load( data7d, size7d );
-		bytecode  = load( data7e, size7e );
-		polygons1 = load( data7f, size7f );
+		palette   = load( Res.data7d, Res.size7d );
+		bytecode  = load( Res.data7e, Res.size7e );
+		polygons1 = load( Res.data7f, Res.size7f );
 		polygons2 = null;
 	}
 	for ( var i = 0; i < tasks.length; ++i ) {
@@ -484,10 +559,12 @@ function get_page( num ) {
 }
 
 function select_page( num ) {
+	// console.log(`Script::op_selectPage(${num})`)
 	current_page0 = get_page( num );
 }
 
 function fill_page( num, color ) {
+	// console.log(`Script::op_fillPage(${num}, ${color})`)
 	num = get_page( num );
 	buffer8.fill( color, num * PAGE_SIZE, ( num + 1 ) * PAGE_SIZE );
 }
@@ -671,7 +748,7 @@ function put_pixel( page, x, y, color ) {
 function draw_char( page, chr, color, x, y ) {
 	if ( x < ( 320 / 8 ) && y < ( 200 - 8 ) ) {
 		for ( var j = 0; j < 8; ++j ) {
-			const mask = font[ ( chr - 32 ) * 8 + j ];
+			const mask = Res.font[ ( chr - 32 ) * 8 + j ];
 			for ( var i = 0; i < 8; ++i ) {
 				if ( ( mask & ( 1 << ( 7 - i ) ) ) != 0 ) {
 					put_pixel( page, x * 8 + i, y + j, color );
@@ -687,9 +764,9 @@ const STRINGS_LANGUAGE_FR = 1;
 var strings_language = STRINGS_LANGUAGE_EN;
 
 function draw_string( num, color, x, y ) {
-	var strings = strings_en;
-	if ( strings_language == STRINGS_LANGUAGE_FR && ( num in strings_fr ) ) {
-		strings = strings_fr;
+	var strings = Res.strings_en;
+	if ( strings_language == STRINGS_LANGUAGE_FR && ( num in Res.strings_fr ) ) {
+		strings = Res.strings_fr;
 	}
 	if ( num in strings ) {
 		const x0 = x;
@@ -708,9 +785,9 @@ function draw_string( num, color, x, y ) {
 }
 
 function draw_bitmap( num ) {
-	const size = bitmaps[ num ][ 1 ];
+	const size = Res.bitmaps[ num ][ 1 ];
 	console.assert( size == 32000 );
-	const buf = load( bitmaps[ num ][ 0 ], size );
+	const buf = load( Res.bitmaps[ num ][ 0 ], size );
 	var offset = 0;
 	for ( var y = 0; y < 200; ++y ) {
 		for ( var x = 0; x < 320; x += 8 ) {
@@ -778,6 +855,7 @@ function set_palette_bmp( data ) {
 }
 
 function update_display( num ) {
+	// console.log(`Script::op_updateDisplay(${num})`)
 	if ( num != 0xfe ) {
 		if ( num == 0xff ) {
 			const tmp = current_page1;
@@ -828,6 +906,7 @@ function reset( ) {
 	next_part = 16001;
 	timestamp = rewind_timestamp = Date.now( );
 	rewind_buffer.length = 0;
+	player.stopMusic();
 }
 
 function tick( ) {
@@ -850,11 +929,22 @@ function tick( ) {
 const INTERVAL = 50;
 var canvas;
 var timer;
+var player;
 
-function init( name ) {
+start.onclick = function () {
+	start.style.display = 'none'
+	init('screen')
+}
+
+async function init( name ) {
 	canvas = document.getElementById( name );
-	document.onkeydown = function( e ) { set_key_pressed( e.keyCode, 1 ); }
-	document.onkeyup   = function( e ) { set_key_pressed( e.keyCode, 0 ); }
+	player = new SfxPlayer((variable, value) => {
+		vars[variable] = value
+	})
+	await player.init()
+	bind_events()
+	load_modules()
+	load_sounds()
 	reset( );
 	if ( timer ) {
 		clearInterval( timer );
@@ -874,7 +964,7 @@ function pause( ) {
 
 function rewind( ) {
 	if ( rewind_buffer.length != 0 ) {
-		console.log( 'rewind pos:' + rewind_buffer.length );
+		// console.log( 'rewind pos:' + rewind_buffer.length );
 		var state = rewind_buffer.pop( );
 		load_state( state );
 	}
@@ -887,7 +977,7 @@ function change_palette( num ) {
 function change_part( num ) {
 	reset( );
 	next_part = 16001 + num;
-	console.log( 'next_part:' + next_part );
+	// console.log( 'next_part:' + next_part );
 }
 
 function change_language( num ) {
@@ -925,4 +1015,56 @@ function update_screen( offset ) {
 		}
 	}
 	context.putImageData( data, 0, 0 );
+}
+
+function play_music(resNum, delay, pos) {
+	if (resNum !== 0) {
+		// _ply->loadSfxModule(resNum, delay, pos);
+		player.loadSfxModule(resNum, delay, pos, Res)
+		player.startMusic()
+		player.playMusic(resNum)
+	} else if (delay !== 0) {
+		player.setEventsDelay(delay, true)
+	} else {
+		player.stopMusic()
+	}
+}
+
+function play_sound(resNum, freq, vol, channel) {
+	if (vol === 0) {
+		player.stopSound(channel)
+		return
+	}
+	if (vol > 63) {
+		vol = 63
+	}
+	try {
+		if (Res.sounds[resNum]) {
+			const [,,me] = Res.sounds[resNum]
+			if (me) {
+				// assert(freq < 40);
+				if (freq >= 40) {
+					console.error(`Assertion failed: $({freq} < 40`)
+				}
+				player.playSoundRaw(channel & 3, me, _freqTable[freq], vol)
+			}
+		}
+	} catch(e) {
+		console.error(`Could not play raw sound ${resNum}`)
+		debugger
+	}
+}
+
+function load_modules() {
+	Object.entries(Res.modules).forEach(([,module]) => {
+		const [data, size] = module
+		module.push(load(data, size))
+	})
+}
+
+function load_sounds() {
+	Object.entries(Res.sounds).forEach(([,sound]) => {
+		const [data, size] = sound
+		sound.push(load(data, size))
+	})
 }

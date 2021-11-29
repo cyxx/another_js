@@ -1,0 +1,4 @@
+node_modules/
+dist/
+dump/
+bytekiller_unpack.so

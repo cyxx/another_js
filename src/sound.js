@@ -17,7 +17,11 @@ const createSfx = () => ({
     loop: 0
 })
 
-class SfxPlayer {
+function read_be_uint16(buf, offset) {
+	return ( buf[ offset ] << 8) | buf[ offset + 1 ];
+}
+
+export class SfxPlayer {
     _delay = 0
     _resNum = 0
     _sfxMod = CreateSfxMod()
@@ -28,11 +32,13 @@ class SfxPlayer {
     _audioContext = null
     _sfxRawWorklet = null
     _sfxPlayerWorklet = null
+    _modifyVarCallback = null
 
-    constructor() {
+    constructor(modifyVarCallback) {
         console.log('SfxPlayer::contructor')
 		this._audioContext = new window.AudioContext()
 		this.resumeAudio()
+        this._modifyVarCallback = modifyVarCallback
     }
 
     async init() {
@@ -48,8 +54,7 @@ class SfxPlayer {
     
             await this._audioContext.audioWorklet.addModule('sfxplayer-processor.js')
             await this._audioContext.audioWorklet.addModule('sfxraw-processor.js')
-            // const filterNode = this._audioContext.createBiquadFilter()
-            // filterNode.frequency.value = 22050
+
             this._sfxRawWorklet = new AudioWorkletNode(this._audioContext, 'sfxraw-processor', {
                 outputChannelCount: [1],
                 numberOfInputs: 0,
@@ -69,7 +74,6 @@ class SfxPlayer {
 
             this._sfxRawWorklet.connect(this._audioContext.destination)
             this._sfxPlayerWorklet.connect(this._audioContext.destination)
-            //this._sfxRawWorklet.connect(this._audioContext.destination)
 
 			this.postMessageToSFXPlayerProcessor({
 				message: 'init',
@@ -107,26 +111,17 @@ class SfxPlayer {
     }
 
 	onSFXPlayerProcessorMessage(event) {
-		// console.log('Message from sfplayer processor', event)
         const data = event.data
 		switch(data.message) {
             case 'syncVar':
                 const { variable, value } = data
-                vars[variable] = value
+                // vars[variable] = value
+                this._modifyVarCallback(variable, value)
                 break
         }
 	}
 
 	onSFXRawProcessorMessage(event) {
-		// console.log('Message from sfplayer processor', event)
-        const data = event.data
-        debugger
-		// switch(data.message) {
-        //     case 'syncVar':
-        //         const { variable, value } = data
-        //         vars[variable] = value
-        //         break
-        // }
 	}    
 
     postMessageToSFXPlayerProcessor(message) {
@@ -145,9 +140,8 @@ class SfxPlayer {
 		}
 	}
 
-    loadSfxModule(resNum, delay, pos) {
-        const [data, size] = modules[resNum]
-        const buf = load(data, size)
+    loadSfxModule(resNum, delay, pos, res) {
+        const [,,buf] = res.modules[resNum]
         if (buf) {
             this._resNum = resNum
             this._sfxMod = CreateSfxMod()
@@ -165,7 +159,7 @@ class SfxPlayer {
             this.setEventsDelay(delay)
             this._sfxMod.data = new Uint8Array(buf.buffer,  0xC0)
             console.log(`SfxPlayer::loadSfxModule() eventDelay = ${this._delay} ms`)
-            this.prepareInstruments(new Uint8Array(buf.buffer, 2))
+            this.prepareInstruments(new Uint8Array(buf.buffer, 2), res.sounds)
             this.postMessageToSFXPlayerProcessor({
                 message: 'load',
                 sfxMod: this._sfxMod,
@@ -176,7 +170,7 @@ class SfxPlayer {
         }
     }
 
-    prepareInstruments(p) {
+    prepareInstruments(p, sounds) {
         let offset = 0
         for (let i = 0; i < 15; ++i) {
             const ins = this._sfxMod.samples[i]

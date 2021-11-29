@@ -1,0 +1,35 @@
+body {
+    margin: 0px auto;
+    text-align: center;
+    padding: 0px 0px; 
+    width: 800px;
+    background: #e5e5e5;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+div {
+    margin: 0 auto;
+}
+
+.main {
+    background-color: #fff;
+    padding-top: 10px;
+    width: 800px;
+    text-align: center;
+}
+
+.intro {
+    width: 640px;
+    text-align: left;
+}
+
+.game {
+    width: 640px;
+}
+
+footer {
+    background-color: #eeeeee;
+    margin: 20px 0px 0px 0px;
+    padding: 8px;
+}

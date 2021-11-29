@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Another World JS</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<div class="main">
+		<h1>Another World JS</h1>
+		<div>
+			<div class="intro">
+			<p>
+				This is a JavaScript port of <a href="https://www.mobygames.com/game/out-of-this-world">Another World</a> using the DOS demo data files.
+			</p>
+			<p>
+				Use arrow keys to control the player and Space/Enter to run.
+			</p>
+			</div>
+			<div>
+				<button id="start">
+					Ready!
+				</button>
+			</div>
+			<div>
+				<canvas id="screen" width="640" height="400"></canvas>
+				<p></p>
+				<div>
+					<input type="button" value="Pause" id="pauseButton" />
+					<input type="button" value="Reset" id="resetButton" />
+					<input type="button" value="Rewind" id="rewindButton" />
+					<select id="languageSelect">
+						<option>English</option>
+						<option>French</option>
+					</select>
+					Palette <select id="paletteSelect">
+						<option>Amiga</option>
+						<option>EGA</option>
+					</select>
+					Part <select id="partSelect">
+						<option>Introduction</option>
+						<option>Water</option>
+					</select>
+				</div>
+				<p></p>
+				<div>
+					<input type="checkbox" id="resolutionCheckbox">1991 screen resolution (320x200)</input>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<strong>another.js</strong> code is available on <a href="http://github.com/cyxx/another_js">github.com</a>.
+		</footer>
+		<!-- <script type="text/javascript" src="pako_inflate.min2.js"></script>
+		<script type="text/javascript" src="sound.js"></script>
+		<script type="text/javascript" src="ootwdemo-sound.js"></script>
+		<script type="text/javascript" src="another-full.js"></script> -->
+		<!-- <script type="text/javascript" src="another.min.js"></script> -->
+		</div>
+	</body>
+</html>
