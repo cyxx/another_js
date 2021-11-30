@@ -36,8 +36,8 @@ function onLowResolutionClick( e ) {
 }
 
 function bind_events() {
-	document.onkeydown = function( e ) { set_key_pressed( e.keyCode, 1 ); }
-	document.onkeyup   = function( e ) { set_key_pressed( e.keyCode, 0 ); }
+	document.onkeydown = function( e ) { set_key_pressed( e, 1 ); }
+	document.onkeyup   = function( e ) { set_key_pressed( e, 0 ); }
 	pauseButton.onclick = onPauseClick
 	resetButton.onclick = onResetClick
 	rewindButton.onclick = onRewindClick
@@ -45,6 +45,12 @@ function bind_events() {
 	paletteSelect.onchange = onPaletteChange
 	partSelect.onchange = onPartChange
 	resolutionCheckbox.onclick = onLowResolutionClick
+	canvas.onclick = () => {
+		if (document.fullscreenElement !== canvas)
+			canvas.requestFullscreen()
+		else
+			document.exitFullscreen()
+	}
 }
 
 var keyboard = new Array( 6 );
@@ -53,7 +59,9 @@ function is_key_pressed( code ) {
 	return keyboard[ code ];
 }
 
-function set_key_pressed( jcode, state ) {
+function set_key_pressed( e, state ) {
+	const jcode = e.keyCode
+
 	if ( jcode == 37 ) {
 		keyboard[ KEY_LEFT ] = state;
 	} else if ( jcode == 38 ) {
@@ -63,7 +71,10 @@ function set_key_pressed( jcode, state ) {
 	} else if ( jcode == 40 ) {
 		keyboard[ KEY_DOWN ] = state;
 	} else if ( jcode == 32 || jcode == 13 ) {
+		e.preventDefault();
 		keyboard[ KEY_ACTION ] = state;
+	} else if (jcode === 8 || jcode === 9) {
+		change_part(1);
 	}
 }
 
