@@ -101,12 +101,16 @@ function bind_events() {
 			onFullscreenChange(false)
 		}
 	}
-	// canvas.onclick = () => {
-	// 	if (document.fullscreenElement !== game) {
-	// 		game.requestFullscreen()
-	// 		onFullscreenChange(true)
-	// 	}
-	// }
+	game.ondblclick = () => {
+		if (document.fullscreenElement) {
+			document.exitFullscreen()
+			onFullscreenChange(false)
+		} else {
+			game.requestFullscreen()
+			onFullscreenChange(true)
+		}
+	}
+
 	touch_manager = nipplejs.create({
 		zone: document.getElementsByClassName('square')[0],
 		mode: 'static',
@@ -151,9 +155,10 @@ function bind_events() {
 
 	let button = nipplejs.create({
 		zone: document.getElementsByClassName('square2')[0],
+		threshold: 0,
 		mode: 'static',
-		lockX: 0,
-		lockY: 0,
+		lockX: true,
+		lockY: true,
 		position: {
 			left: '50%',
 			top: '50%'
@@ -161,10 +166,21 @@ function bind_events() {
 	});
 
 	button.on('start end', (evt) => {
+		let id = 0
 		if (evt.type === 'start') {
+			if (id) {
+				clearTimeout(id)
+				id = 0
+			}
 			keyboard[ KEY_ACTION ] = 1;
 		} else {
-			keyboard[ KEY_ACTION ] = 0;
+			id = setTimeout(() => {
+				keyboard[ KEY_ACTION ] = 0;
+			}, 5)
+			// skip intro
+			if (!next_part && current_part !== 16002) {
+				change_part(1)
+			}			
 		}
 	})
 }
@@ -1078,8 +1094,6 @@ async function init( name ) {
 		clearInterval( timer );
 	}
 	timer = setInterval( tick, INTERVAL );
-	// game.requestFullscreen()
-	// onFullscreenChange(true)
 }
 
 function pause( ) {
@@ -1148,7 +1162,6 @@ function update_screen( offset ) {
 }
 
 function play_music(resNum, delay, pos) {
-	return
 	if (resNum !== 0) {
 		// _ply->loadSfxModule(resNum, delay, pos);
 		player.loadSfxModule(resNum, delay, pos, Res)
@@ -1162,7 +1175,6 @@ function play_music(resNum, delay, pos) {
 }
 
 function play_sound(resNum, freq, vol, channel) {
-	return
 	if (vol === 0) {
 		player.stopSound(channel)
 		return
