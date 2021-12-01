@@ -1,6 +1,7 @@
 import * as Res from './ootwdemo-data'
 import { SfxPlayer } from './sound'
 import pako from 'pako'
+import nipplejs from 'nipplejs';
 import './main.css'
 
 const KEY_UP     = 1;
@@ -35,6 +36,55 @@ function onLowResolutionClick( e ) {
     set_1991_resolution( e.currentTarget.checked );
 }
 
+function getFullscreenSize() {
+	const width = screen.width
+	const height = screen.height
+	const isFirefox = navigator.userAgent.match(/Firefox/)
+	const ratio = width / height
+	let newWidth = width
+	let newHeight = width * ratio
+	if (ratio > 0) {
+		newHeight = height
+		newWidth = newHeight * ratio
+	}
+	return {
+		width: newWidth,
+		height: newHeight,
+		top: isFirefox ? (height - newHeight) / 2 : 0,
+		left: isFirefox ? (width - newWidth) / 2 : 0
+	}
+}
+
+function onFullscreenChange(isFullscreen) {
+	if (isFullscreen) {
+		const {
+			width,
+			height,
+			top,
+			left
+		} = getFullscreenSize()
+		let style = game.style
+		style.width = `${width}px`
+		style.height = `${height}px`
+
+		style = canvas.style
+		style.top = `${top}px`
+		style.left = `${left}px`
+		style.width = `${width}px`
+		style.height = `${height}px`
+	} else {
+		let style = game.style
+		style.removeProperty('width')
+		style.removeProperty('height')
+
+		style = canvas.style
+		style.removeProperty('top')
+		style.removeProperty('left')
+		style.removeProperty('width')
+		style.removeProperty('height')
+	}
+}
+
 function bind_events() {
 	document.onkeydown = function( e ) { set_key_pressed( e, 1 ); }
 	document.onkeyup   = function( e ) { set_key_pressed( e, 0 ); }
@@ -45,12 +95,78 @@ function bind_events() {
 	paletteSelect.onchange = onPaletteChange
 	partSelect.onchange = onPartChange
 	resolutionCheckbox.onclick = onLowResolutionClick
-	canvas.onclick = () => {
-		if (document.fullscreenElement !== canvas)
-			canvas.requestFullscreen()
-		else
+	document.onfullscreenchange = () => {
+		if (!document.fullscreenElement) {
 			document.exitFullscreen()
+			onFullscreenChange(false)
+		}
 	}
+	// canvas.onclick = () => {
+	// 	if (document.fullscreenElement !== game) {
+	// 		game.requestFullscreen()
+	// 		onFullscreenChange(true)
+	// 	}
+	// }
+	touch_manager = nipplejs.create({
+		zone: document.getElementsByClassName('square')[0],
+		mode: 'static',
+		position: {
+			left: '50%',
+			top: '50%'
+		},
+	});
+
+	touch_manager.on('dir:right', function (evt, data) {
+		// console.log(evt.type, data.direction)
+		console.log('right')
+		keyboard[ KEY_LEFT ] = 0;
+		keyboard[ KEY_UP ] = 0;
+		keyboard[ KEY_DOWN ] = 0;
+		keyboard[ KEY_RIGHT ] = 1;
+	}).on('dir:left', (evt, data) => {
+		console.log('left')
+		keyboard[ KEY_LEFT ] = 1;
+		keyboard[ KEY_UP ] = 0;
+		keyboard[ KEY_DOWN ] = 0;
+		keyboard[ KEY_RIGHT ] = 0;		
+	}).on('dir:up', (evt, data) => {
+		console.log('up')
+		keyboard[ KEY_LEFT ] = 0;
+		keyboard[ KEY_UP ] = 1;
+		keyboard[ KEY_DOWN ] = 0;
+		keyboard[ KEY_RIGHT ] = 0;		
+	}).on('dir:down', (evt, data) => {
+		console.log('down')
+		keyboard[ KEY_LEFT ] = 0;
+		keyboard[ KEY_UP ] = 0;
+		keyboard[ KEY_DOWN ] = 1;
+		keyboard[ KEY_RIGHT ] = 0;		
+	}).on('end', () => {
+		console.log('end joystick')
+		keyboard[ KEY_LEFT ] = 0;
+		keyboard[ KEY_UP ] = 0;
+		keyboard[ KEY_DOWN ] = 0;
+		keyboard[ KEY_RIGHT ] = 0;
+	})
+
+	let button = nipplejs.create({
+		zone: document.getElementsByClassName('square2')[0],
+		mode: 'static',
+		lockX: 0,
+		lockY: 0,
+		position: {
+			left: '50%',
+			top: '50%'
+		},
+	});
+
+	button.on('start end', (evt) => {
+		if (evt.type === 'start') {
+			keyboard[ KEY_ACTION ] = 1;
+		} else {
+			keyboard[ KEY_ACTION ] = 0;
+		}
+	})
 }
 
 var keyboard = new Array( 6 );
@@ -112,6 +228,7 @@ var current_part = 0;
 
 var delay = 0;
 var timestamp;
+var touch_manager = null;
 
 function read_byte( ) {
 	const value = bytecode[ bytecode_offset ];
@@ -961,6 +1078,8 @@ async function init( name ) {
 		clearInterval( timer );
 	}
 	timer = setInterval( tick, INTERVAL );
+	// game.requestFullscreen()
+	// onFullscreenChange(true)
 }
 
 function pause( ) {
@@ -1029,6 +1148,7 @@ function update_screen( offset ) {
 }
 
 function play_music(resNum, delay, pos) {
+	return
 	if (resNum !== 0) {
 		// _ply->loadSfxModule(resNum, delay, pos);
 		player.loadSfxModule(resNum, delay, pos, Res)
@@ -1042,6 +1162,7 @@ function play_music(resNum, delay, pos) {
 }
 
 function play_sound(resNum, freq, vol, channel) {
+	return
 	if (vol === 0) {
 		player.stopSound(channel)
 		return

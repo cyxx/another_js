@@ -24,12 +24,43 @@ div {
     text-align: left;
 }
 
-.game {
-    width: 640px;
-}
-
 footer {
     background-color: #eeeeee;
     margin: 20px 0px 0px 0px;
     padding: 8px;
+}
+
+#game {
+    position: relative;
+    width: 640px;
+}
+
+#game:-webkit-full-screen {
+    width: 100% !important;
+}
+#game:-moz-full-screen {
+    width: 100% !important;
+}
+
+#game:-ms-fullscreen {
+    width: 100% !important;
+}
+
+#game:fullscreen {
+    width: 100% !important;
+}
+
+.square, .square2 {
+    background-color:red;
+    position:absolute;
+    z-index: 1;
+    left: 10px;
+    bottom: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.square2 {
+    left: auto;
+    right: 10px;
 }
